@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>University Quiz | Myanmar Universities</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    color: #1c2b3a;
+  }
+  header {
+    background: #1c2b3a;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  header h1 { margin: 0; font-size: 1.5rem; }
+  .wrap {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .card h2 { margin-top: 0; color: #1c2b3a; }
+  .question { margin-bottom: 1.5rem; }
+  .question p { font-weight: bold; margin-bottom: 0.5rem; }
+  .options label {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.4rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .options label:hover { background: #eef4ff; }
+  .options input { margin-right: 0.5rem; }
+  .btn-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  button:hover { background: #1d4ed8; }
+  button.secondary {
+    background: #64748b;
+  }
+  button.secondary:hover { background: #475569; }
+  .result {
+    display: none;
+  }
+  .uni-list {
+    list-style: none;
+    padding: 0;
+  }
+  .uni-list li {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .uni-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .uni-list a:hover { text-decoration: underline; }
+  .match-score {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+  }
+  .note {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Find Your University</h1>
+  <p>Answer a few questions and get matched with Myanmar universities</p>
+</header>
+
+<div class="wrap">
+
+  <!-- Quiz Form -->
+  <div id="quiz-card" class="card">
+    <h2>University Matching Quiz</h2>
+
+    <div class="question">
+      <p>1. What is your strongest subject area?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="science"> Science / Engineering</label>
+        <label><input type="radio" name="q1" value="medicine"> Medicine / Health</label>
+        <label><input type="radio" name="q1" value="arts"> Arts / Humanities</label>
+        <label><input type="radio" name="q1" value="business"> Business / Economics</label>
+        <label><input type="radio" name="q1" value="it"> IT / Computer Science</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. Which region do you prefer?</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="yangon"> Yangon</label>
+        <label><input type="radio" name="q2" value="mandalay"> Mandalay</label>
+        <label><input type="radio" name="q2" value="other"> Other regions</label>
+        <label><input type="radio" name="q2" value="any"> No preference</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3. What is your estimated total marks?</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="500"> 500+ (High)</label>
+        <label><input type="radio" name="q3" value="450"> 450 - 499</label>
+        <label><input type="radio" name="q3" value="400"> 400 - 449</label>
+        <label><input type="radio" name="q3" value="350"> 350 - 399</label>
+        <label><input type="radio" name="q3" value="any"> Not sure</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>4. What career path interests you most?</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="engineer"> Engineer / Architect</label>
+        <label><input type="radio" name="q4" value="doctor"> Doctor / Nurse / Pharmacist</label>
+        <label><input type="radio" name="q4" value="teacher"> Teacher / Researcher</label>
+        <label><input type="radio" name="q4" value="business"> Business / Manager</label>
+        <label><input type="radio" name="q4" value="developer"> Software Developer</label>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button id="submit-quiz">Get Recommendations</button>
+      <button id="back-btn" class="secondary" type="button">Back to Home</button>
+    </div>
+  </div>
+
+  <!-- Result Section -->
+  <div id="result-card" class="card result">
+    <h2>Your Recommended Universities</h2>
+    <p id="summary"></p>
+    <ul id="recommendations" class="uni-list"></ul>
+    <p class="note">These recommendations are based on your quiz answers. Please check official requirements before applying.</p>
+    <div class="btn-row">
+      <button id="retake-btn" class="secondary">Retake Quiz</button>
+      <button id="home-btn" class="secondary">Back to Home</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="quiz.js"></script>
+</body>
+</html>

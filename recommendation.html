@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recommendation | Myanmar Universities</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fa; color: #1c2b3a; }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 24px; }
+  h1 { font-size: 26px; margin-bottom: 4px; }
+  .sub { color: #64748b; margin-top: 0; }
+  .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 20px; }
+  label { display: block; font-weight: bold; margin-bottom: 8px; }
+  input[type="number"], select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
+  .majors { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .majors label { font-weight: normal; }
+  button { background: #1d4ed8; color: #fff; border: 0; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-size: 15px; }
+  button.alt { background: #0f766e; }
+  #results li { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 10px; list-style: none; }
+  #results { padding: 0; }
+  .muted { color: #64748b; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Recommendation Page</h1>
+  <p class="sub">Enter your marks, choose majors and region to see suggested universities.</p>
+
+  <div class="card">
+    <label for="marks">Enter marks (total)</label>
+    <input type="number" id="marks" min="0" max="600" placeholder="e.g. 480">
+  </div>
+
+  <div class="card">
+    <label>Select majors</label>
+    <div class="majors">
+      <label><input type="checkbox" class="major" value="medicine"> Medicine</label>
+      <label><input type="checkbox" class="major" value="engineering"> Engineering</label>
+      <label><input type="checkbox" class="major" value="computer"> Computer Science</label>
+      <label><input type="checkbox" class="major" value="economics"> Economics</label>
+      <label><input type="checkbox" class="major" value="arts"> Arts</label>
+      <label><input type="checkbox" class="major" value="education"> Education</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <label for="region">Select region</label>
+    <select id="region">
+      <option value="">Any region</option>
+      <option value="yangon">Yangon</option>
+      <option value="mandalay">Mandalay</option>
+      <option value="naypyitaw">Nay Pyi Taw</option>
+      <option value="magway">Magway</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <button id="recommendBtn">Show recommendations</button>
+    <button id="quizBtn" class="alt">Survey with Quiz</button>
+  </div>
+
+  <div class="card">
+    <label>Recommended uni list</label>
+    <ul id="results"><li class="muted">No recommendations yet.</li></ul>
+  </div>
+</div>
+
+<script src="recommendation.js"></script>
+</body>
+</html>
