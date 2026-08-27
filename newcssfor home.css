@@ -1566,3 +1566,7 @@ img {
         font-size: 30px;
     }
 }
+body {
+    background-image: url("images/Home.png") !important;
+    background-size: cover !important;
+}
