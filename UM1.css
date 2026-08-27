@@ -1,3 +1,6 @@
+/* ==========================
+   GOOGLE FONT & RESET
+========================== */
 
 *{
     margin:0;
@@ -14,18 +17,46 @@ html{
    BODY
 ========================== */
 
+/* ==========================
+   BODY
+========================== */
+
 body{
 
+    color:#fff;
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+
+}
+
+/* BLUR BACKGROUND IMAGE */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:-20px;
+    left:-20px;
+
+    width:calc(100% + 40px);
+    height:calc(100% + 40px);
+
     background:
-    linear-gradient(rgba(8,20,45,.75),
-    rgba(10,35,70,.75)),
-    url("Laboratory.jpg");
+    linear-gradient(
+        rgba(8,20,45,.75),
+        rgba(10,35,70,.75)
+    ),
+    url("images/site-background.jpg");
 
     background-size:cover;
     background-position:center;
-    background-attachment:fixed;
 
-    color:#fff;
+    filter:blur(3px);
+
+    z-index:-1;
 
 }
 
@@ -336,14 +367,17 @@ body{
    GALLERY
 ========================== */
 
+/* ==========================
+   GALLERY
+========================== */
+
 .gallery{
 
     width:90%;
     max-width:1300px;
 
     margin:auto;
-
-    margin-bottom:45px;
+    margin-bottom:60px;
 
 }
 
