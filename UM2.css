@@ -1,3 +1,6 @@
+/* ==========================
+   GOOGLE FONT & RESET
+========================== */
 
 *{
     margin:0;
@@ -19,7 +22,7 @@ body{
     background:
     linear-gradient(rgba(8,20,45,.75),
     rgba(10,35,70,.75)),
-    url("Laboratory.jpg");
+    url("images/laboratory.jpg");
 
     background-size:cover;
     background-position:center;

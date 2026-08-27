@@ -1,0 +1,473 @@
+/* ==========================
+   Google Font
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:
+    linear-gradient(rgba(5,15,40,0.70),
+    rgba(5,15,40,0.75)),
+    url("photo_2026-08-02_12-26-49.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+
+
+header {
+
+    width: 100%;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 60px;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    background:
+        rgba(15, 23, 42, 0.42);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    transition:
+        all 0.35s ease;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   NAVBAR AFTER SCROLL
+========================================================= */
+
+.navbar.scrolled {
+
+    background:
+        rgba(17, 24, 39, 0.86);
+
+    border-bottom:
+        1px solid rgba(139, 92, 246, 0.30);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    box-shadow:
+        0 10px 40px
+        rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: white;
+
+    letter-spacing: -1px;
+
+    transition:
+        0.3s ease;
+
+    
+}
+
+
+.logo:hover {
+
+    transform:
+        translateY(-1px);
+}
+
+
+.logo span {
+
+    font-weight: 400;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--primary-soft),
+            var(--cyan-light)
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+/* Hide image because it becomes background */
+.image{
+    display:none;
+}
+
+/* Blur overlay */
+
+.overlay{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+ 
+
+    padding:100px;
+}
+
+
+/* ======================
+Section
+====================== */
+
+.major-section{
+
+    width:100%;
+    max-width:1300px;
+
+    text-align:center;
+}
+
+/* Heading */
+
+.major-section h1{
+
+    font-size:55px;
+    color:white;
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    text-shadow:0 5px 15px rgba(0,0,0,.4);
+
+}
+
+/* Subtitle */
+
+.subtitle{
+
+    color:#dbeafe;
+
+    font-size:18px;
+
+    margin-bottom:60px;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* ==========================
+Grid
+========================== */
+
+.major-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+/* ======================
+Cards
+====================== */
+
+.card,
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6,
+.card7{
+   
+
+    padding:35px 20px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,.30);
+
+    transition:.4s;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Glow Effect */
+
+.card::before,
+.card1::before,
+.card2::before,
+.card3::before,
+.card4::before,
+.card5::before,
+.card6::before,
+.card7::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180%;
+
+    height:100%;
+
+    background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.20),
+    transparent);
+
+    left:-180%;
+
+    top:0;
+
+    transition:.8s;
+
+}
+
+.card:hover::before,
+.card1:hover::before,
+.card2:hover::before,
+.card3:hover::before,
+.card4:hover::before,
+.card5:hover::before,
+.card6:hover::before,
+.card7:hover::before{
+
+    left:100%;
+}
+
+/* Hover */
+
+.card:hover,
+.card1:hover,
+.card2:hover,
+.card3:hover,
+.card4:hover,
+.card5:hover,
+.card6:hover,
+.card7:hover{
+
+    transform:translateY(-15px) scale(1.03);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/* Icon */
+
+.icon{
+
+    font-size:55px;
+
+    margin-bottom:18px;
+
+}
+
+/* Title */
+
+.card h2,
+.card1 h2,
+.card2 h2,
+.card3 h2,
+.card4 h2,
+.card5 h2,
+.card6 h2,
+.card7 h2{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+}
+
+/* Paragraph */
+
+.card p,
+.card1 p,
+.card2 p,
+.card3 p,
+.card4 p,
+.card5 p,
+.card6 p,
+.card7 p{
+
+    color:#dbeafe;
+
+    font-size:15px;
+
+}
+
+
+/* ==========================
+Individual Colors
+========================== */
+
+.card{
+
+    border-top:5px solid #00E5FF;
+}
+
+.card1{
+
+    border-top:5px solid #FF9800;
+    
+}
+
+.card2{
+
+    border-top:5px solid #8B5CF6;
+}
+
+.card3{
+
+    border-top:5px solid #00C853;
+}
+
+.card4{
+
+    border-top:5px solid #FF4081;
+}
+
+.card5{
+
+    border-top:5px solid #FFD600;
+}
+
+.card6{
+    border-top:5px solid #A96AD8;
+}
+
+.card7{
+    border-top:5px solid white;
+}
+/* ==========================
+Responsive
+========================== */
+
+@media(max-width:1000px){
+
+.major-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+@media(max-width:650px){
+
+.major-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.major-section h1{
+
+font-size:38px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+}
+.medicine{
+     text-decoration:none;
+
+    color: inherit;
+}
+.Engineering{
+     text-decoration:none;
+
+    color: inherit;
+}
+.Computer{
+    text-decoration:none;
+
+    color: inherit;
+}
+.major-grid a{
+     text-decoration:none;
+
+    color: inherit;
+}

@@ -5,40 +5,40 @@
     font-family:'Poppins',sans-serif;
 }
 
+/* ================= BODY ================= */
 
 body{
 
     min-height:100vh;
 
-    background-image:
-    linear-gradient(
-        rgba(15,23,42,.78),
-        rgba(30,64,175,.75)
-    ),
-    url("Computer\ main.jpg");
+    background:
+    
+       
+    url("Education\ bg.jpg");
 
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
 
     overflow-x:hidden;
+
 }
 
+/* ================= OVERLAY ================= */
 
 .overlay{
 
     min-height:100vh;
 
-    backdrop-filter:blur(6px);
-
     padding:40px;
+
+    background:rgba(255,255,255,.15);
+
+    
 
 }
 
-
-
 /* ================= HEADER ================= */
-
 
 header{
 
@@ -48,132 +48,91 @@ header{
 
     align-items:center;
 
-    margin-bottom:50px;
-
     flex-wrap:wrap;
+
+    margin-bottom:55px;
 
 }
 
-
 header h1{
 
-    font-size:45px;
+    font-size:46px;
 
     font-weight:700;
 
     letter-spacing:1px;
 
-
-    background:
-
-    linear-gradient(
+    background:linear-gradient(
         90deg,
-        #FFFFFF,
-        #BAE6FD,
-        #38BDF8
+        #1E3A8A,
+        #2563EB,
+        #3B82F6
     );
 
-
     background-clip:text;
-
     -webkit-background-clip:text;
-
     -webkit-text-fill-color:transparent;
 
-
-    text-shadow:
-
-    0 0 20px rgba(56,189,248,.35);
+    text-shadow:0 0 15px rgba(37,99,235,.18);
 
 }
 
-
-
 /* ================= SEARCH ================= */
-
 
 .search-box{
 
     width:560px;
 
-    border-radius:35px;
+    border-radius:50px;
 
+    background:rgba(255,255,255,.75);
 
-    background:
+    border:1px solid rgba(37,99,235,.18);
 
-    rgba(56,189,248,.12);
+    backdrop-filter:blur(20px);
 
+    transition:.35s;
 
-    border:
-
-    1px solid rgba(255,255,255,.18);
-
-
-    backdrop-filter:blur(18px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 
 }
 
+.search-box:hover{
 
+    border-color:#3B82F6;
+
+    box-shadow:
+    0 15px 35px rgba(37,99,235,.18);
+
+}
 
 .search-box input{
 
-
     width:100%;
 
-    padding:15px 22px;
-
+    padding:16px 24px;
 
     border:none;
 
     outline:none;
 
+    border-radius:50px;
 
-    border-radius:35px;
+    background:transparent;
 
-
-    background:
-
-    rgba(255,255,255,.08);
-
-
-    color:white;
-
+    color:#1E293B;
 
     font-size:16px;
 
-
-    transition:.35s;
-
 }
-
-
 
 .search-box input::placeholder{
 
-    color:#BAE6FD;
+    color:#64748B;
 
 }
-
-
-
-.search-box input:focus{
-
-
-    background:
-
-    rgba(255,255,255,.15);
-
-
-    box-shadow:
-
-    0 0 25px rgba(56,189,248,.55);
-
-}
-
-
 
 /* ================= LAYOUT ================= */
-
 
 .container{
 
@@ -183,11 +142,9 @@ header h1{
 
     align-items:center;
 
-    gap:60px;
+    gap:70px;
 
 }
-
-
 
 .university-list{
 
@@ -195,9 +152,7 @@ header h1{
 
 }
 
-
-
-.doc{
+.education-image{
 
     width:30%;
 
@@ -209,160 +164,96 @@ header h1{
 
 }
 
-
-
 /* ================= IMAGE ================= */
 
-
-.doc img{
-
+.education-image img{
 
     width:100%;
 
+    max-width:470px;
 
-    max-width:480px;
-
-
-    animation:
-
-    float 3s ease-in-out infinite;
-
+    animation:float 4s ease-in-out infinite;
 
     filter:
-
-    drop-shadow(
-    0 20px 45px rgba(37,99,235,.45)
-    );
+    drop-shadow(0 18px 35px rgba(0,0,0,.18))
+    drop-shadow(0 0 25px rgba(59,130,246,.15));
 
 }
-
-
-
 
 /* ================= CARDS ================= */
 
-
 .card{
-
 
     margin-bottom:18px;
 
+    padding:20px 25px;
 
-    padding:18px 25px;
+    border-radius:22px;
 
-
-    border-radius:20px;
-
-
-    background:
-
-    rgba(15,23,42,.45);
-
+    background:rgba(255,255,255,.82);
 
     backdrop-filter:blur(20px);
 
+    border:1px solid rgba(226,232,240,.9);
 
-    border:
-
-    1px solid rgba(56,189,248,.25);
-
-
-
-    color:white;
-
-
-    font-size:20px;
-
-
-    font-weight:500;
+    box-shadow:
+    0 12px 30px rgba(15,23,42,.08);
 
     transition:.35s;
 
-
-    box-shadow:
-
-    0 10px 30px rgba(0,0,0,.35);
-
-    text-align: center;
-
-    justify-content: center;
+    text-align:center;
 
 }
-
-
 
 .card:hover{
 
-
     transform:
-
-    translateX(12px)
-
+    translateY(-6px)
     scale(1.02);
 
-
-
-    background:
-
-    linear-gradient(
-
+    background:linear-gradient(
         135deg,
-
         #2563EB,
-
-        #38BDF8
-
+        #3B82F6,
+        #60A5FA
     );
 
-
-
-    border-color:#7DD3FC;
-
-
+    border-color:#BFDBFE;
 
     box-shadow:
-
-
-    0 15px 40px rgba(37,99,235,.5),
-
-
-    0 0 30px rgba(56,189,248,.35);
+    0 18px 40px rgba(37,99,235,.25);
 
 }
 
-
-
 /* ================= LINKS ================= */
-
 
 .university-list a{
 
+    display:block;
+
     text-decoration:none;
 
-    color:white;
+    color:#1E293B;
 
-    display:block;
+    font-size:20px;
+
+    font-weight:600;
 
     transition:.3s;
 
 }
 
+.card:hover a{
 
+    color:white;
 
-.university-list a:hover{
-
-    color:#E0F2FE;
+    letter-spacing:.5px;
 
 }
 
-
-
-
-/* ================= FLOAT IMAGE ================= */
-
+/* ================= FLOAT ================= */
 
 @keyframes float{
-
 
     0%{
 
@@ -370,13 +261,11 @@ header h1{
 
     }
 
-
     50%{
 
-        transform:translateY(-12px);
+        transform:translateY(-15px);
 
     }
-
 
     100%{
 
@@ -386,10 +275,7 @@ header h1{
 
 }
 
-
-
 /* ================= SCROLLBAR ================= */
-
 
 ::-webkit-scrollbar{
 
@@ -397,157 +283,104 @@ header h1{
 
 }
 
-
-
 ::-webkit-scrollbar-track{
 
-    background:#0F172A;
+    background:#E2E8F0;
 
 }
 
-
-
 ::-webkit-scrollbar-thumb{
 
-
-    background:
-
-    linear-gradient(
-
+    background:linear-gradient(
         #2563EB,
-
-        #38BDF8
-
+        #3B82F6,
+        #60A5FA
     );
-
 
     border-radius:20px;
 
 }
 
-
-
 ::-webkit-scrollbar-thumb:hover{
 
-
-    background:
-
-    linear-gradient(
-
-        #38BDF8,
-
-        #7DD3FC
-
+    background:linear-gradient(
+        #1D4ED8,
+        #2563EB,
+        #3B82F6
     );
 
 }
 
-
-
-
 /* ================= RESPONSIVE ================= */
 
-
-@media(max-width:900px){
-
+@media(max-width:1000px){
 
 .container{
 
-
     flex-direction:column;
 
-
 }
-
-
 
 .university-list{
 
-
     width:100%;
-
 
 }
 
-
-
-.doc{
-
+.education-image{
 
     width:70%;
 
-
 }
 
-
-
 }
-
-
-
-
 
 @media(max-width:700px){
 
+.overlay{
 
+    padding:25px;
+
+}
 
 header{
 
-
     flex-direction:column;
-
 
     gap:20px;
 
-
 }
-
-
 
 header h1{
 
-
     font-size:34px;
-
 
     text-align:center;
 
-
 }
-
-
 
 .search-box{
 
-
     width:100%;
-
 
 }
 
-
-
-.doc{
-
+.education-image{
 
     display:none;
 
-
 }
-
-
 
 .card{
 
-
-    font-size:18px;
-
-
     padding:16px;
-
 
 }
 
+.university-list a{
 
+    font-size:18px;
+
+}
 
 }

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison</title>
+    <link rel="stylesheet" href="test3.css">
+</head>
+<body>
+
+    <div>
+        <header>
+            <nav class="navbar">
+                <div class="logo">Uni<span>Path</span></div>
+                  
+                
+            </nav>
+        </header>
+    </div>
+
+    <div class="compare-section">
+        <h1>Compare Universities</h1>
+        <div class="search-area">
+            <div class="search-box">
+                <label><strong>University 1</strong></label>
+                <select id="uni1">
+                    <option value="">-- Select University --</option>
+                    <option value="med1_yangon">ဆေးတက္ကသိုလ် (၁)၊ ရန်ကုန် (University of Medicine 1, Yangon)</option>
+                    <option value="med_mandalay">ဆေးတက္ကသိုလ်၊ မန္တလေး (University of Medicine, Mandalay)</option>
+                    <option value="med2_yangon">ဆေးတက္ကသိုလ် (၂)၊ ရန်ကုန် (University of Medicine 2, Yangon)</option>
+                    <option value="med_magway">ဆေးတက္ကသိုလ်၊ မကွေး (University of Medicine, Magway)</option>
+                    <option value="med_taunggyi">ဆေးတက္ကသိုလ်၊ တောင်ကြီး (University of Medicine, Taunggyi)</option>
+                    <option value="dental_yangon">သွားဘက်ဆိုင်ရာဆေးတက္ကသိုလ်၊ ရန်ကုန် (University of Dental Medicine, Yangon)</option>
+                    <option value="dental_mandalay">သွားဘက်ဆိုင်ရာဆေးတက္ကသိုလ်၊ မန္တလေး (University of Dental Medicine, Mandalay)</option>
+                    <option value="pharmacy_yangon">ဆေးဝါးတက္ကသိုလ်၊ ရန်ကုန် (University of Pharmacy, Yangon)</option>
+                    <option value="pharmacy_mandalay">ဆေးဝါးတက္ကသိုလ်၊ မန္တလေး (University of Pharmacy, Mandalay)</option>
+                    <option value="medtech_yangon">ဆေးဘက်ဆိုင်ရာနည်းပညာတက္ကသိုလ်၊ ရန်ကုန် (University of Medical Technology, Yangon)</option>
+                    <option value="medtech_mandalay">ဆေးဘက်ဆိုင်ရာနည်းပညာတက္ကသိုလ်၊ မန္တလေး (University of Medical Technology, Mandalay)</option>
+                    <option value="nursing_yangon">သူနာပြုတက္ကသိုလ်၊ ရန်ကုန် (University of Nursing, Yangon)</option>
+                    <option value="nursing_mandalay">သူနာပြုတက္ကသိုလ်၊ မန္တလေး (University of Nursing, Mandalay)</option>
+                    <option value="communityhealth_magway">အခြေခံကျန်းမာရေးတက္ကသိုလ်၊ မကွေး (University of Community Health, Magway)</option>
+                    <option value="traditionalmedicine_mandalay">တိုင်းရင်းဆေးတက္ကသိုလ်၊ မန္တလေး (University of Traditional Medicine, Mandalay)</option>
+                    <option value="nspu">Naypyitaw State Polytechnic University</option>
+                    <option value="ytu">ရန်ကုန်နည်းပညာတက္ကသိုလ် (Yangon Technological University)</option>
+                    <option value="mtu">မန္တလေးနည်းပညာတက္ကသိုလ် (Mandalay Technological University)</option>
+                    <option value="tu_ycc">နည်းပညာတက္ကသိုလ် - ရတနာပုံဆိုက်ဘာစီးတီး (Technological University - Yatanarpon Cyber City)</option>
+                    <option value="maeu">မြန်မာနိုင်ငံလေကြောင်းနှင့်အာကာသပညာတက္ကသိုလ် (Myanmar Aerospace Engineering University)</option>
+                    <option value="tu_mandalay">နည်းပညာတက္ကသိုလ်၊ မန္တလေး (Technological University, Mandalay)</option>
+                    <option value="tu_monywa">နည်းပညာတက္ကသိုလ်၊ မုံရွာ (Technological University, Monywa)</option>
+                    <option value="tu_kalay">နည်းပညာတက္ကသိုလ်၊ ကလေး (Technological University, Kalay)</option>
+                    <option value="tu_sagaing">နည်းပညာတက္ကသိုလ်၊ စစ်ကိုင်း (Technological University, Sagaing)</option>
+                    <option value="tu_kyaukse">နည်းပညာတက္ကသိုလ်၊ ကျောက်ဆည် (Technological University, Kyaukse)</option>
+                    <option value="tu_meiktila">နည်းပညာတက္ကသိုလ်၊ မိတ္ထီလာ (Technological University, Meiktila)</option>
+                    <option value="tu_yamethin">နည်းပညာတက္ကသိုလ်၊ ရမည်းသင်း (Technological University, Yamethin)</option>
+                    <option value="tu_magway">နည်းပညာတက္ကသိုလ်၊ မကွေး (Technological University, Magway)</option>
+                    <option value="tu_pakokku">နည်းပညာတက္ကသိုလ်၊ ပခုက္ကူ (Technological University, Pakokku)</option>
+                    <option value="tu_taunggyi">နည်းပညာတက္ကသိုလ်၊ တောင်ကြီး (Technological University, Taunggyi)</option>
+                    <option value="tu_loikaw">နည်းပညာတက္ကသိုလ်၊ လွိုင်ကော် (Technological University, Loikaw)</option>
+                    <option value="tu_toungoo">နည်းပညာတက္ကသိုလ်၊ တောင်ငူ (Technological University, Toungoo)</option>
+                    <option value="tu_sittwe">နည်းပညာတက္ကသိုလ်၊ စစ်တွေ (Technological University, Sittwe)</option>
+                    <option value="pyay_tu">ပြည်နည်းပညာတက္ကသိုလ် (Pyay Technological University)</option>
+                    <option value="wytu">ရန်ကုန်အနောက်ပိုင်းနည်းပညာတက္ကသိုလ် (West Yangon Technological University)</option>
+                    <option value="hmawbi_tu">နည်းပညာတက္ကသိုလ်၊ မှော်ဘီ (Technological University, Hmawbi)</option>
+                    <option value="thanlyin_tu">နည်းပညာတက္ကသိုလ်၊ သန်လျင် (Technological University, Thanlyin)</option>
+                    <option value="pathein_tu">နည်းပညာတက္ကသိုလ်၊ ပုသိမ် (Technological University, Pathein)</option>
+                    <option value="hinthada_tu">နည်းပညာတက္ကသိုလ်၊ ဟင်္သာတ (Technological University, Hinthada)</option>
+                    <option value="hpaan_tu">နည်းပညာတက္ကသိုလ်၊ ဘားအံ (Technological University, Hpa-An)</option>
+                    <option value="mawlamyine_tu">နည်းပညာတက္ကသိုလ်၊ မော်လမြိုင် (Technological University, Mawlamyine)</option>
+                    <option value="shwebo_gtc">အစိုးရနည်းပညာကောလိပ်၊ ရွှေဘို (Government Technological College, Shwebo)</option>
+                    <option value="mandalay_gtc">အစိုးရနည်းပညာကောလိပ်၊ မန္တလေး (Government Technological College, Mandalay)</option>
+                    <option value="kyaukphyu_gtc">အစိုးရနည်းပညာကောလိပ်၊ ကျောက်ဖြူ (Government Technological College, Kyaukphyu)</option>
+                    <option value="south_dagon_gtc">အစိုးရနည်းပညာကောလိပ်၊ တောင်ဒဂုံ (Government Technological College, South Dagon)</option>
+                    <option value="ucsy">ရန်ကုန်ကွန်ပျူတာတက္ကသိုလ် (University of Computer Studies, Yangon)</option>
+                    <option value="uit">သတင်းအချက်အလက်နည်းပညာတက္ကသိုလ် (University of Information Technology, Yangon)</option>
+                    <option value="ucsm">မန္တလေးကွန်ပျူတာတက္ကသိုလ် (University of Computer Studies, Mandalay)</option>
+                    <option value="monywa_cu">ကွန်ပျူတာတက္ကသိုလ်၊ မုံရွာ (Computer University, Monywa)</option>
+                    <option value="kalay_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ကလေး (Computer University, Kalay)</option>
+                    <option value="mandalay_cu">ကွန်ပျူတာတက္ကသိုလ်၊ မန္တလေး (Computer University, Mandalay)</option>
+                    <option value="meiktila_cu">ကွန်ပျူတာတက္ကသိုလ်၊ မိတ္ထီလာ (Computer University, Meiktila)</option>
+                    <option value="magway_cu">ကွန်ပျူတာတက္ကသိုလ်၊ မကွေး (Computer University, Magway)</option>
+                    <option value="pakokku_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ပခုက္ကူ (Computer University, Pakokku)</option>
+                    <option value="taunggyi_cu">ကွန်ပျူတာတက္ကသိုလ်၊ တောင်ကြီး (Computer University, Taunggyi)</option>
+                    <option value="loikaw_cu">ကွန်ပျူတာတက္ကသိုလ်၊ လွိုင်ကော် (Computer University, Loikaw)</option>
+                    <option value="toungoo_cu">ကွန်ပျူတာတက္ကသိုလ်၊ တောင်ငူ (Computer University, Toungoo)</option>
+                    <option value="sittwe_cu">ကွန်ပျူတာတက္ကသိုလ်၊ စစ်တွေ (Computer University, Sittwe)</option>
+                    <option value="pyay_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ပြည် (Computer University, Pyay)</option>
+                    <option value="pathein_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ပုသိမ် (Computer University, Pathein)</option>
+                    <option value="hinthada_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ဟင်္သာတ (Computer University, Hinthada)</option>
+                    <option value="hpaan_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ဘားအံ (Computer University, Hpa-An)</option>
+                    <option value="thaton_cu">ကွန်ပျူတာတက္ကသိုလ်၊ သထုံ (Computer University, Thaton)</option>
+                    <option value="myitkyina_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ မြစ်ကြီးနား (Polytechnic University, Myitkyina)</option>
+                    <option value="bhamo_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ ဗန်းမော် (Polytechnic University, Bhamo)</option>
+                    <option value="lashio_pu:">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ လားရှိုး (Polytechnic University, Lashio)</option>
+                    <option value="panglong_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ ပင်လုံ (Polytechnic University, Panglong)</option>
+                    <option value="kengtung_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ ကျိုင်းတုံ (Polytechnic University, Kengtung)</option>
+                    <option value="maubin_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ မအူပင် (Polytechnic University, Maubin)</option>
+                    <option value="dawei_pu">Polytechnic University (Dawei) (Polytechnic University, Dawei)</option>
+                    <option value="myeik_pu">Polytechnic University (Myeik) (Polytechnic University, Myeik)</option>
+                    <option value="nsa">Naypyitaw State Academy</option>
+                    <option value="yu">ရန်ကုန်တက္ကသိုလ် (University of Yangon)</option>
+                    <option value="mu">မန္တလေးတက္ကသိုလ် (University of Mandalay)</option>
+                    <option value="yueco_hlaing">ရန်ကုန်စီးပွားရေးတက္ကသိုလ် - လှိုင်နယ်မြေ (Yangon University of Economics - Hlaing Campus)</option>
+                    <option value="yueco_ywathagyi">ရန်ကုန်စီးပွားရေးတက္ကသိုလ် - ရွာသာကြီးနယ်မြေ (Yangon University of Economics - Ywathagyi Campus)</option>
+                    <option value="mueco">မုံရွာစီးပွားရေးတက္ကသိုလ် (Monywa University of Economics)</option>
+                    <option value="meiktila_ueco">မိတ္ထီလာစီးပွားရေးတက္ကသိုလ် (Meiktila University of Economics)</option>
+                    <option value="yuoe">ရန်ကုန်ပညာရေးတက္ကသိုလ် (Yangon University of Education)</option>
+                    <option value="suoe">စစ်ကိုင်းပညာရေးတက္ကသိုလ် (Sagaing University of Education)</option>
+                    <option value="yufl">ရန်ကုန်နိုင်ငံခြားဘာသာတက္ကသိုလ် (Yangon University of Foreign Languages)</option>
+                    <option value="mufl">မန္တလေးနိုင်ငံခြားဘာသာတက္ကသိုလ် (Mandalay University of Foreign Languages)</option>
+                    <option value="myitkyina_edc">မြစ်ကြီးနားပညာရေးဒီဂရီကောလိပ် (Myitkyina Education Degree College)</option>
+                    <option value="loikaw_edc">လွိုင်ကော်ပညာရေးဒီဂရီကောလိပ် (Loikaw Education Degree College)</option>
+                    <option value="hpaan_edc">ဘားအံပညာရေးဒီဂရီကောလိပ် (Hpa-An Education Degree College)</option>
+                    <option value="hakha_edc">ဟားခါးပညာရေးဒီဂရီကောလိပ် (Hakha Education Degree College)</option>
+                    <option value="sagaing_edc">စစ်ကိုင်းပညာရေးဒီဂရီကောလိပ် (Sagaing Education Degree College)</option>
+                    <option value="monywa_edc">မုံရွာပညာရေးဒီဂရီကောလိပ် (Monywa Education Degree College)</option>
+                    <option value="katha_edc">ကသာပညာရေးဒီဂရီကောလိပ် (Katha Education Degree College)</option>
+                    <option value="udawei_edc">ထားဝယ်ပညာရေးဒီဂရီကောလိပ် (Dawei Education Degree College)</option>
+                    <option value="toungoo_edc">တောင်ငူပညာရေးဒီဂရီကောလိပ် (Toungoo Education Degree College)</option>
+                    <option value="pyay_edc">ပြည်မြို့ပညာရေးဒီဂရီကောလိပ် (Pyay Education Degree College)</option>
+                    <option value="magway_edc">မကွေးပညာရေးဒီဂရီကောလိပ် (Magway Education Degree College)</option>
+                    <option value="pakokku_edc">ပခုက္ကူပညာရေးဒီဂရီကောလိပ် (Pakokku Education Degree College)</option>
+                    <option value="mandalay_edc">မန္တလေးပညာရေးဒီဂရီကောလိပ် (Mandalay Education Degree College)</option>
+                    <option value="meiktila_edc">မိတ္ထီလာပညာရေးဒီဂရီကောလိပ် (Meiktila Education Degree College)</option>
+                    <option value="mawlamyine_edc">မော်လမြိုင်ပညာရေးဒီဂရီကောလိပ် (Mawlamyine Education Degree College)</option>
+                    <option value="kyaukphyu_edc">ကျောက်ဖြူပညာရေးဒီဂရီကောလိပ် (Kyaukphyu Education Degree College)</option>
+                    <option value="yankin_edc">ရန်ကင်းပညာရေးဒီဂရီကောလိပ် (Yankin Education Degree College)</option>
+                    <option value="hlegu_edc">လှည်းကူးပညာရေးဒီဂရီကောလိပ် (Hlegu Education Degree College)</option>
+                    <option value="thingangyun_edc">သင်္ဃန်းကျွန်းပညာရေးဒီဂရီကောလိပ် (Thingangyun Education Degree College)</option>
+                    <option value="taunggyi_edc">တောင်ကြီးပညာရေးဒီဂရီကောလိပ် (Taunggyi Education Degree College)</option>
+                    <option value="lashio_edc">လားရှိုးပညာရေးဒီဂရီကောလိပ် (Lashio Education Degree College)</option>
+                    <option value="kengtung_edc">ကျိုင်းတုံပညာရေးဒီဂရီကောလိပ် (Kengtung Education Degree College)</option>
+                    <option value="pathein_edc">ပုသိမ်ပညာရေးဒီဂရီကောလိပ် (Pathein Education Degree College)</option>
+                    <option value="myaungmya_edc">မြောင်းမြပညာရေးဒီဂရီကောလိပ် (Myaungmya Education Degree College)</option>
+                    <option value="bogale_edc">ဘိုကလေးပညာရေးဒီဂရီကောလိပ် (Bogale Education Degree College)</option>
+                    <option value="nmdc">အမျိုးသားစီမံခန့်ခွဲမှုပညာဒီဂရီကောလိပ် (National Management Degree College)</option>
+                    <option value="mandalar_u">မန္တလာတက္ကသိုလ် - BTHM သင်တန်း (Mandalar University - BTHM Course)</option>
+                    <option value="yau">ရေဆင်းစိုက်ပျိုးရေးတက္ကသိုလ် (Yezin Agricultural University)</option>
+                    <option value="uvs">မွေးမြူရေးဆိုင်ရာဆေးတက္ကသိုလ်၊ ရေဆင်း (University of Veterinary Science, Yezin)</option>
+                    <option value="uaa_maubin">စိုက်ပျိုးရေးနှင့်မွေးမြူရေးတက္ကသိုလ်၊ မအူပင် (University of Agriculture and Livestock, Maubin)</option>
+                    <option value="ufes">သစ်တောနှင့်ပတ်ဝန်းကျင်ဆိုင်ရာတက္ကသိုလ်၊ ရေဆင်း (University of Forestry and Environmental Science, Yezin)</option>
+                    <option value="miit">မြန်မာသတင်းအချက်အလက်နည်းပညာတက္ကသိုလ် (Myanmar Institute of Information Technology)</option>
+                    <option value="ucm">သမဝါယမနှင့်စီမံခန့်ခွဲမှုပညာတက္ကသိုလ်များ (Universities of Co-operative and Management)</option>
+                    <option value="cooperative_colleges">သမဝါယမကောလိပ်များ (Co-operative Colleges)</option>
+                    <option value="lacquerware_college">ယွန်းပညာကောလိပ်၊ ပုဂံမြို့ (Lacquerville College, Bagan)</option>
+                    <option value="nuca">အမျိုးသားယဉ်ကျေးမှုနှင့် အနုပညာတက္ကသိုလ်များ (National Universities of Arts and Culture)</option>
+                    <option value="mmu">မြန်မာနိုင်ငံရေကြောင်းပညာတက္ကသိုလ် (Myanmar Maritime University)</option>
+                    <option value="udnr">ပြည်ထောင်စုတိုင်းရင်းသားလူမျိုးများဖွံ့ဖြိုးရေးတက္ကသိုလ်၊ စစ်ကိုင်း (University for the Development of the National Races of the Union, Sagaing)</option>
+                    <option value="nrydc">ပြည်ထောင်စုတိုင်းရင်းသားလူငယ်များစွမ်းရည်ဖွံ့ဖြိုးရေးဒီဂရီကောလိပ်၊ ရန်ကုန်နှင့်စစ်ကိုင်း (Degree College for National Youth Development, Yangon & Sagaing)</option>
+                </select>
+            </div>
+
+            <div class="search-box">
+                <label><strong>University 2</strong></label>
+                <select id="uni2">
+                    <option value="">-- Select University --</option>
+                    <option value="med1_yangon">ဆေးတက္ကသိုလ် (၁)၊ ရန်ကုန် (University of Medicine 1, Yangon)</option>
+                    <option value="med_mandalay">ဆေးတက္ကသိုလ်၊ မန္တလေး (University of Medicine, Mandalay)</option>
+                    <option value="med2_yangon">ဆေးတက္ကသိုလ် (၂)၊ ရန်ကုန် (University of Medicine 2, Yangon)</option>
+                    <option value="med_magway">ဆေးတက္ကသိုလ်၊ မကွေး (University of Medicine, Magway)</option>
+                    <option value="med_taunggyi">ဆေးတက္ကသိုလ်၊ တောင်ကြီး (University of Medicine, Taunggyi)</option>
+                    <option value="dental_yangon">သွားဘက်ဆိုင်ရာဆေးတက္ကသိုလ်၊ ရန်ကုန် (University of Dental Medicine, Yangon)</option>
+                    <option value="dental_mandalay">သွားဘက်ဆိုင်ရာဆေးတက္ကသိုလ်၊ မန္တလေး (University of Dental Medicine, Mandalay)</option>
+                    <option value="pharmacy_yangon">ဆေးဝါးတက္ကသိုလ်၊ ရန်ကုန် (University of Pharmacy, Yangon)</option>
+                    <option value="pharmacy_mandalay">ဆေးဝါးတက္ကသိုလ်၊ မန္တလေး (University of Pharmacy, Mandalay)</option>
+                    <option value="medtech_yangon">ဆေးဘက်ဆိုင်ရာနည်းပညာတက္ကသိုလ်၊ ရန်ကုန် (University of Medical Technology, Yangon)</option>
+                    <option value="medtech_mandalay">ဆေးဘက်ဆိုင်ရာနည်းပညာတက္ကသိုလ်၊ မန္တလေး (University of Medical Technology, Mandalay)</option>
+                    <option value="nursing_yangon">သူနာပြုတက္ကသိုလ်၊ ရန်ကုန် (University of Nursing, Yangon)</option>
+                    <option value="nursing_mandalay">သူနာပြုတက္ကသိုလ်၊ မန္တလေး (University of Nursing, Mandalay)</option>
+                    <option value="communityhealth_magway">အခြေခံကျန်းမာရေးတက္ကသိုလ်၊ မကွေး (University of Community Health, Magway)</option>
+                    <option value="traditionalmedicine_mandalay">တိုင်းရင်းဆေးတက္ကသိုလ်၊ မန္တလေး (University of Traditional Medicine, Mandalay)</option>
+                    <option value="nspu">Naypyitaw State Polytechnic University</option>
+                    <option value="ytu">ရန်ကုန်နည်းပညာတက္ကသိုလ် (Yangon Technological University)</option>
+                    <option value="mtu">မန္တလေးနည်းပညာတက္ကသိုလ် (Mandalay Technological University)</option>
+                    <option value="tu_ycc">နည်းပညာတက္ကသိုလ် - ရတနာပုံဆိုက်ဘာစီးတီး (Technological University - Yatanarpon Cyber City)</option>
+                    <option value="maeu">မြန်မာနိုင်ငံလေကြောင်းနှင့်အာကာသပညာတက္ကသိုလ် (Myanmar Aerospace Engineering University)</option>
+                    <option value="tu_mandalay">နည်းပညာတက္ကသိုလ်၊ မန္တလေး (Technological University, Mandalay)</option>
+                    <option value="tu_monywa">နည်းပညာတက္ကသိုလ်၊ မုံရွာ (Technological University, Monywa)</option>
+                    <option value="tu_kalay">နည်းပညာတက္ကသိုလ်၊ ကလေး (Technological University, Kalay)</option>
+                    <option value="tu_sagaing">နည်းပညာတက္ကသိုလ်၊ စစ်ကိုင်း (Technological University, Sagaing)</option>
+                    <option value="tu_kyaukse">နည်းပညာတက္ကသိုလ်၊ ကျောက်ဆည် (Technological University, Kyaukse)</option>
+                    <option value="tu_meiktila">နည်းပညာတက္ကသိုလ်၊ မိတ္ထီလာ (Technological University, Meiktila)</option>
+                    <option value="tu_yamethin">နည်းပညာတက္ကသိုလ်၊ ရမည်းသင်း (Technological University, Yamethin)</option>
+                    <option value="tu_magway">နည်းပညာတက္ကသိုလ်၊ မကွေး (Technological University, Magway)</option>
+                    <option value="tu_pakokku">နည်းပညာတက္ကသိုလ်၊ ပခုက္ကူ (Technological University, Pakokku)</option>
+                    <option value="tu_taunggyi">နည်းပညာတက္ကသိုလ်၊ တောင်ကြီး (Technological University, Taunggyi)</option>
+                    <option value="tu_loikaw">နည်းပညာတက္ကသိုလ်၊ လွိုင်ကော် (Technological University, Loikaw)</option>
+                    <option value="tu_toungoo">နည်းပညာတက္ကသိုလ်၊ တောင်ငူ (Technological University, Toungoo)</option>
+                    <option value="tu_sittwe">နည်းပညာတက္ကသိုလ်၊ စစ်တွေ (Technological University, Sittwe)</option>
+                    <option value="pyay_tu">ပြည်နည်းပညာတက္ကသိုလ် (Pyay Technological University)</option>
+                    <option value="wytu">ရန်ကုန်အနောက်ပိုင်းနည်းပညာတက္ကသိုလ် (West Yangon Technological University)</option>
+                    <option value="hmawbi_tu">နည်းပညာတက္ကသိုလ်၊ မှော်ဘီ (Technological University, Hmawbi)</option>
+                    <option value="thanlyin_tu">နည်းပညာတက္ကသိုလ်၊ သန်လျင် (Technological University, Thanlyin)</option>
+                    <option value="pathein_tu">နည်းပညာတက္ကသိုလ်၊ ပုသိမ် (Technological University, Pathein)</option>
+                    <option value="hinthada_tu">နည်းပညာတက္ကသိုလ်၊ ဟင်္သာတ (Technological University, Hinthada)</option>
+                    <option value="hpaan_tu">နည်းပညာတက္ကသိုလ်၊ ဘားအံ (Technological University, Hpa-An)</option>
+                    <option value="mawlamyine_tu">နည်းပညာတက္ကသိုလ်၊ မော်လမြိုင် (Technological University, Mawlamyine)</option>
+                    <option value="shwebo_gtc">အစိုးရနည်းပညာကောလိပ်၊ ရွှေဘို (Government Technological College, Shwebo)</option>
+                    <option value="mandalay_gtc">အစိုးရနည်းပညာကောလိပ်၊ မန္တလေး (Government Technological College, Mandalay)</option>
+                    <option value="kyaukphyu_gtc">အစိုးရနည်းပညာကောလိပ်၊ ကျောက်ဖြူ (Government Technological College, Kyaukphyu)</option>
+                    <option value="south_dagon_gtc">အစိုးရနည်းပညာကောလိပ်၊ တောင်ဒဂုံ (Government Technological College, South Dagon)</option>
+                    <option value="ucsy">ရန်ကုန်ကွန်ပျူတာတက္ကသိုလ် (University of Computer Studies, Yangon)</option>
+                    <option value="uit">သတင်းအချက်အလက်နည်းပညာတက္ကသိုလ် (University of Information Technology, Yangon)</option>
+                    <option value="ucsm">မန္တလေးကွန်ပျူတာတက္ကသိုလ် (University of Computer Studies, Mandalay)</option>
+                    <option value="monywa_cu">ကွန်ပျူတာတက္ကသိုလ်၊ မုံရွာ (Computer University, Monywa)</option>
+                    <option value="kalay_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ကလေး (Computer University, Kalay)</option>
+                    <option value="mandalay_cu">ကွန်ပျူတာတက္ကသိုလ်၊ မန္တလေး (Computer University, Mandalay)</option>
+                    <option value="meiktila_cu">ကွန်ပျူတာတက္ကသိုလ်၊ မိတ္ထီလာ (Computer University, Meiktila)</option>
+                    <option value="magway_cu">ကွန်ပျူတာတက္ကသိုလ်၊ မကွေး (Computer University, Magway)</option>
+                    <option value="pakokku_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ပခုက္ကူ (Computer University, Pakokku)</option>
+                    <option value="taunggyi_cu">ကွန်ပျူတာတက္ကသိုလ်၊ တောင်ကြီး (Computer University, Taunggyi)</option>
+                    <option value="loikaw_cu">ကွန်ပျူတာတက္ကသိုလ်၊ လွိုင်ကော် (Computer University, Loikaw)</option>
+                    <option value="toungoo_cu">ကွန်ပျူတာတက္ကသိုလ်၊ တောင်ငူ (Computer University, Toungoo)</option>
+                    <option value="sittwe_cu">ကွန်ပျူတာတက္ကသိုလ်၊ စစ်တွေ (Computer University, Sittwe)</option>
+                    <option value="pyay_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ပြည် (Computer University, Pyay)</option>
+                    <option value="pathein_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ပုသိမ် (Computer University, Pathein)</option>
+                    <option value="hinthada_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ဟင်္သာတ (Computer University, Hinthada)</option>
+                    <option value="hpaan_cu">ကွန်ပျူတာတက္ကသိုလ်၊ ဘားအံ (Computer University, Hpa-An)</option>
+                    <option value="thaton_cu">ကွန်ပျူတာတက္ကသိုလ်၊ သထုံ (Computer University, Thaton)</option>
+                    <option value="myitkyina_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ မြစ်ကြီးနား (Polytechnic University, Myitkyina)</option>
+                    <option value="bhamo_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ ဗန်းမော် (Polytechnic University, Bhamo)</option>
+                    <option value="lashio_pu:">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ လားရှိုး (Polytechnic University, Lashio)</option>
+                    <option value="panglong_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ ပင်လုံ (Polytechnic University, Panglong)</option>
+                    <option value="kengtung_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ ကျိုင်းတုံ (Polytechnic University, Kengtung)</option>
+                    <option value="maubin_pu">ပိုလီတက္ကနစ်တက္ကသိုလ်၊ မအူပင် (Polytechnic University, Maubin)</option>
+                    <option value="dawei_pu">Polytechnic University (Dawei) (Polytechnic University, Dawei)</option>
+                    <option value="myeik_pu">Polytechnic University (Myeik) (Polytechnic University, Myeik)</option>
+                    <option value="nsa">Naypyitaw State Academy</option>
+                    <option value="yu">ရန်ကုန်တက္ကသိုလ် (University of Yangon)</option>
+                    <option value="mu">မန္တလေးတက္ကသိုလ် (University of Mandalay)</option>
+                    <option value="yueco_hlaing">ရန်ကုန်စီးပွားရေးတက္ကသိုလ် - လှိုင်နယ်မြေ (Yangon University of Economics - Hlaing Campus)</option>
+                    <option value="yueco_ywathagyi">ရန်ကုန်စီးပွားရေးတက္ကသိုလ် - ရွာသာကြီးနယ်မြေ (Yangon University of Economics - Ywathagyi Campus)</option>
+                    <option value="mueco">မုံရွာစီးပွားရေးတက္ကသိုလ် (Monywa University of Economics)</option>
+                    <option value="meiktila_ueco">မိတ္ထီလာစီးပွားရေးတက္ကသိုလ် (Meiktila University of Economics)</option>
+                    <option value="yuoe">ရန်ကုန်ပညာရေးတက္ကသိုလ် (Yangon University of Education)</option>
+                    <option value="suoe">စစ်ကိုင်းပညာရေးတက္ကသိုလ် (Sagaing University of Education)</option>
+                    <option value="yufl">ရန်ကုန်နိုင်ငံခြားဘာသာတက္ကသိုလ် (Yangon University of Foreign Languages)</option>
+                    <option value="mufl">မန္တလေးနိုင်ငံခြားဘာသာတက္ကသိုလ် (Mandalay University of Foreign Languages)</option>
+                    <option value="myitkyina_edc">မြစ်ကြီးနားပညာရေးဒီဂရီကောလိပ် (Myitkyina Education Degree College)</option>
+                    <option value="loikaw_edc">လွိုင်ကော်ပညာရေးဒီဂရီကောလိပ် (Loikaw Education Degree College)</option>
+                    <option value="hpaan_edc">ဘားအံပညာရေးဒီဂရီကောလိပ် (Hpa-An Education Degree College)</option>
+                    <option value="hakha_edc">ဟားခါးပညာရေးဒီဂရီကောလိပ် (Hakha Education Degree College)</option>
+                    <option value="sagaing_edc">စစ်ကိုင်းပညာရေးဒီဂရီကောလိပ် (Sagaing Education Degree College)</option>
+                    <option value="monywa_edc">မုံရွာပညာရေးဒီဂရီကောလိပ် (Monywa Education Degree College)</option>
+                    <option value="katha_edc">ကသာပညာရေးဒီဂရီကောလိပ် (Katha Education Degree College)</option>
+                    <option value="udawei_edc">ထားဝယ်ပညာရေးဒီဂရီကောလိပ် (Dawei Education Degree College)</option>
+                    <option value="toungoo_edc">တောင်ငူပညာရေးဒီဂရီကောလိပ် (Toungoo Education Degree College)</option>
+                    <option value="pyay_edc">ပြည်မြို့ပညာရေးဒီဂရီကောလိပ် (Pyay Education Degree College)</option>
+                    <option value="magway_edc">မကွေးပညာရေးဒီဂရီကောလိပ် (Magway Education Degree College)</option>
+                    <option value="pakokku_edc">ပခုက္ကူပညာရေးဒီဂရီကောလိပ် (Pakokku Education Degree College)</option>
+                    <option value="mandalay_edc">မန္တလေးပညာရေးဒီဂရီကောလိပ် (Mandalay Education Degree College)</option>
+                    <option value="meiktila_edc">မိတ္ထီလာပညာရေးဒီဂရီကောလိပ် (Meiktila Education Degree College)</option>
+                    <option value="mawlamyine_edc">မော်လမြိုင်ပညာရေးဒီဂရီကောလိပ် (Mawlamyine Education Degree College)</option>
+                    <option value="kyaukphyu_edc">ကျောက်ဖြူပညာရေးဒီဂရီကောလိပ် (Kyaukphyu Education Degree College)</option>
+                    <option value="yankin_edc">ရန်ကင်းပညာရေးဒီဂရီကောလိပ် (Yankin Education Degree College)</option>
+                    <option value="hlegu_edc">လှည်းကူးပညာရေးဒီဂရီကောလိပ် (Hlegu Education Degree College)</option>
+                    <option value="thingangyun_edc">သင်္ဃန်းကျွန်းပညာရေးဒီဂရီကောလိပ် (Thingangyun Education Degree College)</option>
+                    <option value="taunggyi_edc">တောင်ကြီးပညာရေးဒီဂရီကောလိပ် (Taunggyi Education Degree College)</option>
+                    <option value="lashio_edc">လားရှိုးပညာရေးဒီဂရီကောလိပ် (Lashio Education Degree College)</option>
+                    <option value="kengtung_edc">ကျိုင်းတုံပညာရေးဒီဂရီကောလိပ် (Kengtung Education Degree College)</option>
+                    <option value="pathein_edc">ပုသိမ်ပညာရေးဒီဂရီကောလိပ် (Pathein Education Degree College)</option>
+                    <option value="myaungmya_edc">မြောင်းမြပညာရေးဒီဂရီကောလိပ် (Myaungmya Education Degree College)</option>
+                    <option value="bogale_edc">ဘိုကလေးပညာရေးဒီဂရီကောလိပ် (Bogale Education Degree College)</option>
+                    <option value="nmdc">အမျိုးသားစီမံခန့်ခွဲမှုပညာဒီဂရီကောလိပ် (National Management Degree College)</option>
+                    <option value="mandalar_u">မန္တလာတက္ကသိုလ် - BTHM သင်တန်း (Mandalar University - BTHM Course)</option>
+                    <option value="yau">ရေဆင်းစိုက်ပျိုးရေးတက္ကသိုလ် (Yezin Agricultural University)</option>
+                    <option value="uvs">မွေးမြူရေးဆိုင်ရာဆေးတက္ကသိုလ်၊ ရေဆင်း (University of Veterinary Science, Yezin)</option>
+                    <option value="uaa_maubin">စိုက်ပျိုးရေးနှင့်မွေးမြူရေးတက္ကသိုလ်၊ မအူပင် (University of Agriculture and Livestock, Maubin)</option>
+                    <option value="ufes">သစ်တောနှင့်ပတ်ဝန်းကျင်ဆိုင်ရာတက္ကသိုလ်၊ ရေဆင်း (University of Forestry and Environmental Science, Yezin)</option>
+                    <option value="miit">မြန်မာသတင်းအချက်အလက်နည်းပညာတက္ကသိုလ် (Myanmar Institute of Information Technology)</option>
+                    <option value="ucm">သမဝါယမနှင့်စီမံခန့်ခွဲမှုပညာတက္ကသိုလ်များ (Universities of Co-operative and Management)</option>
+                    <option value="cooperative_colleges">သမဝါယမကောလိပ်များ (Co-operative Colleges)</option>
+                    <option value="lacquerware_college">ယွန်းပညာကောလိပ်၊ ပုဂံမြို့ (Lacquerville College, Bagan)</option>
+                    <option value="nuca">အမျိုးသားယဉ်ကျေးမှုနှင့် အနုပညာတက္ကသိုလ်များ (National Universities of Arts and Culture)</option>
+                    <option value="mmu">မြန်မာနိုင်ငံရေကြောင်းပညာတက္ကသိုလ် (Myanmar Maritime University)</option>
+                    <option value="udnr">ပြည်ထောင်စုတိုင်းရင်းသားလူမျိုးများဖွံ့ဖြိုးရေးတက္ကသိုလ်၊ စစ်ကိုင်း (University for the Development of the National Races of the Union, Sagaing)</option>
+                    <option value="nrydc">ပြည်ထောင်စုတိုင်းရင်းသားလူငယ်များစွမ်းရည်ဖွံ့ဖြိုးရေးဒီဂရီကောလိပ်၊ ရန်ကုန်နှင့်စစ်ကိုင်း (Degree College for National Youth Development, Yangon & Sagaing)</option>
+                </select>
+            </div>
+
+            <button onclick="compareUniversities()">Compare</button>
+        </div>
+
+        <div class="comparison">
+            <div class="card">
+                <img id="img1" src="Compare1.jpg" alt="University">
+                <h2 id="name1">University 1</h2>
+                <div class="card-content">
+                    <p id="location1">📍 Location</p>
+                    <p id="type1">🏛  Type</p>
+                    <p id="established1">📅 Established</p>
+                    <p id="description1">
+                        Select a university to view its information.
+                    </p>
+                    <p>🌐 <a id="website1" href="#" target="_blank">Website</a></p>
+                </div>
+                
+            </div>
+
+            <div class="card">
+                <img id="img2" src="Compare1.jpg" alt="University">
+                <h2 id="name2">University 2</h2>
+                <div class="card-content">
+                    <p id="location2">📍 Location</p>
+                    <p id="type2">🏛  Type</p>
+                    <p id="established2">📅 Established</p>
+                    <p id="description2">
+                        Select a university to view its information.
+                    </p>
+                    <p>🌐 <a id="website2" href="#" target="_blank">Website</a></p>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="test3.js"></script>
+</body>
+</html>

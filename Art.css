@@ -6,39 +6,44 @@
 }
 
 
+/* ================= BODY ================= */
+
 body{
 
     min-height:100vh;
-
-    background-image:
+background:
     linear-gradient(
-        rgba(15,23,42,.78),
-        rgba(30,64,175,.75)
+        rgba(60,20,80,.35),
+        rgba(120,40,100,.45)
     ),
-    url("Computer\ main.jpg");
+    
+    url("art-background-jokv15ndpp2g8low.jpg");
 
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
 
     overflow-x:hidden;
+
 }
 
+
+/* ================= OVERLAY ================= */
 
 .overlay{
 
     min-height:100vh;
 
-    backdrop-filter:blur(6px);
-
     padding:40px;
+
+    
+
+    background:rgba(20,10,35,.15);
 
 }
 
 
-
 /* ================= HEADER ================= */
-
 
 header{
 
@@ -48,29 +53,28 @@ header{
 
     align-items:center;
 
-    margin-bottom:50px;
-
     flex-wrap:wrap;
+
+    margin-bottom:55px;
 
 }
 
 
 header h1{
 
-    font-size:45px;
+    font-size:46px;
 
     font-weight:700;
 
     letter-spacing:1px;
 
 
-    background:
-
-    linear-gradient(
+    background:linear-gradient(
         90deg,
         #FFFFFF,
-        #BAE6FD,
-        #38BDF8
+        #F9A8D4,
+        #C084FC,
+        #FBBF24
     );
 
 
@@ -82,11 +86,10 @@ header h1{
 
 
     text-shadow:
-
-    0 0 20px rgba(56,189,248,.35);
+    0 0 20px rgba(236,72,153,.45),
+    0 0 30px rgba(139,92,246,.25);
 
 }
-
 
 
 /* ================= SEARCH ================= */
@@ -96,20 +99,35 @@ header h1{
 
     width:560px;
 
-    border-radius:35px;
-
+    border-radius:50px;
 
     background:
+    rgba(236,72,153,.4);
 
-    rgba(56,189,248,.12);
 
-
-    border:
-
-    1px solid rgba(255,255,255,.18);
+    border:1px solid
+    rgba(244,114,182,.35);
 
 
     backdrop-filter:blur(18px);
+
+    transition:.35s;
+
+}
+
+
+
+.search-box:hover{
+
+
+    border-color:#F9A8D4;
+
+
+    box-shadow:
+
+    0 12px 35px rgba(236,72,153,.25),
+
+    0 0 25px rgba(251,191,36,.18);
 
 }
 
@@ -120,20 +138,20 @@ header h1{
 
     width:100%;
 
-    padding:15px 22px;
+
+    padding:16px 24px;
 
 
     border:none;
 
+
     outline:none;
 
 
-    border-radius:35px;
+    border-radius:50px;
 
 
-    background:
-
-    rgba(255,255,255,.08);
+    background:transparent;
 
 
     color:white;
@@ -142,15 +160,13 @@ header h1{
     font-size:16px;
 
 
-    transition:.35s;
-
 }
 
 
 
 .search-box input::placeholder{
 
-    color:#BAE6FD;
+    color:#FCE7F3;
 
 }
 
@@ -158,15 +174,9 @@ header h1{
 
 .search-box input:focus{
 
-
-    background:
-
-    rgba(255,255,255,.15);
-
-
     box-shadow:
 
-    0 0 25px rgba(56,189,248,.55);
+    inset 0 0 20px rgba(236,72,153,.25);
 
 }
 
@@ -179,11 +189,14 @@ header h1{
 
     display:flex;
 
+
     justify-content:space-between;
+
 
     align-items:center;
 
-    gap:60px;
+
+    gap:70px;
 
 }
 
@@ -197,13 +210,16 @@ header h1{
 
 
 
-.doc{
+.art-image{
 
     width:30%;
 
+
     display:flex;
 
+
     justify-content:center;
+
 
     align-items:center;
 
@@ -214,28 +230,28 @@ header h1{
 /* ================= IMAGE ================= */
 
 
-.doc img{
+.art-image img{
 
 
     width:100%;
 
 
-    max-width:480px;
+    max-width:470px;
 
 
-    animation:
+    animation:float 4s ease-in-out infinite;
 
-    float 3s ease-in-out infinite;
 
 
     filter:
 
-    drop-shadow(
-    0 20px 45px rgba(37,99,235,.45)
-    );
+    drop-shadow(0 20px 40px rgba(0,0,0,.35))
+
+    drop-shadow(0 0 35px rgba(236,72,153,.35))
+
+    drop-shadow(0 0 30px rgba(139,92,246,.25));
 
 }
-
 
 
 
@@ -248,46 +264,44 @@ header h1{
     margin-bottom:18px;
 
 
-    padding:18px 25px;
+    padding:19px 25px;
 
 
-    border-radius:20px;
+    border-radius:22px;
+
 
 
     background:
 
-    rgba(15,23,42,.45);
+    rgba(30,15,50,.60);
 
-
-    backdrop-filter:blur(20px);
 
 
     border:
 
-    1px solid rgba(56,189,248,.25);
+    1px solid rgba(236,72,153,.30);
 
 
 
-    color:white;
+    backdrop-filter:blur(18px);
 
 
-    font-size:20px;
-
-
-    font-weight:500;
 
     transition:.35s;
 
 
+
     box-shadow:
 
-    0 10px 30px rgba(0,0,0,.35);
+    0 12px 35px rgba(0,0,0,.3);
 
-    text-align: center;
 
-    justify-content: center;
+
+    text-align:center;
+
 
 }
+
 
 
 
@@ -296,9 +310,11 @@ header h1{
 
     transform:
 
-    translateX(12px)
+    translateY(-6px)
 
-    scale(1.02);
+    translateX(8px)
+
+    scale(1.03);
 
 
 
@@ -308,25 +324,26 @@ header h1{
 
         135deg,
 
-        #2563EB,
+        #EC4899,
 
-        #38BDF8
+        #8B5CF6,
+
+        #F59E0B
 
     );
 
 
 
-    border-color:#7DD3FC;
+    border-color:#FDE68A;
 
 
 
     box-shadow:
 
+    0 18px 45px rgba(236,72,153,.45),
 
-    0 15px 40px rgba(37,99,235,.5),
+    0 0 35px rgba(139,92,246,.35);
 
-
-    0 0 30px rgba(56,189,248,.35);
 
 }
 
@@ -337,28 +354,43 @@ header h1{
 
 .university-list a{
 
-    text-decoration:none;
-
-    color:white;
 
     display:block;
 
-    transition:.3s;
+
+    text-decoration:none;
+
+
+    color:white;
+
+
+    font-size:20px;
+
+
+    font-weight:600;
+
+
+    transition:.35s;
+
 
 }
 
 
 
-.university-list a:hover{
+.card:hover a{
 
-    color:#E0F2FE;
+
+    color:white;
+
+
+    letter-spacing:.7px;
+
 
 }
 
 
 
-
-/* ================= FLOAT IMAGE ================= */
+/* ================= FLOAT ANIMATION ================= */
 
 
 @keyframes float{
@@ -373,7 +405,7 @@ header h1{
 
     50%{
 
-        transform:translateY(-12px);
+        transform:translateY(-18px);
 
     }
 
@@ -401,7 +433,7 @@ header h1{
 
 ::-webkit-scrollbar-track{
 
-    background:#0F172A;
+    background:#1E1033;
 
 }
 
@@ -410,18 +442,18 @@ header h1{
 ::-webkit-scrollbar-thumb{
 
 
-    background:
+    background:linear-gradient(
 
-    linear-gradient(
+        #EC4899,
 
-        #2563EB,
+        #8B5CF6,
 
-        #38BDF8
+        #F59E0B
 
     );
 
 
-    border-radius:20px;
+    border-radius:30px;
 
 }
 
@@ -430,13 +462,13 @@ header h1{
 ::-webkit-scrollbar-thumb:hover{
 
 
-    background:
+    background:linear-gradient(
 
-    linear-gradient(
+        #F472B6,
 
-        #38BDF8,
+        #A78BFA,
 
-        #7DD3FC
+        #FCD34D
 
     );
 
@@ -444,18 +476,15 @@ header h1{
 
 
 
-
 /* ================= RESPONSIVE ================= */
 
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
 
 .container{
 
-
     flex-direction:column;
-
 
 }
 
@@ -463,26 +492,20 @@ header h1{
 
 .university-list{
 
-
     width:100%;
-
 
 }
 
 
 
-.doc{
-
+.art-image{
 
     width:70%;
 
-
 }
 
 
-
 }
-
 
 
 
@@ -490,15 +513,19 @@ header h1{
 @media(max-width:700px){
 
 
+.overlay{
+
+    padding:25px;
+
+}
+
+
 
 header{
 
-
     flex-direction:column;
 
-
     gap:20px;
-
 
 }
 
@@ -506,12 +533,9 @@ header{
 
 header h1{
 
-
     font-size:34px;
 
-
     text-align:center;
-
 
 }
 
@@ -519,19 +543,15 @@ header h1{
 
 .search-box{
 
-
     width:100%;
-
 
 }
 
 
 
-.doc{
-
+.art-image{
 
     display:none;
-
 
 }
 
@@ -539,15 +559,17 @@ header h1{
 
 .card{
 
-
-    font-size:18px;
-
-
     padding:16px;
-
 
 }
 
+
+
+.university-list a{
+
+    font-size:18px;
+
+}
 
 
 }
