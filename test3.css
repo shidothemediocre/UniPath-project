@@ -1,1464 +1,489 @@
- /* =========================================================
-    GLOBAL RESET
+/* =========================================================
+   GOOGLE FONT & GLOBAL RESET
 ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+/* =========================================================
+   COLOR VARIABLES (ALIGNED TO DEFAULT STYLE)
+========================================================= */
 :root {
-
-    /* ================= COLORS ================= */
-
-    --primary: #2563eb;
-    --primary-light: #60a5fa;
-    --primary-soft: #bfdbfe;
-
-    --cyan: #38dff2;
-    --cyan-light: #67e8f9;
-    --cyan-dark: #0891b2;
-
-    --blue: #60a5fa;
-
-    --navy: #172554;
-    --dark: #0b1120;
-    --dark-light: #111827;
-
-    --text: #f1f5f9;
-    --text-light: #cbd5e1;
-    --text-muted: #93c5fd;
-
-    --white: #ffffff;
-
-    /* ================= GLASS ================= */
-
-    --glass: rgba(30, 41, 59, 0.68);
-
-    --glass-light: rgba(51, 65, 85, 0.60);
-
+    --cyan: #22D3EE;
+    --cyan-alt: #00E5FF;
+    --blue-glow: rgba(37, 99, 235, 0.08);
+    --text-white: #FFFFFF;
+    --text-sub: #DBEAFE;
+    --text-muted: #E2E8F0;
+    --dark-bg-1: rgba(15, 23, 42, 0.55);
+    --dark-bg-2: rgba(30, 41, 59, 0.65);
+    --glass-card: rgba(255, 255, 255, 0.10);
     --glass-border: rgba(255, 255, 255, 0.18);
-
-    /* ================= SHADOW ================= */
-
-    --shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
-
-    --shadow-light: 0 15px 45px rgba(0, 0, 0, 0.22);
 }
-
 
 /* =========================================================
    BODY
 ========================================================= */
-
 body {
-
-    min-height: 100vh;
-
-    font-family: "Poppins", sans-serif;
-
-    color: var(--text);
-
     background:
         linear-gradient(
-            rgba(8, 15, 30, 0.68),
-            rgba(12, 20, 38, 0.78)
+            var(--dark-bg-1),
+            var(--dark-bg-2)
         ),
-        url("Home.png");
-
+        url("images/Home.png");
     background-size: cover;
-
     background-position: center;
-
-    background-attachment: fixed;
-
     background-repeat: no-repeat;
-
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text-white);
     overflow-x: hidden;
 }
 
-
 /* =========================================================
-   BACKGROUND GLOW
+   HEADER & NAVBAR
 ========================================================= */
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    width: 500px;
-    height: 500px;
-
-    top: 5%;
-    left: -180px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(37, 99, 235, 0.20);
-
-    filter: blur(110px);
-
-    pointer-events: none;
-
-    z-index: -1;
-}
-
-
-body::after {
-
-    content: "";
-
-    position: fixed;
-
-    width: 450px;
-    height: 450px;
-
-    bottom: -120px;
-    right: -120px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(56, 223, 242, 0.16);
-
-    filter: blur(110px);
-
-    pointer-events: none;
-
-    z-index: -1;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
 header {
-
     width: 100%;
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     z-index: 1000;
 }
-
-
-/* =========================================================
-   NAVBAR
-========================================================= */
 
 .navbar {
-
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 20px 60px;
-
     position: fixed;
-
-    top: 0;
-    left: 0;
-
-    background:
-        rgba(15, 23, 42, 0.42);
-
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.15);
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-    transition:
-        all 0.35s ease;
-
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 1350px;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.70);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 22px;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(37, 99, 235, 0.08);
     z-index: 1000;
+    transition: 0.35s ease;
+    will-change: background, box-shadow;
+    pointer-events: auto;
 }
-
-
-/* =========================================================
-   NAVBAR AFTER SCROLL
-========================================================= */
 
 .navbar.scrolled {
-
-    background:
-        rgba(17, 24, 39, 0.86);
-
-    border-bottom:
-        1px solid rgba(37, 99, 235, 0.30);
-
-    backdrop-filter:
-        blur(22px);
-
-    -webkit-backdrop-filter:
-        blur(22px);
-
+    background: rgba(2, 6, 23, 0.92);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border-color: rgba(96, 165, 250, 0.20);
     box-shadow:
-        0 10px 40px
-        rgba(0, 0, 0, 0.30);
+        0 10px 35px rgba(0, 0, 0, 0.50),
+        0 0 25px rgba(59, 130, 246, 0.12);
 }
-
 
 /* =========================================================
    LOGO
 ========================================================= */
-
 .logo {
-
     font-size: 34px;
-
-    font-weight: 800;
-
-    color: var(--white);
-
+    font-weight: 700;
+    color: var(--text-white);
     letter-spacing: -1px;
-
-    transition:
-        0.3s ease;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+    transition: 0.3s ease;
 }
-
 
 .logo:hover {
-
-    transform:
-        translateY(-1px);
+    transform: translateY(-1px);
 }
-
 
 .logo span {
-
-    font-weight: 800;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            var(--primary-soft),
-            var(--cyan-light)
-        );
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    background-clip: text;
+    color: var(--cyan);
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.60);
 }
 
-
 /* =========================================================
-   NAV LINKS
+   NAVIGATION LINKS
 ========================================================= */
-
 .nav-links {
-
     display: flex;
-
     align-items: center;
-
-    gap: 36px;
-
+    gap: 35px;
     list-style: none;
 }
 
+.nav-links li {
+    position: relative;
+}
 
 .nav-links a {
-
-    position: relative;
-
+    color: var(--text-muted);
     text-decoration: none;
-
-    color:
-        #e5e7eb;
-
     font-size: 15px;
-
-    font-weight: 500;
-
-    transition:
-        color 0.3s ease;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
 }
 
-
-.nav-links a:hover {
-
-    color:
-        var(--cyan-light);
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--cyan);
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.40);
 }
-
-
-/* =========================================================
-   NAV LINK UNDERLINE
-========================================================= */
 
 .nav-links a::after {
-
     content: "";
-
     position: absolute;
-
     left: 0;
-
     bottom: -6px;
-
     width: 0;
-
     height: 2px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            var(--primary-light),
-            var(--cyan-light)
-        );
-
+    background: var(--cyan);
     border-radius: 10px;
-
-    transition:
-        width 0.3s ease;
+    transition: 0.3s;
 }
 
-
-.nav-links a:hover::after {
-
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
-
 /* =========================================================
-   MAIN SECTION
+   MAIN OVERLAY & SECTIONS
 ========================================================= */
+.overlay {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 130px 100px 80px;
+}
 
-.compare-section {
-
-    width: 90%;
-
-    max-width: 1250px;
-
-    margin:
-        135px auto 70px;
-
+.compare-section,
+.major-section {
+    width: 100%;
+    max-width: 1300px;
+    margin: 135px auto 70px;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
-
-/* =========================================================
-   MAIN TITLE
-========================================================= */
-
-.compare-section h1 {
-
-    margin-bottom: 35px;
-
-    font-size: 44px;
-
-    font-weight: 800;
-
-    letter-spacing: -1px;
-
-    color: white;
-
-    text-shadow:
-        0 5px 30px
-        rgba(37, 99, 235, 0.30);
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #dbeafe,
-            #bfdbfe,
-            #93c5fd,
-            #67e8f9
-        );
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    background-clip: text;
+/* Page Titles */
+.compare-section h1,
+.major-section h1 {
+    font-size: 55px;
+    color: var(--text-white);
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
+.subtitle {
+    color: var(--text-sub);
+    font-size: 18px;
+    margin-bottom: 60px;
+    letter-spacing: 0.5px;
+}
 
 /* =========================================================
    SEARCH AREA
 ========================================================= */
-
 .search-area {
-
     width: 100%;
-
     padding: 25px 30px;
-
     display: flex;
-
     justify-content: center;
-
     align-items: flex-end;
-
     gap: 25px;
-
     margin-bottom: 50px;
-
     position: relative;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(51, 65, 85, 0.68),
-            rgba(30, 41, 59, 0.58)
-        );
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.16);
-
-    border-radius: 22px;
-
-    backdrop-filter:
-        blur(20px);
-
-    -webkit-backdrop-filter:
-        blur(20px);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.25);
+    background: var(--glass-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.30);
 }
-
-
-/* =========================================================
-   SEARCH BOX
-========================================================= */
 
 .search-box {
-
     display: flex;
-
     flex-direction: column;
-
     text-align: left;
-
     width: 320px;
 }
-
 
 .search-box label {
-
     margin-bottom: 9px;
-
-    color:
-        #dbeafe;
-
-    font-size: 14px;
-
+    color: var(--text-sub);
+    font-size: 15px;
     font-weight: 600;
 }
-
-
-/* =========================================================
-   SELECT
-========================================================= */
 
 .search-box select {
-
     width: 320px;
-
     height: 50px;
-
-    padding:
-        12px 16px;
-
-    border:
-        1px solid
-        rgba(96, 165, 250, 0.42);
-
+    padding: 12px 16px;
+    border: 1px solid var(--glass-border);
     border-radius: 12px;
-
     outline: none;
-
-    background:
-        rgba(30, 41, 59, 0.82);
-
-    color:
-        #f1f5f9;
-
+    background: rgba(15, 23, 42, 0.85);
+    color: var(--text-white);
     font-size: 15px;
-
     font-weight: 500;
-
-    backdrop-filter:
-        blur(15px);
-
-    -webkit-backdrop-filter:
-        blur(15px);
-
-    box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, 0.22);
-
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     cursor: pointer;
-
-    transition:
-        all 0.3s ease;
-}
-
-
-.search-box select:hover {
-
-    border-color:
-        var(--primary-light);
-
-    box-shadow:
-        0 0 25px
-        rgba(37, 99, 235, 0.25);
-}
-
-
-.search-box select:focus {
-
-    border-color:
-        var(--cyan-light);
-
-    box-shadow:
-
-        0 0 0 3px
-        rgba(56, 223, 242, 0.13),
-
-        0 0 25px
-        rgba(56, 223, 242, 0.18);
-}
-
-
-/* =========================================================
-   SELECT OPTIONS
-========================================================= */
-
-.search-box select option {
-
-    background:
-        #172033;
-
-    color:
-        #f1f5f9;
-}
-
-
-/* =========================================================
-   BUTTON
-========================================================= */
-
-button {
-
-    height: 50px;
-
-    padding:
-        12px 32px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #2563eb,
-            #22d3ee
-        );
-
-    color:
-        white;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    box-shadow:
-
-        0 10px 30px
-        rgba(37, 99, 235, 0.28);
-
-    transition:
-        all 0.3s ease;
-}
-
-
-button:hover {
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-
-        0 15px 40px
-        rgba(56, 223, 242, 0.22),
-
-        0 5px 20px
-        rgba(37, 99, 235, 0.28);
-}
-
-
-button:active {
-
-    transform:
-        translateY(-1px);
-}
-
-
-/* =========================================================
-   COMPARISON AREA
-========================================================= */
-
-.comparison {
-
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-
-    gap: 55px;
-
-    align-items: stretch;
-
-    position: relative;
-
-    margin-top: 35px;
-}
-
-
-/* =========================================================
-   CENTER VS
-========================================================= */
-
-.comparison::before {
-
-    content: "VS";
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    width: 64px;
-    height: 64px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #2563eb,
-            #22d3ee
-        );
-
-    border:
-        5px solid
-        #0b1120;
-
-    border-radius: 50%;
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: 800;
-
-    box-shadow:
-
-        0 10px 35px
-        rgba(37, 99, 235, 0.30);
-
-    z-index: 10;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   GLASS CARD
-========================================================= */
-
-.card {
-
-    width: 100%;
-
-    min-width: 0;
-
-    height: 650px;
-
-    padding: 20px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    overflow: hidden;
-
-    position: relative;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(51, 65, 85, 0.76),
-            rgba(30, 41, 59, 0.72)
-        );
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.16);
-
-    border-radius: 22px;
-
-    backdrop-filter:
-        blur(20px);
-
-    -webkit-backdrop-filter:
-        blur(20px);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.30);
-
-    transition:
-        all 0.4s ease;
-}
-
-
-/* =========================================================
-   CARD GLOW
-========================================================= */
-
-.card::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 200px;
-    height: 200px;
-
-    top: -100px;
-    right: -100px;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(96, 165, 250, 0.25),
-            transparent 70%
-        );
-
-    pointer-events: none;
-}
-
-
-.card::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    bottom: -90px;
-    left: -90px;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(56, 223, 242, 0.16),
-            transparent 70%
-        );
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   CARD HOVER
-========================================================= */
-
-.card:hover {
-
-    transform:
-        translateY(-10px);
-
-    border-color:
-        rgba(96, 165, 250, 0.55);
-
-    box-shadow:
-
-        0 30px 70px
-        rgba(0, 0, 0, 0.38),
-
-        0 0 35px
-        rgba(37, 99, 235, 0.18);
-}
-
-
-/* =========================================================
-   CARD IMAGE
-========================================================= */
-
-.card img {
-
-    width: 100%;
-
-    height: 220px;
-
-    object-fit: cover;
-
-    border-radius: 15px;
-
-    flex-shrink: 0;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.16);
-
-    box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, 0.25);
-
-    transition:
-        all 0.5s ease;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-.card:hover img {
-
-    transform:
-        scale(1.025);
-
-    filter:
-        brightness(1.10)
-        saturate(1.08);
-}
-
-
-/* =========================================================
-   CARD CONTENT
-========================================================= */
-
-.card-content {
-
-    flex: 1;
-
-    overflow-y: auto;
-
-    overflow-x: hidden;
-
-    margin-top: 15px;
-
-    padding-right: 8px;
-
-    position: relative;
-
-    z-index: 3;
-}
-
-
-/* =========================================================
-   CARD SCROLLBAR
-========================================================= */
-
-.card-content::-webkit-scrollbar {
-
-    width: 6px;
-}
-
-
-.card-content::-webkit-scrollbar-track {
-
-    background:
-        rgba(255, 255, 255, 0.07);
-
-    border-radius: 20px;
-}
-
-
-.card-content::-webkit-scrollbar-thumb {
-
-    background:
-
-        linear-gradient(
-            180deg,
-            var(--primary-light),
-            var(--cyan-light)
-        );
-
-    border-radius: 20px;
-}
-
-
-.card-content::-webkit-scrollbar-thumb:hover {
-
-    background:
-
-        linear-gradient(
-            180deg,
-            #bfdbfe,
-            #67e8f9
-        );
-}
-
-
-/* =========================================================
-   CARD TITLE
-========================================================= */
-
-.card h2 {
-
-    text-align: center;
-
-    margin:
-        5px 0 18px;
-
-    font-size: 24px;
-
-    font-weight: 700;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #dbeafe,
-            #bfdbfe,
-            #93c5fd,
-            #67e8f9
-        );
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    background-clip: text;
-}
-
-
-/* =========================================================
-   CARD PARAGRAPH
-========================================================= */
-
-.card p {
-
-    font-size: 20px;
-
-    margin:
-        12px 0;
-
-    line-height: 1.7;
-
-    color:
-        #d5deeb;
-
-    text-align: left;
-}
-
-
-/* =========================================================
-   UNIVERSITY NAME
-========================================================= */
-
-.mm-name {
-
-    display: block;
-
-    margin-top: 8px;
-
-    font-size: 19px;
-
-    color:
-        #b8c4d6;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   STRONG TEXT
-========================================================= */
-
-.card strong {
-
-    color:
-        #f1f5f9;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   HORIZONTAL LINE
-========================================================= */
-
-.card hr {
-
-    border: none;
-
-    height: 1px;
-
-    margin:
-        15px 0;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(96, 165, 250, 0.55),
-            rgba(103, 232, 249, 0.55),
-            transparent
-        );
-}
-
-
-/* =========================================================
-   TEXT SELECTION
-========================================================= */
-
-::selection {
-
-    background:
-        rgba(37, 99, 235, 0.50);
-
-    color:
-        white;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .navbar {
-
-        padding:
-            18px 30px;
-    }
-
-    .nav-links {
-
-        gap: 22px;
-    }
-
-    .compare-section {
-
-        width: 92%;
-    }
-
-    .comparison {
-
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
-
-        gap: 40px;
-    }
-
-    .comparison::before {
-
-        width: 58px;
-        height: 58px;
-
-        font-size: 20px;
-    }
-
-    .card {
-
-        height: 630px;
-    }
-
-    .card img {
-
-        height: 205px;
-    }
-}
-
-
-/* =========================================================
-   TABLET / SMALL SCREEN
-========================================================= */
-
-@media (max-width: 800px) {
-
-    .navbar {
-
-        padding:
-            18px 25px;
-    }
-
-    .nav-links {
-
-        gap: 16px;
-    }
-
-    .nav-links a {
-
-        font-size: 13px;
-    }
-
-    .compare-section h1 {
-
-        font-size: 38px;
-    }
-
-    .search-area {
-
-        flex-wrap: wrap;
-
-        padding:
-            25px;
-    }
-
-    .search-box {
-
-        width:
-            calc(50% - 15px);
-    }
-
-    .search-box select {
-
-        width: 100%;
-    }
-
-    .search-area button {
-
-        width: 100%;
-
-        margin-top: 5px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .navbar {
-
-        padding:
-            18px 22px;
-    }
-
-    .logo {
-
-        font-size: 28px;
-    }
-
-    .nav-links {
-
-        display: none;
-    }
-
-    .compare-section {
-
-        width: 92%;
-
-        margin:
-            110px auto 50px;
-    }
-
-    .compare-section h1 {
-
-        font-size: 34px;
-
-        line-height: 1.2;
-
-        margin-bottom: 30px;
-    }
-
-    .search-area {
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 15px;
-
-        padding:
-            25px 20px;
-
-        margin-bottom: 40px;
-    }
-
-    .search-box {
-
-        width: 100%;
-
-        max-width: none;
-    }
-
-    .search-box select {
-
-        width: 100%;
-    }
-
-    .search-area button {
-
-        width: 100%;
-
-        margin-top: 5px;
-    }
-
-    .comparison {
-
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-
-        margin-top: 25px;
-    }
-
-    /*
-       Put VS between the cards instead of
-       over the card content.
-    */
-
-    .comparison::before {
-
-        top: 50%;
-
-        width: 52px;
-
-        height: 52px;
-
-        font-size: 13px;
-    }
-
-    .card {
-
-        width: 100%;
-
-        height: 620px;
-
-        max-width: 500px;
-
-        margin: 0 auto;
-    }
-
-    .card:hover {
-
-        transform:
-            translateY(-8px);
-    }
-
-    .card img {
-
-        height: 200px;
-    }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 450px) {
-
-    .navbar {
-
-        padding:
-            16px 18px;
-    }
-
-    .logo {
-
-        font-size: 25px;
-    }
-
-    .compare-section {
-
-        width: 94%;
-
-        margin:
-            105px auto 40px;
-    }
-
-    .compare-section h1 {
-
-        font-size: 29px;
-
-        margin-bottom: 25px;
-    }
-
-    .search-area {
-
-        padding:
-            22px 15px;
-
-        border-radius:
-            18px;
-    }
-
-    .search-box select {
-
-        height: 48px;
-
-        font-size: 14px;
-    }
-
-    button {
-
-        height: 48px;
-
-        padding:
-            10px 25px;
-
-        font-size: 14px;
-    }
-
-    .comparison {
-
-        gap: 40px;
-    }
-
-    .comparison::before {
-
-        width: 48px;
-
-        height: 48px;
-
-        font-size: 12px;
-
-        border-width: 4px;
-    }
-
-    .card {
-
-        height: 590px;
-
-        padding: 15px;
-
-        border-radius: 20px;
-    }
-
-    .card img {
-
-        height: 185px;
-
-        border-radius: 14px;
-    }
-
-    .card h2 {
-
-        font-size: 21px;
-    }
-
-    .card p {
-
-        font-size: 14px;
-
-        line-height: 1.6;
-    }
-
-    .mm-name {
-
-        font-size: 17px;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 350px) {
-
-    .logo {
-
-        font-size: 22px;
-    }
-
-    .compare-section h1 {
-
-        font-size: 26px;
-    }
-
-    .card {
-
-        height: 560px;
-    }
-
-    .card img {
-
-        height: 165px;
-    }
-}
-
-.card p a {
-    display: inline-block;
-
-    padding: 8px 14px;
-
-    margin-left: 5px;
-
-    background: rgba(37, 99, 235, 0.15);
-
-    border: 1px solid rgba(167, 139, 250, 0.45);
-
-    border-radius: 20px;
-
-    color: var(--cyan-light);
-
-    text-decoration: none;
-
     transition: 0.3s ease;
 }
 
-.card p a:hover {
-    background: rgba(37, 99, 235, 0.25);
+.search-box select:hover,
+.search-box select:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.40);
+}
 
-    border-color: var(--cyan-light);
+.search-box select option {
+    background: #0f172a;
+    color: var(--text-white);
+}
 
-    transform: translateY(-2px);
+button {
+    height: 50px;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 12px;
+    background: var(--cyan-alt);
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.30);
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.50);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   COMPARISON GRID & CARDS
+========================================================= */
+.comparison {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 55px;
+    align-items: stretch;
+    position: relative;
+    margin-top: 35px;
+}
+
+.comparison::before {
+    content: "VS";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cyan-alt);
+    border: 5px solid #0b1120;
+    border-radius: 50%;
+    color: #0f172a;
+    font-size: 16px;
+    font-weight: 800;
+    box-shadow: 0 10px 35px rgba(0, 229, 255, 0.40);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.card {
+    padding: 35px 25px;
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: var(--glass-card);
+    border: 1px solid var(--glass-border);
+    border-top: 5px solid var(--cyan-alt);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.30);
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sweep Glow Animation */
+.card::before {
+    content: "";
+    position: absolute;
+    width: 180%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.20),
+        transparent
+    );
+    left: -180%;
+    top: 0;
+    transition: 0.8s;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    flex-shrink: 0;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.025);
+    filter: brightness(1.10) saturate(1.08);
+}
+
+.card-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 15px;
+    padding-right: 8px;
+    text-align: left;
+}
+
+.card h2 {
+    color: var(--text-white);
+    font-size: 28px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.card p {
+    color: var(--text-sub);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.mm-name {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: center;
+}
+
+.card strong {
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+.card hr {
+    border: none;
+    height: 1px;
+    margin: 15px 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(34, 211, 238, 0.55),
+        transparent
+    );
+}
+
+/* Scrollbar Style */
+.card-content::-webkit-scrollbar {
+    width: 6px;
+}
+.card-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+}
+.card-content::-webkit-scrollbar-thumb {
+    background: var(--cyan);
+    border-radius: 20px;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+========================================================= */
+@media (max-width: 1000px) {
+    .comparison {
+        gap: 40px;
+    }
+    .card {
+        height: 630px;
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        top: 15px;
+        width: 94%;
+        padding: 15px 20px;
+    }
+    .logo {
+        font-size: 28px;
+    }
+    .nav-links {
+        gap: 18px;
+    }
+    .nav-links a {
+        font-size: 14px;
+    }
+    .compare-section {
+        margin: 110px auto 50px;
+    }
+    .search-area {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 25px 20px;
+    }
+    .search-box, .search-box select, button {
+        width: 100%;
+    }
+    .comparison {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
 }
