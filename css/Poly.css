@@ -1,0 +1,418 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ================= BODY ================= */
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(37,99,235,.18),
+        rgba(6,182,212,.12)
+    ),
+    url("../images/Poly bg1.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    overflow-x:hidden;
+
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay{
+
+    min-height:100vh;
+
+    padding:40px;
+
+    background:rgba(8,12,22,.18);
+
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    margin-bottom:55px;
+
+}
+
+header h1{
+
+    font-size:46px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 15px rgba(37,99,235,.45),
+        0 0 30px rgba(6,182,212,.25);
+
+}
+
+/* ================= SEARCH BOX ================= */
+
+.search-box{
+
+    width:560px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.4);
+
+    border:1px solid rgba(37,99,235,.35);
+
+    backdrop-filter:blur(18px);
+
+    transition:.4s;
+
+}
+
+.search-box:hover{
+
+    border-color:#38BDF8;
+
+    box-shadow:
+        0 12px 35px rgba(37,99,235,.25),
+        0 0 30px rgba(6,182,212,.25);
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:16px 24px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:50px;
+
+    background:transparent;
+
+    color:black;
+
+    font-size:16px;
+
+}
+
+.search-box input::placeholder{
+
+    color:black;
+
+}
+
+.search-box input:focus{
+
+    box-shadow:inset 0 0 20px rgba(255,152,0,.15);
+
+}
+
+/* ================= LAYOUT ================= */
+
+.container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+.university-list{
+
+    width:68%;
+
+}
+
+.business-image{
+
+    width:32%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ================= IMAGE ================= */
+
+.business-image img{
+
+    width:100%;
+
+    max-width:470px;
+
+    animation:float 4s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 25px 40px rgba(0,0,0,.35))
+        drop-shadow(0 0 35px rgba(37,99,235,.30))
+        drop-shadow(0 0 30px rgba(6,182,212,.25));
+
+}
+
+/* ================= UNIVERSITY CARDS ================= */
+
+.card{
+
+    margin-bottom:18px;
+
+    padding:20px 28px;
+
+    border-radius:22px;
+
+    background:rgba(15,23,42,.70);
+
+    border:1px solid rgba(37,99,235,.30);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+
+    text-align: center;
+
+    justify-content: center;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transition:.6s;
+
+}
+
+.card:hover::before{
+
+    left:100%;
+
+}
+
+.card:hover{
+
+    transform:
+        translateY(-6px)
+        translateX(8px)
+        scale(1.02);
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #06B6D4,
+        #0EA5E9
+    );
+
+    border-color:#7DD3FC;
+
+    box-shadow:
+        0 20px 45px rgba(37,99,235,.45),
+        0 0 35px rgba(6,182,212,.30);
+
+}
+
+/* ================= LINKS ================= */
+
+.university-list a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.card:hover a{
+
+    letter-spacing:.6px;
+
+    color:#fff;
+
+}
+
+/* ================= FLOAT ================= */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-16px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#151925;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        #2563EB,
+        #06B6D4,
+        #38BDF8
+    );
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:linear-gradient(
+        #1D4ED8,
+        #0891B2,
+        #67E8F9
+    );
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+.container{
+
+    flex-direction:column;
+
+}
+
+.university-list{
+
+    width:100%;
+
+}
+
+.business-image{
+
+    width:70%;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.overlay{
+
+    padding:25px;
+
+}
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+header h1{
+
+    font-size:34px;
+
+    text-align:center;
+
+}
+
+.search-box{
+
+    width:100%;
+
+}
+
+.business-image{
+
+    display:none;
+
+}
+
+.card{
+
+    padding:16px;
+
+}
+
+.university-list a{
+
+    font-size:18px;
+
+}
+
+}

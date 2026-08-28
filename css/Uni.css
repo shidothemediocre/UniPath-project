@@ -1,0 +1,726 @@
+/* ==========================
+   Google Font
+========================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+/* ==========================
+   BODY
+========================== */
+
+body{
+
+    background:
+
+    linear-gradient(
+        rgba(15,23,42,0.55),
+        rgba(30,41,59,0.65)
+    ),
+
+    url("../images/Home.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    width:100%;
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    z-index:1000;
+
+}
+
+
+/* =========================================================
+   NAVBAR
+   SAME STYLE AS HOME PAGE
+========================================================= */
+
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 92%;
+    max-width: 1350px;
+
+    padding: 18px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(15, 23, 42, 0.70);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(37, 99, 235, 0.08);
+
+    z-index: 1000;
+
+    transition: 0.35s ease;
+}
+
+
+/* =========================================================
+   NAVBAR WHEN SCROLLING
+========================================================= */
+
+.navbar.scrolled {
+
+    background: rgba(2, 6, 23, 0.92);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    border-color: rgba(96, 165, 250, 0.20);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.50),
+        0 0 25px rgba(59, 130, 246, 0.12);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: white;
+
+    letter-spacing: -1px;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,0.08);
+
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+
+/* UniPath blue/cyan part */
+
+.logo span {
+
+    color: #22D3EE;
+
+    text-shadow:
+        0 0 15px rgba(34,211,238,0.60);
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+
+    color: #E2E8F0;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+
+/* Hover */
+
+.nav-links a:hover {
+
+    color: #22D3EE;
+
+    text-shadow:
+        0 0 10px rgba(34,211,238,0.40);
+}
+
+
+/* Blue underline */
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #22D3EE;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   RESPONSIVE NAVBAR
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .navbar {
+        top: 15px;
+        width: 94%;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+/* =========================================================
+   HIDE ORIGINAL TOP IMAGE
+========================================================= */
+
+.image{
+
+    display:none;
+
+}
+
+
+/* =========================================================
+   MAIN OVERLAY
+========================================================= */
+
+.overlay{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:130px 100px 80px;
+
+}
+
+
+/* ======================
+   SECTION
+====================== */
+
+.major-section{
+
+    width:100%;
+
+    max-width:1300px;
+
+    text-align:center;
+
+}
+
+
+/* ======================
+   HEADING
+====================== */
+
+.major-section h1{
+
+    font-size:55px;
+
+    color:white;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    text-shadow:
+
+        0 5px 15px
+        rgba(0,0,0,.4);
+
+}
+
+
+/* ======================
+   SUBTITLE
+====================== */
+
+.subtitle{
+
+    color:#dbeafe;
+
+    font-size:18px;
+
+    margin-bottom:60px;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* ==========================
+   GRID
+========================== */
+
+.major-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+/* ======================
+   CARDS
+====================== */
+
+.card,
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6,
+.card7{
+
+    padding:35px 20px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(20px);
+
+    background:
+
+        rgba(255,255,255,.10);
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.18);
+
+    box-shadow:
+
+        0 8px 32px
+        rgba(0,0,0,.30);
+
+    transition:.4s;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* ======================
+   GLOW EFFECT
+====================== */
+
+.card::before,
+.card1::before,
+.card2::before,
+.card3::before,
+.card4::before,
+.card5::before,
+.card6::before,
+.card7::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,.20),
+            transparent
+        );
+
+    left:-180%;
+
+    top:0;
+
+    transition:.8s;
+
+}
+
+
+.card:hover::before,
+.card1:hover::before,
+.card2:hover::before,
+.card3:hover::before,
+.card4:hover::before,
+.card5:hover::before,
+.card6:hover::before,
+.card7:hover::before{
+
+    left:100%;
+
+}
+
+
+/* ======================
+   HOVER
+====================== */
+
+.card:hover,
+.card1:hover,
+.card2:hover,
+.card3:hover,
+.card4:hover,
+.card5:hover,
+.card6:hover,
+.card7:hover{
+
+    transform:
+        translateY(-15px)
+        scale(1.03);
+
+    box-shadow:
+
+        0 20px 45px
+        rgba(0,0,0,.35);
+
+}
+
+
+/* ======================
+   ICON
+====================== */
+
+.icon{
+
+    font-size:55px;
+
+    margin-bottom:18px;
+
+}
+
+
+/* ======================
+   TITLE
+====================== */
+
+.card h2,
+.card1 h2,
+.card2 h2,
+.card3 h2,
+.card4 h2,
+.card5 h2,
+.card6 h2,
+.card7 h2{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+}
+
+
+/* ======================
+   PARAGRAPH
+====================== */
+
+.card p,
+.card1 p,
+.card2 p,
+.card3 p,
+.card4 p,
+.card5 p,
+.card6 p,
+.card7 p{
+
+    color:#dbeafe;
+
+    font-size:15px;
+
+}
+
+
+/* ==========================
+   INDIVIDUAL COLORS
+========================== */
+
+.card{
+
+    border-top:
+        5px solid #00E5FF;
+
+}
+
+
+.card1{
+
+    border-top:
+        5px solid #FF9800;
+
+}
+
+
+.card2{
+
+    border-top:
+        5px solid #8B5CF6;
+
+}
+
+
+.card3{
+
+    border-top:
+        5px solid #00C853;
+
+}
+
+
+.card4{
+
+    border-top:
+        5px solid #FF4081;
+
+}
+
+
+.card5{
+
+    border-top:
+        5px solid #FFD600;
+
+}
+
+
+.card6{
+
+    border-top:
+        5px solid #A96AD8;
+
+}
+
+
+.card7{
+
+    border-top:
+        5px solid white;
+
+}
+
+
+/* ==========================
+   CARD LINKS
+========================== */
+
+.card a,
+.card1 a,
+.card2 a,
+.card3 a,
+.card4 a,
+.card5 a,
+.card6 a,
+.major-grid a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:1000px){
+
+    .major-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+/* ==========================
+   TABLET / MOBILE
+========================== */
+
+@media(max-width:750px){
+
+    .navbar{
+
+        top:15px;
+
+        width:94%;
+
+        padding:15px 20px;
+
+    }
+
+    .logo{
+
+        font-size:30px;
+
+    }
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .overlay{
+
+        padding:
+            120px 30px 60px;
+
+    }
+
+}
+
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media(max-width:650px){
+
+    .major-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .major-section h1{
+
+        font-size:38px;
+
+    }
+
+    .subtitle{
+
+        font-size:16px;
+
+        margin-bottom:40px;
+
+    }
+
+}
+
+
+/* ==========================
+   NAVBAR SCROLL SCRIPT SUPPORT
+========================== */
+
+.navbar{
+
+    will-change:
+        background,
+        box-shadow;
+
+}
