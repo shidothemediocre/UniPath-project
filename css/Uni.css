@@ -1,74 +1,54 @@
-/* ==========================
-   Google Font
-========================== */
 
-*{
+/* =========================================================
+   UNIPATH — UNIVERSITY MAJORS PAGE
+   Dark Glassmorphism Theme
+========================================================= */
 
-    margin:0;
 
-    padding:0;
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
 
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    font-family:'Poppins',sans-serif;
-
+html {
+    scroll-behavior: smooth;
 }
 
 
-/* ==========================
+/* =========================================================
    BODY
-========================== */
+   SAME BACKGROUND AS HOME PAGE
+========================================================= */
 
-body{
-
+body {
     background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.65),
+            rgba(30, 41, 59, 0.75)
+        ),
+        url("../images/Home.png");
 
-    linear-gradient(
-        rgba(15,23,42,0.55),
-        rgba(30,41,59,0.65)
-    ),
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-    url("../images/Home.png");
+    min-height: 100vh;
+    overflow-x: hidden;
 
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    background-attachment:fixed;
-
-    min-height:100vh;
-
-    overflow-x:hidden;
-
+    color: white;
 }
 
 
 /* =========================================================
    HEADER
 ========================================================= */
-
-header{
-
-    width:100%;
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    z-index:1000;
-
-}
-
-
-/* =========================================================
-   NAVBAR
-   SAME STYLE AS HOME PAGE
-========================================================= */
-
 
 header {
     width: 100%;
@@ -78,8 +58,13 @@ header {
     z-index: 1000;
 }
 
-.navbar {
 
+/* =========================================================
+   NAVBAR
+   SAME STYLE AS HOME PAGE
+========================================================= */
+
+.navbar {
     position: fixed;
 
     top: 20px;
@@ -101,7 +86,7 @@ header {
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
-    border: 1px solid rgba(255,255,255,0.10);
+    border: 1px solid rgba(255, 255, 255, 0.10);
 
     border-radius: 22px;
 
@@ -112,6 +97,8 @@ header {
     z-index: 1000;
 
     transition: 0.35s ease;
+
+    will-change: background, box-shadow;
 }
 
 
@@ -120,7 +107,6 @@ header {
 ========================================================= */
 
 .navbar.scrolled {
-
     background: rgba(2, 6, 23, 0.92);
 
     backdrop-filter: blur(22px);
@@ -139,7 +125,6 @@ header {
 ========================================================= */
 
 .logo {
-
     font-size: 34px;
 
     font-weight: 700;
@@ -149,7 +134,7 @@ header {
     letter-spacing: -1px;
 
     text-shadow:
-        0 0 15px rgba(255,255,255,0.08);
+        0 0 15px rgba(255, 255, 255, 0.08);
 
     transition: 0.3s ease;
 }
@@ -159,14 +144,13 @@ header {
 }
 
 
-/* UniPath blue/cyan part */
+/* UniPath cyan part */
 
 .logo span {
-
     color: #22D3EE;
 
     text-shadow:
-        0 0 15px rgba(34,211,238,0.60);
+        0 0 15px rgba(34, 211, 238, 0.60);
 }
 
 
@@ -175,7 +159,6 @@ header {
 ========================================================= */
 
 .nav-links {
-
     display: flex;
 
     align-items: center;
@@ -190,7 +173,6 @@ header {
 }
 
 .nav-links a {
-
     color: #E2E8F0;
 
     text-decoration: none;
@@ -199,37 +181,33 @@ header {
 
     font-weight: 600;
 
-    transition: 0.3s;
-
     position: relative;
+
+    transition: 0.3s;
 }
 
 
 /* Hover */
 
 .nav-links a:hover {
-
     color: #22D3EE;
 
     text-shadow:
-        0 0 10px rgba(34,211,238,0.40);
+        0 0 10px rgba(34, 211, 238, 0.40);
 }
 
 
-/* Blue underline */
+/* Underline */
 
 .nav-links a::after {
-
     content: "";
 
     position: absolute;
 
     left: 0;
-
     bottom: -6px;
 
     width: 0;
-
     height: 2px;
 
     background: #22D3EE;
@@ -245,34 +223,11 @@ header {
 
 
 /* =========================================================
-   RESPONSIVE NAVBAR
-========================================================= */
-
-@media (max-width: 750px) {
-
-    .navbar {
-        top: 15px;
-        width: 94%;
-        padding: 15px 20px;
-    }
-
-    .logo {
-        font-size: 28px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-}
-
-/* =========================================================
    HIDE ORIGINAL TOP IMAGE
 ========================================================= */
 
-.image{
-
-    display:none;
-
+.image {
+    display: none;
 }
 
 
@@ -280,94 +235,80 @@ header {
    MAIN OVERLAY
 ========================================================= */
 
-.overlay{
+.overlay {
+    min-height: 100vh;
 
-    min-height:100vh;
+    display: flex;
 
-    display:flex;
+    justify-content: center;
+    align-items: center;
 
-    justify-content:center;
-
-    align-items:center;
-
-    padding:130px 100px 80px;
-
+    padding: 130px 100px 80px;
 }
 
 
-/* ======================
-   SECTION
-====================== */
+/* =========================================================
+   MAJOR SECTION
+========================================================= */
 
-.major-section{
+.major-section {
+    width: 100%;
 
-    width:100%;
+    max-width: 1300px;
 
-    max-width:1300px;
-
-    text-align:center;
-
+    text-align: center;
 }
 
 
-/* ======================
-   HEADING
-====================== */
+/* =========================================================
+   MAIN HEADING
+========================================================= */
 
-.major-section h1{
+.major-section h1 {
+    font-size: 55px;
 
-    font-size:55px;
+    color: white;
 
-    color:white;
+    font-weight: 700;
 
-    font-weight:700;
-
-    margin-bottom:15px;
+    margin-bottom: 15px;
 
     text-shadow:
-
-        0 5px 15px
-        rgba(0,0,0,.4);
-
+        0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 
-/* ======================
+/* =========================================================
    SUBTITLE
-====================== */
+========================================================= */
 
-.subtitle{
+.subtitle {
+    color: #DBEAFE;
 
-    color:#dbeafe;
+    font-size: 18px;
 
-    font-size:18px;
+    margin-bottom: 60px;
 
-    margin-bottom:60px;
-
-    letter-spacing:.5px;
-
+    letter-spacing: 0.5px;
 }
 
 
-/* ==========================
-   GRID
-========================== */
+/* =========================================================
+   MAJOR GRID
+========================================================= */
 
-.major-grid{
+.major-grid {
+    display: grid;
 
-    display:grid;
+    grid-template-columns: repeat(3, 1fr);
 
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:35px;
-
+    gap: 35px;
 }
 
 
-/* ======================
+/* =========================================================
    CARDS
-====================== */
+========================================================= */
 
 .card,
 .card1,
@@ -376,42 +317,34 @@ header {
 .card4,
 .card5,
 .card6,
-.card7{
+.card7 {
+    padding: 35px 20px;
 
-    padding:35px 20px;
+    border-radius: 25px;
 
-    border-radius:25px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-    backdrop-filter:blur(20px);
+    background: rgba(255, 255, 255, 0.10);
 
-    background:
-
-        rgba(255,255,255,.10);
-
-    border:
-
-        1px solid
-        rgba(255,255,255,.18);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
     box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.30);
 
-        0 8px 32px
-        rgba(0,0,0,.30);
+    transition: 0.4s;
 
-    transition:.4s;
+    cursor: pointer;
 
-    cursor:pointer;
+    position: relative;
 
-    position:relative;
-
-    overflow:hidden;
-
+    overflow: hidden;
 }
 
 
-/* ======================
-   GLOW EFFECT
-====================== */
+/* =========================================================
+   CARD LIGHT SWEEP EFFECT
+========================================================= */
 
 .card::before,
 .card1::before,
@@ -420,33 +353,30 @@ header {
 .card4::before,
 .card5::before,
 .card6::before,
-.card7::before{
+.card7::before {
+    content: "";
 
-    content:"";
+    position: absolute;
 
-    position:absolute;
-
-    width:180%;
-
-    height:100%;
+    width: 180%;
+    height: 100%;
 
     background:
-
         linear-gradient(
             120deg,
             transparent,
-            rgba(255,255,255,.20),
+            rgba(255, 255, 255, 0.20),
             transparent
         );
 
-    left:-180%;
+    left: -180%;
+    top: 0;
 
-    top:0;
-
-    transition:.8s;
-
+    transition: 0.8s;
 }
 
+
+/* Sweep on hover */
 
 .card:hover::before,
 .card1:hover::before,
@@ -455,16 +385,14 @@ header {
 .card4:hover::before,
 .card5:hover::before,
 .card6:hover::before,
-.card7:hover::before{
-
-    left:100%;
-
+.card7:hover::before {
+    left: 100%;
 }
 
 
-/* ======================
-   HOVER
-====================== */
+/* =========================================================
+   CARD HOVER
+========================================================= */
 
 .card:hover,
 .card1:hover,
@@ -473,36 +401,30 @@ header {
 .card4:hover,
 .card5:hover,
 .card6:hover,
-.card7:hover{
-
+.card7:hover {
     transform:
         translateY(-15px)
         scale(1.03);
 
     box-shadow:
-
-        0 20px 45px
-        rgba(0,0,0,.35);
-
+        0 20px 45px rgba(0, 0, 0, 0.35);
 }
 
 
-/* ======================
+/* =========================================================
    ICON
-====================== */
+========================================================= */
 
-.icon{
+.icon {
+    font-size: 55px;
 
-    font-size:55px;
-
-    margin-bottom:18px;
-
+    margin-bottom: 18px;
 }
 
 
-/* ======================
-   TITLE
-====================== */
+/* =========================================================
+   CARD TITLES
+========================================================= */
 
 .card h2,
 .card1 h2,
@@ -511,20 +433,18 @@ header {
 .card4 h2,
 .card5 h2,
 .card6 h2,
-.card7 h2{
+.card7 h2 {
+    color: white;
 
-    color:white;
+    font-size: 28px;
 
-    font-size:28px;
-
-    margin-bottom:12px;
-
+    margin-bottom: 12px;
 }
 
 
-/* ======================
-   PARAGRAPH
-====================== */
+/* =========================================================
+   CARD PARAGRAPHS
+========================================================= */
 
 .card p,
 .card1 p,
@@ -533,86 +453,55 @@ header {
 .card4 p,
 .card5 p,
 .card6 p,
-.card7 p{
+.card7 p {
+    color: #DBEAFE;
 
-    color:#dbeafe;
+    font-size: 15px;
 
-    font-size:15px;
-
+    line-height: 1.6;
 }
 
 
-/* ==========================
-   INDIVIDUAL COLORS
-========================== */
+/* =========================================================
+   INDIVIDUAL CARD COLORS
+========================================================= */
 
-.card{
+.card {
+    border-top: 5px solid #00E5FF;
+}
 
-    border-top:
-        5px solid #00E5FF;
+.card1 {
+    border-top: 5px solid #FF9800;
+}
 
+.card2 {
+    border-top: 5px solid #8B5CF6;
+}
+
+.card3 {
+    border-top: 5px solid #00C853;
+}
+
+.card4 {
+    border-top: 5px solid #FF4081;
+}
+
+.card5 {
+    border-top: 5px solid #FFD600;
+}
+
+.card6 {
+    border-top: 5px solid #A96AD8;
+}
+
+.card7 {
+    border-top: 5px solid white;
 }
 
 
-.card1{
-
-    border-top:
-        5px solid #FF9800;
-
-}
-
-
-.card2{
-
-    border-top:
-        5px solid #8B5CF6;
-
-}
-
-
-.card3{
-
-    border-top:
-        5px solid #00C853;
-
-}
-
-
-.card4{
-
-    border-top:
-        5px solid #FF4081;
-
-}
-
-
-.card5{
-
-    border-top:
-        5px solid #FFD600;
-
-}
-
-
-.card6{
-
-    border-top:
-        5px solid #A96AD8;
-
-}
-
-
-.card7{
-
-    border-top:
-        5px solid white;
-
-}
-
-
-/* ==========================
+/* =========================================================
    CARD LINKS
-========================== */
+========================================================= */
 
 .card a,
 .card1 a,
@@ -621,106 +510,124 @@ header {
 .card4 a,
 .card5 a,
 .card6 a,
-.major-grid a{
+.card7 a,
+.major-grid a {
+    text-decoration: none;
 
-    text-decoration:none;
-
-    color:inherit;
-
+    color: inherit;
 }
 
 
-/* ==========================
-   RESPONSIVE
-========================== */
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
 
-@media(max-width:1000px){
+@media (max-width: 1000px) {
 
-    .major-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+    .major-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
+    .overlay {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
 
 
-/* ==========================
-   TABLET / MOBILE
-========================== */
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
 
-@media(max-width:750px){
+@media (max-width: 750px) {
 
-    .navbar{
+    .navbar {
+        top: 15px;
 
-        top:15px;
+        width: 94%;
 
-        width:94%;
-
-        padding:15px 20px;
-
+        padding: 15px 20px;
     }
 
-    .logo{
-
-        font-size:30px;
-
+    .logo {
+        font-size: 30px;
     }
 
-    .nav-links{
-
-        display:none;
-
+    .nav-links {
+        display: none;
     }
 
-    .overlay{
-
+    .overlay {
         padding:
             120px 30px 60px;
-
     }
-
 }
 
 
-/* ==========================
+/* =========================================================
    SMALL MOBILE
-========================== */
+========================================================= */
 
-@media(max-width:650px){
+@media (max-width: 650px) {
 
-    .major-grid{
-
-        grid-template-columns:1fr;
-
+    .major-grid {
+        grid-template-columns: 1fr;
     }
 
-    .major-section h1{
-
-        font-size:38px;
-
+    .major-section h1 {
+        font-size: 38px;
     }
 
-    .subtitle{
+    .subtitle {
+        font-size: 16px;
 
-        font-size:16px;
-
-        margin-bottom:40px;
-
+        margin-bottom: 40px;
     }
 
+    .card,
+    .card1,
+    .card2,
+    .card3,
+    .card4,
+    .card5,
+    .card6,
+    .card7 {
+        padding: 30px 20px;
+    }
 }
 
 
-/* ==========================
-   NAVBAR SCROLL SCRIPT SUPPORT
-========================== */
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
 
-.navbar{
+@media (max-width: 400px) {
 
-    will-change:
-        background,
-        box-shadow;
+    .overlay {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
+    .major-section h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .icon {
+        font-size: 48px;
+    }
+
+    .card h2,
+    .card1 h2,
+    .card2 h2,
+    .card3 h2,
+    .card4 h2,
+    .card5 h2,
+    .card6 h2,
+    .card7 h2 {
+        font-size: 24px;
+    }
 }
