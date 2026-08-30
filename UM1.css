@@ -1,0 +1,497 @@
+/* ==========================
+   GOOGLE FONT & RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ==========================
+   BODY
+========================== */
+
+body{
+
+    background:
+    linear-gradient(rgba(8,20,45,.75),
+    rgba(10,35,70,.75)),
+    url("images/laboratory.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:#fff;
+
+}
+
+/* ==========================
+   OVERLAY
+========================== */
+
+.overlay{
+
+    width:100%;
+    min-height:100vh;
+    padding:35px;
+
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+    margin-bottom:40px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:18px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.20);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.nav-title{
+
+    font-size:25px;
+    font-weight:600;
+    letter-spacing:1px;
+
+    color:white;
+
+}
+
+.nav-title i{
+
+    color:#3de8ff;
+    margin-right:10px;
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.logo{
+
+    width:150px;
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    background:white;
+
+    padding:10px;
+
+    border:6px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 0 40px rgba(61,232,255,.5);
+
+}
+
+.header h1{
+
+    margin-top:20px;
+
+    font-size:52px;
+
+    background:linear-gradient(90deg,#ffffff,#69f0ff,#8effc1);
+    background-clip: text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.header h3{
+
+    color:#d4ffff;
+
+    margin-top:10px;
+
+}
+
+.subtitle{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    color:#ededed;
+
+}
+
+/* ==========================
+   HERO IMAGE
+========================== */
+
+.hero{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    margin-bottom:40px;
+
+}
+
+.hero img{
+
+    width:100%;
+
+    border-radius:25px;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+/* ==========================
+   GLASS SECTION
+========================== */
+
+.glass{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+    margin-bottom:35px;
+
+    padding:35px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(25px);
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.20);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.glass h2{
+
+    margin-bottom:20px;
+
+    color:#69f0ff;
+
+}
+
+.glass p{
+
+    line-height:1.9;
+
+    font-size:17px;
+
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.cards{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    margin-bottom:45px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    transition:.4s;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.20);
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    background:rgba(255,255,255,.18);
+
+    box-shadow:0 15px 35px rgba(61,232,255,.30);
+
+}
+
+.icon{
+
+    font-size:35px;
+
+    color:#3de8ff;
+
+    margin-bottom:18px;
+
+}
+
+.card h2{
+
+    margin-bottom:18px;
+
+    color:#ffffff;
+
+}
+
+.card p{
+
+    line-height:1.8;
+
+}
+
+.card ul{
+
+    padding-left:20px;
+
+}
+
+.card li{
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================
+   ENTRANCE CARD
+========================== */
+
+.entrance{
+
+    text-align:center;
+
+}
+
+.entrance h1{
+
+    font-size:15px;
+
+    margin:20px 0;
+
+    color:#8effc1;
+
+    text-shadow:0 0 25px #3de8ff;
+
+}
+
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    margin-bottom:45px;
+
+}
+
+.gallery h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:#69f0ff;
+
+}
+
+.gallery-box{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.gallery-box img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    transition:.5s;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    cursor:pointer;
+
+}
+
+.gallery-box img:hover{
+
+    transform:scale(1.06);
+
+    box-shadow:0 20px 40px rgba(61,232,255,.35);
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.visit-btn{
+
+    margin-top:25px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:linear-gradient(135deg,#3b82f6,#22d3ee,#34d399);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.visit-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(34,211,238,.40);
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:40px auto 0;
+
+    text-align:center;
+
+    padding:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+footer p{
+
+    color:#dddddd;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+    .header h1{
+
+        font-size:36px;
+
+    }
+
+    .gallery-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .logo{
+
+        width:120px;
+        height:120px;
+
+    }
+
+    .nav-title{
+
+        font-size:20px;
+
+    }
+
+}
