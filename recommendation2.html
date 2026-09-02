@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recommendation | UniPath Myanmar</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="recommendation2.css">
+</head>
+
+<body>
+
+  <header>
+
+    <h1>University Recommendation</h1>
+
+    <p>
+      Enter your marks and interests to see which universities fit you
+    </p>
+
+  </header>
+
+
+  <div class="wrap">
+
+    <!-- FORM -->
+
+    <div id="form-card" class="card">
+
+      <h2>Tell us about yourself</h2>
+
+
+      <!-- Quiz Result -->
+
+      <div
+        id="quiz-result-info"
+        class="quiz-result-info">
+
+        <strong>Quiz recommendation:</strong>
+
+        <span id="quiz-field-text"></span>
+
+        <br>
+
+        <small>
+          Your quiz result has been used to select a suitable field.
+          You can still change your choices below.
+        </small>
+
+      </div>
+
+
+      <!-- Marks -->
+
+      <div
+        class="field"
+        data-f="marks">
+
+        <label
+          class="label"
+          for="marks">
+
+          Your total marks
+
+        </label>
+
+        <input
+          type="number"
+          id="marks"
+          min="0"
+          max="600"
+          placeholder="e.g. 480"
+        >
+
+        <p class="error-msg">
+          Please enter your marks (0 - 600).
+        </p>
+
+      </div>
+
+
+      <!-- Majors -->
+
+      <div
+        class="field"
+        data-f="majors">
+
+        <p>
+          Which major(s) are you interested in?
+        </p>
+
+        <div class="checks">
+
+          <label>
+            <input
+              type="checkbox"
+              name="major"
+              value="medicine"
+            >
+            Medicine / Health
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="major"
+              value="science"
+            >
+            Science / Engineering
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="major"
+              value="it"
+            >
+            IT / Computer Science
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="major"
+              value="business"
+            >
+            Business / Economics
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="major"
+              value="arts"
+            >
+            Arts / Humanities
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="major"
+              value="education"
+            >
+            Education
+          </label>
+
+        </div>
+
+        <p class="error-msg">
+          Please choose at least one major.
+        </p>
+
+      </div>
+
+
+      <!-- Region -->
+
+      <div
+        class="field"
+        data-f="region">
+
+        <label
+          class="label"
+          for="region">
+
+          Preferred region
+
+        </label>
+
+        <select id="region">
+
+          <option value="">
+            -- Choose a region --
+          </option>
+
+          <option value="yangon">
+            Yangon
+          </option>
+
+          <option value="mandalay">
+            Mandalay
+          </option>
+
+          <option value="other">
+            Other regions
+          </option>
+
+          <option value="any">
+            No preference
+          </option>
+
+        </select>
+
+        <p class="error-msg">
+          Please choose a region.
+        </p>
+
+      </div>
+
+
+      <!-- Buttons -->
+
+      <div class="btn-row">
+
+        <button id="recommend-btn">
+          Show Recommendations
+        </button>
+
+        <button
+          id="home-btn"
+          class="secondary"
+          type="button" onclick="window.location.href='HOMEPAGEUITPJ.html'">
+
+          Back to Home
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div
+      id="result-card"
+      class="card result">
+
+      <h2>
+        Recommended for You
+      </h2>
+
+      <p id="summary"></p>
+
+      <ul
+        id="recommendations"
+        class="uni-list">
+      </ul>
+
+      <p class="note">
+
+        Recommendations are based on the details
+        you entered. Please check official requirements
+        before applying.
+
+      </p>
+
+      <div class="btn-row">
+
+        <button
+          id="edit-btn"
+          class="secondary" onclick="window.location.href='recommendation2.html'">
+
+          Change My Answers
+
+        </button>
+
+        <button
+          id="home-btn-2"
+          class="secondary" onclick="window.location.href='HOMEPAGEUITPJ.html'">
+
+          Back to Home
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- QUIZ -->
+
+    <div class="card quiz-banner">
+
+      Not sure which field suits you?
+
+      <br>
+
+      Take our psychology-based skills quiz.
+
+      <br>
+
+      <button type="button" onclick="window.location.href='quiz2.html'">
+      🧠 Take Psychology Quiz
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="recommendation2.js"></script>
+
+</body>
+</html>
