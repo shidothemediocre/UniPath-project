@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UniPath</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="newcssfor home.css">
+<link rel="stylesheet" href="css/newcssfor home.css">
 </head>
 <body>
 
@@ -13,10 +13,10 @@
     <div class="logo">Uni<span>Path</span></div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="Uni.html">Universities</a></li>
-      <li><a href="test3.html">Compare</a></li>
-      <li><a href="recommendation.html">Recommendation</a></li>
-      <li><a href="About.html">About</a></li>
+      <li><a href="html/Uni.html">Universities</a></li>
+      <li><a href="html/test3.html">Compare</a></li>
+      <li><a href="html/recommendation.html">Recommendation</a></li>
+      <li><a href="html/About.html">About</a></li>
     </ul>
   </nav>
 
@@ -30,9 +30,10 @@
       for your future.
     </p>
     <div class="search-box">
-      <input type="text" placeholder="Search university, major, or location...">
-      <button>Search</button>
+      <input id="globalSearch" type="text" autocomplete="off" placeholder="Search university, major, or location...">
+      <button id="searchBtn" type="button">Search</button>
     </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
   </div>
 </section>
 
@@ -123,7 +124,7 @@
     <span>INFORMATION TECHNOLOGY</span>
     <h2>UNIVERSITY OF INFORMATION TECHNOLOGY</h2>
     <p>University of Information Technology is one of Myanmar's leading technology universities, focusing on Information Technology, Computer Science, Artificial Intelligence, Software Engineering, and modern digital innovation.</p>
-    <a href="Uni.html">Explore More University →</a>
+    <a href="html/Uni.html">Explore More University →</a>
   </div>
 </section>
 
@@ -136,8 +137,8 @@
     <div class="footer-col">
       <h3>Quick Links</h3>
       <a href="index.html">Home</a>
-      <a href="Uni.html">Universities</a>
-      <a href="About.html">About</a>
+      <a href="html/Uni.html">Universities</a>
+      <a href="html/About.html">About</a>
       <a href="#">Contact</a>
     </div>
     <div class="footer-col">
@@ -168,6 +169,7 @@ window.addEventListener("scroll", function() {
   navbar.classList.toggle("scrolled", window.scrollY > 80);
 });
 </script>
+<script src="js/home.js"></script>
 
 </body>
 </html>

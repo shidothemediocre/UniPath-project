@@ -1,0 +1,211 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background-image:
+    linear-gradient(rgba(20,35,55,.55),rgba(20,35,55,.60)),
+    url("../images/Engineering bg2.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+}
+
+.overlay{
+
+    min-height:100vh;
+  
+    padding:40px;
+
+}
+
+header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:50px;
+    flex-wrap:wrap;
+
+}
+
+header h1{
+
+    color:#F4C430;
+    font-size:42px;
+    font-weight:700;
+    letter-spacing:1px;
+
+}
+
+.search-box{
+
+    width:560px;
+    background:rgba(0,0,0,0.4);
+    border-radius: 30px;
+
+
+}
+
+.search-box input{
+
+    width:100%;
+    padding:12px 18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    color:white;
+
+    font-size:15px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    transition:.4s;
+
+  
+
+}
+
+.search-box input::placeholder{
+
+    color:rgb(235, 239, 174);
+
+}
+
+.search-box input:focus{
+
+    background:rgba(255,255,255,.28);
+
+    box-shadow:0 0 20px rgba(255,255,255,.4);
+
+}
+
+.grid{ display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card{
+    margin-bottom:18px;
+    padding:18px 25px;
+    border-radius:18px;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.35);
+    color:white;
+    font-size:25px;
+    font-weight:500;
+    transition:.35s;
+    text-align: center;
+    justify-content: center;
+}
+
+.card:hover{
+    transform:translateX(10px);
+    background:rgba(255,255,255,.28);
+}
+
+
+@media(max-width:700px){
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+header h1{
+
+font-size:32px;
+
+text-align:center;
+
+}
+
+.search-box{
+
+width:100%;
+
+}
+
+}
+.doc {
+
+    width:40%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+.doc img {
+
+
+    max-width:100%;
+
+    animation:float 3s infinite ease-in-out;
+
+    margin-left: 80%;
+
+    height: 150%;
+
+    width:70%;
+}
+
+
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+.container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+}
+
+.university-list{
+    width:70%;
+}
+.doc{
+    width:40%;
+    display:flex;
+    justify-content:center;
+}
+
+.doc img{
+    width:100%;
+    max-width:480px;
+    filter:drop-shadow(0 15px 35px rgba(0,0,0,.35));
+}
+.university-list a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
