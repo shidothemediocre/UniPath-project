@@ -184,6 +184,8 @@ const questions = [
 
 ];
 
+var HOME_PAGE = "../index.html";
+
 
 /* ============================================
    ANSWER OPTIONS
