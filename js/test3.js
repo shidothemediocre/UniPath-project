@@ -1389,7 +1389,11 @@ function compareUniversities() {
     // University 1
     if (university1) {
 
-        document.getElementById("img1").src = university1.image;
+        document.getElementById("img1").onerror = function () {
+            this.onerror = null;
+            this.src = "../images/Home.png";
+        };
+        document.getElementById("img1").src = "../images/" + university1.image;
 
         document.getElementById("name1").innerHTML =
         `
@@ -1417,7 +1421,11 @@ function compareUniversities() {
     // University 2
     if (university2) {
 
-        document.getElementById("img2").src = university2.image;
+        document.getElementById("img2").onerror = function () {
+            this.onerror = null;
+            this.src = "../images/Home.png";
+        };
+        document.getElementById("img2").src = "../images/" + university2.image;
 
         document.getElementById("name2").innerHTML =
         `

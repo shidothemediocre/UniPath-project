@@ -6,64 +6,64 @@
 var universities = [
   {
     name: "University of Medicine 1, Yangon",
-    page: "../html/UM1.html",
+    page: "UM1.html",
     region: "yangon",
     majors: ["medicine"],
     minMarks: 500
   },
   {
     name: "University of Medicine, Mandalay",
-    page: "../html/UM2.html",
+    page: "umm.html",
     region: "mandalay",
     majors: ["medicine"],
     minMarks: 500
   },
   {
     name: "Yangon Technological University",
-    page: "../html/YTU.html",
+    page: "YTU.html",
     region: "yangon",
     majors: ["science", "it"],
     minMarks: 480
   },
   {
     name: "Mandalay Technological University",
-    page: "../html/MTU.html",
+    page: "MTU.html",
     region: "mandalay",
     majors: ["science", "it"],
     minMarks: 470
   },
   {
     name: "Yangon University",
-    page: "../html/yu.html",
+    page: "yu.html",
     region: "yangon",
     majors: ["arts", "science", "business"],
     minMarks: 350
   },
   {
     name: "Mandalay University",
-    page: "../html/mul.html",
+    page: "mul.html",
     region: "mandalay",
     majors: ["arts", "science", "business"],
     minMarks: 350
   },
   {
     name: "Yangon University of Economics",
-    page: "../html/yue.html",
+    page: "yue.html",
     region: "yangon",
     majors: ["business"],
     minMarks: 400
   },
   {
     name: "University of Computer Studies, Yangon",
-    page: "../html/UCSY.html",
+    page: "UCSY.html",
     region: "yangon",
     majors: ["it"],
     minMarks: 450
   }
 ];
 
-var HOME_PAGE = "../html/index.html";
-var QUIZ_PAGE = "../html/quiz.html";
+var HOME_PAGE = "../index.html";
+var QUIZ_PAGE = "quiz.html";
 
 var REGION_LABELS = {
   yangon: "Yangon",
@@ -139,7 +139,7 @@ function showResults(marks, majors, region) {
   list.innerHTML = "";
 
   if (matched.length === 0) {
-    list.innerHTML = "<li>No universities match all your choices. Try different majors or region, or browse the full list on <a href='../html/Uni.html'>Universities page</a>.</li>";
+    list.innerHTML = "<li>No universities match all your choices. Try different majors or region, or browse the full list on <a href='Uni.html'>Universities page</a>.</li>";
   } else {
     matched.forEach(function (uni) {
       var reasons = [];
