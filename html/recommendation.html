@@ -1,290 +1,1622 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Recommendation | UniPath Myanmar</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UniPath Myanmar | Recommendation</title>
+
 <style>
-  /* ===================================
-       UNIPATH DARK THEME (matches home)
-  =================================== */
-  :root {
-    --primary: #3B82F6;
-    --primary-light: #60A5FA;
-    --secondary: #06B6D4;
-    --secondary-light: #22D3EE;
-    --accent: #8B5CF6;
-    --success: #10B981;
-    --danger: #F87171;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-
-    --dark-bg: #0F172A;
-    --dark-bg-2: #1E293B;
-    --dark-bg-3: #334155;
-
-    --text-main: #FFFFFF;
-    --text-muted: #E2E8F0;
-    --text-light: #CBD5E1;
-
-    --glass: rgba(30, 41, 59, 0.72);
-    --glass-light: rgba(51, 65, 85, 0.55);
-    --glass-border: rgba(255, 255, 255, 0.10);
-
-    --glow-blue: rgba(59, 130, 246, 0.30);
-    --glow-cyan: rgba(6, 182, 212, 0.25);
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(160deg, #0F172A 0%, #1E293B 60%, #0F172A 100%);
-    background-attachment: fixed;
-    color: var(--text-main);
+body {
+    font-family: Arial, sans-serif;
     min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-  }
+    color: white;
+    background:
+        radial-gradient(circle at top left, #164e63, transparent 35%),
+        radial-gradient(circle at bottom right, #312e81, transparent 35%),
+        #0f172a;
+}
 
-  body::before, body::after {
-    content: "";
-    position: fixed;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    filter: blur(120px);
-    z-index: 0;
-    pointer-events: none;
-  }
-  body::before { top: -150px; left: -120px; background: rgba(37, 99, 235, 0.20); }
-  body::after { bottom: -150px; right: -120px; background: rgba(6, 182, 212, 0.18); }
+.container {
+    width: 90%;
+    max-width: 750px;
+    margin: auto;
+    padding: 45px 0;
+}
 
-  header {
-    position: relative;
-    z-index: 1;
+header {
     text-align: center;
-    padding: 2.5rem 1.5rem 1.5rem;
-  }
-  header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, var(--primary-light), var(--secondary-light));
-    -webkit-background-clip: text;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    background: linear-gradient(90deg, #60a5fa, #22d3ee);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  header p { color: var(--text-light); margin-top: 0.4rem; font-weight: 300; }
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
-  .wrap {
-    position: relative;
-    z-index: 1;
-    max-width: 760px;
-    margin: 0 auto 3rem;
-    padding: 0 1rem;
-  }
+header p {
+    color: #cbd5e1;
+    margin-top: 8px;
+}
 
-  .card {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  .card h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.25rem; }
+.card {
+    background: rgba(30, 41, 59, 0.88);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
 
-  .field { margin-bottom: 1.5rem; }
-  .field > p, .field > label.label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 0.6rem;
-    color: var(--text-muted);
-  }
-
-  input[type="number"], select {
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    color: var(--text-main);
-    background: var(--glass-light);
-    border: 1px solid var(--glass-border);
-    border-radius: 10px;
-    padding: 0.7rem 0.9rem;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  input[type="number"]:focus, select:focus { border-color: var(--secondary); }
-  input[type="number"]::placeholder { color: var(--text-light); opacity: 0.6; }
-  select option { background: var(--dark-bg-2); color: var(--text-main); }
-
-  .checks label {
-    display: block;
-    padding: 0.7rem 0.9rem;
-    margin-bottom: 0.5rem;
-    border: 1px solid var(--glass-border);
-    border-radius: 10px;
-    background: var(--glass-light);
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s, transform 0.15s;
-    color: var(--text-light);
-  }
-  .checks label:hover {
-    border-color: var(--primary);
-    background: rgba(59, 130, 246, 0.12);
-    transform: translateX(4px);
-  }
-  .checks label:has(input:checked) {
-    border-color: var(--secondary);
-    background: rgba(6, 182, 212, 0.15);
-    color: var(--text-main);
-  }
-  .checks input { margin-right: 0.5rem; accent-color: var(--secondary); }
-
-  /* Inline validation */
-  .field.error > p, .field.error > label.label { color: var(--danger); }
-  .error-msg {
+.step {
     display: none;
-    color: var(--danger);
-    font-size: 0.85rem;
-    margin-top: 0.35rem;
-  }
-  .field.error .error-msg { display: block; }
-  .field.error input[type="number"],
-  .field.error select { border-color: rgba(248, 113, 113, 0.55); }
-  .field.error .checks label { border-color: rgba(248, 113, 113, 0.45); }
+}
 
-  .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.step.active {
+    display: block;
+}
 
-  button {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.6rem;
+h2 {
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px;
     border-radius: 10px;
-    font-size: 0.95rem;
-    font-weight: 500;
+    border: 1px solid #475569;
+    background: #1e293b;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #22d3ee;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 22px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 18px var(--glow-blue);
-  }
-  button:hover { transform: translateY(-2px); box-shadow: 0 6px 24px var(--glow-cyan); }
-  button.secondary {
-    background: var(--glass-light);
-    border: 1px solid var(--glass-border);
-    box-shadow: none;
-    color: var(--text-muted);
-  }
-  button.secondary:hover { border-color: var(--primary-light); }
+    transition: 0.2s;
+}
 
-  .result { display: none; }
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(6,182,212,0.3);
+}
 
-  .uni-list { list-style: none; }
-  .uni-list li {
-    background: var(--glass-light);
-    border: 1px solid var(--glass-border);
+button.secondary {
+    background: #334155;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.error {
+    color: #f87171;
+    margin-bottom: 15px;
+    display: none;
+}
+
+/* QUIZ */
+
+.progress {
+    height: 8px;
+    background: #334155;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 10%;
+    background: linear-gradient(90deg, #3b82f6, #22d3ee);
+    transition: 0.3s;
+}
+
+.question-number {
+    color: #67e8f9;
+    margin-bottom: 10px;
+}
+
+.question {
+    font-size: 22px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.answers {
+    display: grid;
+    gap: 12px;
+}
+
+.answer {
+    padding: 15px;
+    border: 1px solid #475569;
     border-radius: 12px;
-    padding: 1rem 1.1rem;
-    margin-bottom: 0.85rem;
-    transition: border-color 0.2s, transform 0.15s;
-  }
-  .uni-list li:hover { border-color: var(--primary); transform: translateY(-2px); }
-  .uni-list a {
-    color: var(--secondary-light);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.02rem;
-  }
-  .uni-list a:hover { text-decoration: underline; }
+    background: #1e293b;
+    cursor: pointer;
+    transition: 0.2s;
+}
 
-  .uni-meta { font-size: 0.85rem; color: var(--text-light); margin-top: 0.4rem; }
-  .uni-why { font-size: 0.82rem; color: var(--text-light); margin-top: 0.35rem; opacity: 0.85; }
-  .uni-why b { color: var(--secondary-light); font-weight: 500; }
+.answer:hover {
+    border-color: #22d3ee;
+    background: #26364c;
+}
 
-  #summary { color: var(--text-light); font-size: 0.92rem; margin-bottom: 1.25rem; }
-  .note { color: var(--text-light); font-size: 0.82rem; opacity: 0.75; margin-top: 1rem; }
+.answer.selected {
+    border-color: #22d3ee;
+    background: rgba(6,182,212,0.18);
+}
 
-  .quiz-banner {
+/* RESULT */
+
+.result-score {
     text-align: center;
-    color: var(--text-light);
-    font-size: 0.92rem;
-  }
-  .quiz-banner button { margin-top: 0.75rem; }
+    margin: 25px 0;
+}
+
+.score-number {
+    font-size: 65px;
+    font-weight: bold;
+    color: #22d3ee;
+}
+
+.result-message {
+    font-size: 19px;
+    margin-top: 10px;
+    color: #cbd5e1;
+}
+
+.result-divider {
+    border: none;
+    border-top: 1px solid #334155;
+    margin: 25px 0;
+}
+
+.university {
+    background: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.university h3 {
+    color: #67e8f9;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.university p {
+    color: #cbd5e1;
+    margin: 7px 0;
+}
+
+.match {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(16,185,129,0.15);
+    color: #6ee7b7;
+    font-weight: bold;
+}
+
+.why {
+    margin-top: 15px;
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+.small-note {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 20px;
+    line-height: 1.5;
+}
 </style>
 </head>
+
+
 <body>
 
+<div class="container">
+
 <header>
-  <h1>University Recommendation</h1>
-  <p>Enter your marks and interests to see which universities fit you</p>
+    <h1>UniPath Myanmar</h1>
+    <p>Find a university that fits you.</p>
 </header>
 
-<div class="wrap">
 
-  <!-- Filter Form -->
-  <div id="form-card" class="card">
-    <h2>Tell us about yourself</h2>
+<!-- =====================================================
+     STEP 1 — MARKS
+===================================================== -->
 
-    <div class="field" data-f="marks">
-      <label class="label" for="marks">Your total marks</label>
-      <input type="number" id="marks" min="0" max="600" placeholder="e.g. 480">
-      <p class="error-msg">Please enter your marks (0 - 600).</p>
-    </div>
+<div class="card step active" id="step1">
 
-    <div class="field" data-f="majors">
-      <p>Which major(s) are you interested in?</p>
-      <div class="checks">
-        <label><input type="checkbox" name="major" value="medicine"> Medicine / Health</label>
-        <label><input type="checkbox" name="major" value="science"> Science / Engineering</label>
-        <label><input type="checkbox" name="major" value="it"> IT / Computer Science</label>
-        <label><input type="checkbox" name="major" value="business"> Business / Economics</label>
-        <label><input type="checkbox" name="major" value="arts"> Arts / Humanities</label>
-      </div>
-      <p class="error-msg">Please choose at least one major.</p>
-    </div>
+    <h2>🎓 Let's Find Your University</h2>
 
-    <div class="field" data-f="region">
-      <label class="label" for="region">Preferred region</label>
-      <select id="region">
-        <option value="">-- Choose a region --</option>
-        <option value="yangon">Yangon</option>
-        <option value="mandalay">Mandalay</option>
-        <option value="other">Other regions</option>
-        <option value="any">No preference</option>
-      </select>
-      <p class="error-msg">Please choose a region (or "No preference").</p>
-    </div>
+    <p class="description">
+        First, tell us about your academic performance.
+        We'll use it together with your interests and
+        challenge result to find suitable universities.
+    </p>
 
-    <div class="btn-row">
-      <button id="recommend-btn">Show Recommendations</button>
-      <button id="home-btn" class="secondary" type="button">Back to Home</button>
-    </div>
-  </div>
+    <label for="marks">
+        Your total marks
+    </label>
 
-  <!-- Result Section -->
-  <div id="result-card" class="card result">
-    <h2>Recommended for You</h2>
-    <p id="summary"></p>
-    <ul id="recommendations" class="uni-list"></ul>
-    <p class="note">Recommendations are based on the details you entered. Please check official requirements before applying.</p>
-    <div class="btn-row">
-      <button id="edit-btn" class="secondary">Change My Answers</button>
-      <button id="home-btn-2" class="secondary">Back to Home</button>
-    </div>
-  </div>
+    <input
+        type="number"
+        id="marks"
+        min="0"
+        max="600"
+        placeholder="Example: 480"
+    >
 
-  <!-- Quiz Banner -->
-  <div class="card quiz-banner">
-    Not sure what to choose? Take our quick quiz instead.
-    <br>
-    <button id="quiz-btn" type="button">Take the Quiz</button>
-  </div>
+    <p class="error" id="marksError">
+        Please enter a valid mark between 0 and 600.
+    </p>
+
+    <button onclick="nextToMajor()">
+        Continue →
+    </button>
 
 </div>
 
-<script src="../js/recommendation.js"></script>
+
+<!-- =====================================================
+     STEP 2 — MAJOR
+===================================================== -->
+
+<div class="card step" id="step2">
+
+    <h2>🔎 What are you interested in?</h2>
+
+    <p class="description">
+        Select the field you're interested in.
+        You'll then take a short 10-question challenge.
+    </p>
+
+    <label for="major">
+        Select your field
+    </label>
+
+    <select id="major">
+
+        <option value="">
+            -- Select a field --
+        </option>
+
+        <option value="it">
+            IT & Computer Science
+        </option>
+
+        <option value="medicine">
+            Medicine & Health
+        </option>
+
+        <option value="engineering">
+            Engineering
+        </option>
+
+        <option value="business">
+            Business & Economics
+        </option>
+
+        <option value="arts">
+            Arts & Humanities
+        </option>
+
+    </select>
+
+    <p class="error" id="majorError">
+        Please select a field.
+    </p>
+
+    <div class="buttons">
+
+        <button
+            class="secondary"
+            onclick="showStep(1)">
+            ← Back
+        </button>
+
+        <button onclick="startQuiz()">
+            Start My Challenge →
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STEP 3 — QUIZ
+===================================================== -->
+
+<div class="card step" id="step3">
+
+    <h2 id="quizTitle">
+        Field Challenge
+    </h2>
+
+    <div class="progress">
+        <div
+            class="progress-bar"
+            id="progressBar">
+        </div>
+    </div>
+
+    <p
+        class="question-number"
+        id="questionNumber">
+        Question 1 of 10
+    </p>
+
+    <div
+        class="question"
+        id="questionText">
+    </div>
+
+    <div
+        class="answers"
+        id="answers">
+    </div>
+
+    <p
+        class="error"
+        id="answerError">
+        Please choose an answer.
+    </p>
+
+    <div class="buttons">
+
+        <button onclick="nextQuestion()">
+            Next →
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STEP 4 — RESULTS
+===================================================== -->
+
+<div class="card step" id="step4">
+
+    <h2>🎉 Your Field Result</h2>
+
+    <div class="result-score">
+
+        <div
+            class="score-number"
+            id="scoreNumber">
+            0/10
+        </div>
+
+        <div
+            class="result-message"
+            id="resultMessage">
+        </div>
+
+    </div>
+
+    <hr class="result-divider">
+
+    <h2>
+        🎓 Your University Recommendations
+    </h2>
+
+    <p
+        id="recommendationIntro"
+        class="description">
+    </p>
+
+    <div id="universities"></div>
+
+    <div class="buttons">
+
+        <button onclick="showStep(2)">
+            Try Another Field
+        </button>
+
+        <button
+            class="secondary"
+            onclick="location.reload()">
+            Start Again
+        </button>
+
+    </div>
+
+    <p class="small-note">
+        Recommendations are for guidance only.
+        Always check the official university requirements
+        before applying.
+    </p>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   QUIZ DATA
+===================================================== */
+
+const quizData = {
+
+    /* ================= IT ================= */
+
+    it: [
+
+        {
+            q: "Which language is mainly used to structure webpages?",
+            options: [
+                "Python",
+                "HTML",
+                "SQL",
+                "C++"
+            ],
+            answer: 1
+        },
+
+        {
+            q: "What does CPU stand for?",
+            options: [
+                "Central Processing Unit",
+                "Computer Personal Unit",
+                "Central Program Utility",
+                "Control Processing User"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which one is an operating system?",
+            options: [
+                "Windows",
+                "Chrome",
+                "Google",
+                "HTML"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What does RAM mainly provide?",
+            options: [
+                "Temporary memory",
+                "Internet connection",
+                "Permanent storage",
+                "Power supply"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which symbol is commonly used for a comment in JavaScript?",
+            options: [
+                "//",
+                "##",
+                "$$",
+                "@@"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which of these is a database language?",
+            options: [
+                "SQL",
+                "HTML",
+                "CSS",
+                "JPEG"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What does URL stand for?",
+            options: [
+                "Uniform Resource Locator",
+                "Universal Research Link",
+                "User Resource Language",
+                "Uniform Routing Line"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which one is a programming language?",
+            options: [
+                "Python",
+                "Windows",
+                "Google",
+                "HTTP"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is used to style a webpage?",
+            options: [
+                "CSS",
+                "SQL",
+                "C++",
+                "DNS"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which device is commonly used to input text?",
+            options: [
+                "Monitor",
+                "Keyboard",
+                "Speaker",
+                "Projector"
+            ],
+            answer: 1
+        }
+
+    ],
+
+
+    /* ================= MEDICINE ================= */
+
+    medicine: [
+
+        {
+            q: "Which organ pumps blood around the human body?",
+            options: [
+                "Liver",
+                "Heart",
+                "Lung",
+                "Kidney"
+            ],
+            answer: 1
+        },
+
+        {
+            q: "Which organ is mainly responsible for breathing?",
+            options: [
+                "Heart",
+                "Lung",
+                "Stomach",
+                "Brain"
+            ],
+            answer: 1
+        },
+
+        {
+            q: "What is the largest organ of the human body?",
+            options: [
+                "Heart",
+                "Skin",
+                "Liver",
+                "Brain"
+            ],
+            answer: 1
+        },
+
+        {
+            q: "Which blood cells help fight infection?",
+            options: [
+                "Red blood cells",
+                "White blood cells",
+                "Platelets",
+                "Plasma"
+            ],
+            answer: 1
+        },
+
+        {
+            q: "Which organ controls many body functions?",
+            options: [
+                "Brain",
+                "Lung",
+                "Kidney",
+                "Stomach"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is the approximate normal human body temperature?",
+            options: [
+                "27°C",
+                "37°C",
+                "47°C",
+                "57°C"
+            ],
+            answer: 1
+        },
+
+        {
+            q: "Which organ filters waste from the blood?",
+            options: [
+                "Kidneys",
+                "Heart",
+                "Lungs",
+                "Skin"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which nutrient is mainly needed for building and repairing tissues?",
+            options: [
+                "Protein",
+                "Water",
+                "Salt",
+                "Fiber"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which system transports blood around the body?",
+            options: [
+                "Digestive system",
+                "Circulatory system",
+                "Nervous system",
+                "Skeletal system"
+            ],
+            answer: 1
+        },
+
+        {
+            q: "Which organ is mainly involved in digestion?",
+            options: [
+                "Stomach",
+                "Heart",
+                "Brain",
+                "Lung"
+            ],
+            answer: 0
+        }
+
+    ],
+
+
+    /* ================= ENGINEERING ================= */
+
+    engineering: [
+
+        {
+            q: "Which unit is used to measure electrical resistance?",
+            options: [
+                "Volt",
+                "Ampere",
+                "Ohm",
+                "Watt"
+            ],
+            answer: 2
+        },
+
+        {
+            q: "What force pulls objects toward Earth?",
+            options: [
+                "Friction",
+                "Gravity",
+                "Magnetism",
+                "Pressure"
+            ],
+            answer: 1
+        },
+
+        {
+            q: "Which material is a good electrical conductor?",
+            options: [
+                "Copper",
+                "Rubber",
+                "Glass",
+                "Wood"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is the SI unit of force?",
+            options: [
+                "Joule",
+                "Newton",
+                "Watt",
+                "Pascal"
+            ],
+            answer: 1
+        },
+
+        {
+            q: "Which branch studies structures and buildings?",
+            options: [
+                "Civil Engineering",
+                "Chemical Engineering",
+                "Software Engineering",
+                "Biomedical Engineering"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which device converts electrical energy into mechanical motion?",
+            options: [
+                "Motor",
+                "Battery",
+                "Resistor",
+                "Switch"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which simple machine uses a wheel and rope?",
+            options: [
+                "Pulley",
+                "Lever",
+                "Wedge",
+                "Screw"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is used to measure temperature?",
+            options: [
+                "Thermometer",
+                "Barometer",
+                "Ammeter",
+                "Voltmeter"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which field focuses on machines and mechanical systems?",
+            options: [
+                "Mechanical Engineering",
+                "Civil Engineering",
+                "Computer Engineering",
+                "Environmental Engineering"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which unit measures power?",
+            options: [
+                "Watt",
+                "Meter",
+                "Newton",
+                "Ohm"
+            ],
+            answer: 0
+        }
+
+    ],
+
+
+    /* ================= BUSINESS ================= */
+
+    business: [
+
+        {
+            q: "What does profit mean?",
+            options: [
+                "Revenue minus costs",
+                "Only total revenue",
+                "Only total costs",
+                "Number of employees"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is marketing mainly concerned with?",
+            options: [
+                "Promoting products and services",
+                "Building computers",
+                "Treating patients",
+                "Designing roads"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What does GDP measure?",
+            options: [
+                "Economic output",
+                "Population height",
+                "Internet speed",
+                "Company employees"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which is an example of an asset?",
+            options: [
+                "Cash",
+                "Debt",
+                "Expense",
+                "Loss"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is entrepreneurship?",
+            options: [
+                "Starting and managing a business",
+                "Studying biology",
+                "Building bridges",
+                "Writing medical reports"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which department manages employees?",
+            options: [
+                "Human Resources",
+                "Marketing",
+                "Engineering",
+                "Production"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What can supply and demand help determine?",
+            options: [
+                "Market price",
+                "Body temperature",
+                "Computer speed",
+                "Building height"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which document reports a company's financial position?",
+            options: [
+                "Financial statement",
+                "Passport",
+                "Map",
+                "Timetable"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is a customer?",
+            options: [
+                "A person who buys a product or service",
+                "A company employee",
+                "A government building",
+                "A machine"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which is an example of a business expense?",
+            options: [
+                "Rent",
+                "Sales revenue",
+                "Profit",
+                "Investment return"
+            ],
+            answer: 0
+        }
+
+    ],
+
+
+    /* ================= ARTS ================= */
+
+    arts: [
+
+        {
+            q: "Which subject studies human history and culture?",
+            options: [
+                "Humanities",
+                "Physics",
+                "Chemistry",
+                "Engineering"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is literature?",
+            options: [
+                "Written artistic works",
+                "Computer hardware",
+                "Chemical reactions",
+                "Building design"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which is a form of visual art?",
+            options: [
+                "Painting",
+                "Programming",
+                "Accounting",
+                "Networking"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What does a historian study?",
+            options: [
+                "The past",
+                "Computer processors",
+                "Chemical formulas",
+                "Electrical circuits"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which is an example of performing art?",
+            options: [
+                "Theatre",
+                "Accounting",
+                "Programming",
+                "Architecture"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is a biography?",
+            options: [
+                "A person's life story",
+                "A business plan",
+                "A scientific equation",
+                "A computer program"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which field studies society?",
+            options: [
+                "Sociology",
+                "Physics",
+                "Engineering",
+                "Computer Science"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "What is culture?",
+            options: [
+                "Shared beliefs, customs and practices",
+                "Computer memory",
+                "A mathematical formula",
+                "A chemical element"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which activity is commonly associated with journalism?",
+            options: [
+                "News reporting",
+                "Circuit design",
+                "Surgery",
+                "Bridge construction"
+            ],
+            answer: 0
+        },
+
+        {
+            q: "Which subject studies human behavior and mind?",
+            options: [
+                "Psychology",
+                "Geology",
+                "Physics",
+                "Engineering"
+            ],
+            answer: 0
+        }
+
+    ]
+
+};
+
+
+/* =====================================================
+   UNIVERSITY DATA
+===================================================== */
+
+const universities = {
+
+    it: [
+        {
+            name: "University of Computer Studies, Yangon",
+            region: "Yangon",
+            minMarks: 450
+        },
+        {
+            name: "Yangon Technological University",
+            region: "Yangon",
+            minMarks: 480
+        }
+    ],
+
+    medicine: [
+        {
+            name: "University of Medicine 1, Yangon",
+            region: "Yangon",
+            minMarks: 500
+        },
+        {
+            name: "University of Medicine, Mandalay",
+            region: "Mandalay",
+            minMarks: 500
+        }
+    ],
+
+    engineering: [
+        {
+            name: "Yangon Technological University",
+            region: "Yangon",
+            minMarks: 480
+        },
+        {
+            name: "Mandalay Technological University",
+            region: "Mandalay",
+            minMarks: 470
+        }
+    ],
+
+    business: [
+        {
+            name: "Yangon University of Economics",
+            region: "Yangon",
+            minMarks: 400
+        },
+        {
+            name: "Yangon University",
+            region: "Yangon",
+            minMarks: 350
+        }
+    ],
+
+    arts: [
+        {
+            name: "Yangon University",
+            region: "Yangon",
+            minMarks: 350
+        },
+        {
+            name: "Mandalay University",
+            region: "Mandalay",
+            minMarks: 350
+        }
+    ]
+
+};
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let marks = 0;
+let selectedMajor = "";
+let questions = [];
+let currentQuestion = 0;
+let score = 0;
+let selectedAnswer = null;
+
+
+/* =====================================================
+   SHOW STEP
+===================================================== */
+
+function showStep(number) {
+
+    document.querySelectorAll(".step").forEach(function(step) {
+        step.classList.remove("active");
+    });
+
+    document
+        .getElementById("step" + number)
+        .classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =====================================================
+   STEP 1 → STEP 2
+===================================================== */
+
+function nextToMajor() {
+
+    const input =
+        document.getElementById("marks");
+
+    const error =
+        document.getElementById("marksError");
+
+    marks = Number(input.value);
+
+    if (
+        input.value === "" ||
+        !Number.isFinite(marks) ||
+        marks < 0 ||
+        marks > 600
+    ) {
+
+        error.style.display = "block";
+        return;
+    }
+
+    error.style.display = "none";
+
+    showStep(2);
+}
+
+
+/* =====================================================
+   START QUIZ
+===================================================== */
+
+function startQuiz() {
+
+    selectedMajor =
+        document.getElementById("major").value;
+
+    const error =
+        document.getElementById("majorError");
+
+    if (!selectedMajor) {
+
+        error.style.display = "block";
+        return;
+    }
+
+    error.style.display = "none";
+
+    questions =
+        quizData[selectedMajor];
+
+    currentQuestion = 0;
+    score = 0;
+
+    document
+        .getElementById("quizTitle")
+        .textContent =
+        getMajorName(selectedMajor) +
+        " Challenge";
+
+    showStep(3);
+
+    loadQuestion();
+}
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion() {
+
+    selectedAnswer = null;
+
+    const question =
+        questions[currentQuestion];
+
+    document
+        .getElementById("questionNumber")
+        .textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+    document
+        .getElementById("questionText")
+        .textContent =
+        question.q;
+
+    document
+        .getElementById("progressBar")
+        .style.width =
+        ((currentQuestion + 1) /
+        questions.length * 100) +
+        "%";
+
+    const answers =
+        document.getElementById("answers");
+
+    answers.innerHTML = "";
+
+    question.options.forEach(
+        function(option, index) {
+
+            const div =
+                document.createElement("div");
+
+            div.className = "answer";
+
+            div.textContent = option;
+
+            div.addEventListener(
+                "click",
+                function() {
+
+                    document
+                        .querySelectorAll(".answer")
+                        .forEach(function(a) {
+                            a.classList.remove(
+                                "selected"
+                            );
+                        });
+
+                    div.classList.add("selected");
+
+                    selectedAnswer = index;
+                }
+            );
+
+            answers.appendChild(div);
+        }
+    );
+
+    document
+        .getElementById("answerError")
+        .style.display = "none";
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion() {
+
+    if (selectedAnswer === null) {
+
+        document
+            .getElementById("answerError")
+            .style.display = "block";
+
+        return;
+    }
+
+    if (
+        selectedAnswer ===
+        questions[currentQuestion].answer
+    ) {
+        score++;
+    }
+
+    currentQuestion++;
+
+    if (
+        currentQuestion <
+        questions.length
+    ) {
+
+        loadQuestion();
+
+    } else {
+
+        showResults();
+    }
+}
+
+
+/* =====================================================
+   SHOW RESULTS
+===================================================== */
+
+function showResults() {
+
+    document
+        .getElementById("scoreNumber")
+        .textContent =
+        score + "/10";
+
+    let message;
+
+    if (score >= 8) {
+
+        message =
+            "⭐ Strong potential! You performed very well in this challenge.";
+
+    } else if (score >= 6) {
+
+        message =
+            "🟢 Good potential! This field may be a good match for you.";
+
+    } else if (score >= 4) {
+
+        message =
+            "🟡 Potential fit. Explore this field more before making your decision.";
+
+    } else {
+
+        message =
+            "🌱 You may want to explore this field more. Remember, this short quiz does not determine your future.";
+    }
+
+    document
+        .getElementById("resultMessage")
+        .textContent = message;
+
+    document
+        .getElementById("recommendationIntro")
+        .textContent =
+        "You scored " +
+        score +
+        "/10 in " +
+        getMajorName(selectedMajor) +
+        " and entered " +
+        marks +
+        "/600 marks.";
+
+    generateRecommendations();
+
+    showStep(4);
+}
+
+
+/* =====================================================
+   RECOMMENDATION ENGINE
+===================================================== */
+
+function generateRecommendations() {
+
+    const container =
+        document.getElementById("universities");
+
+    container.innerHTML = "";
+
+    const list =
+        universities[selectedMajor];
+
+    /*
+       A university is considered academically
+       qualified when the user's marks meet
+       its minimum marks.
+    */
+
+    const qualified =
+        list.filter(function(uni) {
+
+            return marks >= uni.minMarks;
+
+        });
+
+
+    if (qualified.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="university">
+
+                <h3>
+                    🔎 No direct match found
+                </h3>
+
+                <p>
+                    Your marks do not currently meet
+                    the sample minimum requirements
+                    for this field.
+                </p>
+
+                <div class="why">
+
+                    You can try another field or
+                    explore more universities.
+
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    qualified.forEach(
+        function(uni, index) {
+
+            /*
+               Match calculation:
+
+               Academic eligibility = 50%
+               Quiz result          = 50%
+            */
+
+            const academicScore = 50;
+
+            const quizScore =
+                (score / 10) * 50;
+
+            let match =
+                Math.round(
+                    academicScore +
+                    quizScore
+                );
+
+            if (match > 100) {
+                match = 100;
+            }
+
+
+            const card =
+                document.createElement("div");
+
+            card.className = "university";
+
+            card.innerHTML = `
+
+                <h3>
+                    ${index === 0 ? "🥇" : "🥈"}
+                    ${uni.name}
+                </h3>
+
+                <p>
+                    📍 ${uni.region}
+                </p>
+
+                <p>
+                    🎯 ${getMajorName(selectedMajor)}
+                </p>
+
+                <p>
+                    📚 Minimum marks:
+                    <strong>
+                        ${uni.minMarks}+
+                    </strong>
+                </p>
+
+                <span class="match">
+                    ${match}% Match
+                </span>
+
+                <div class="why">
+
+                    <strong>
+                        Why we recommend it:
+                    </strong>
+
+                    <br>
+
+                    ✓ Your marks meet the
+                    listed requirement
+
+                    <br>
+
+                    ✓ Your selected field matches
+
+                    <br>
+
+                    ✓ Your challenge score:
+                    ${score}/10
+
+                </div>
+
+                <br>
+
+                <button
+                    onclick="openUniversity('${uni.name}')">
+
+                    Explore University →
+
+                </button>
+
+            `;
+
+            container.appendChild(card);
+        }
+    );
+}
+
+
+/* =====================================================
+   UNIVERSITY BUTTON
+===================================================== */
+
+function openUniversity(name) {
+
+    alert(
+        "Connect this button to the real " +
+        name +
+        " university page later."
+    );
+}
+
+
+/* =====================================================
+   MAJOR NAME
+===================================================== */
+
+function getMajorName(major) {
+
+    const names = {
+
+        it:
+            "IT & Computer Science",
+
+        medicine:
+            "Medicine & Health",
+
+        engineering:
+            "Engineering",
+
+        business:
+            "Business & Economics",
+
+        arts:
+            "Arts & Humanities"
+
+    };
+
+    return names[major] || "Selected Field";
+}
+
+</script>
+
 </body>
 </html>
+

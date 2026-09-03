@@ -4,17 +4,10 @@ const search = document.getElementById("search");
 // Get all university cards
 const cards = document.querySelectorAll(".card");
 
-const list = document.querySelector(".university-list");
-const emptyMessage = document.createElement("p");
-emptyMessage.textContent = "No universities found";
-emptyMessage.style.display = "none";
-list.appendChild(emptyMessage);
-
 // Search function
-search.addEventListener("input", () => {
+search.addEventListener("keyup", () => {
 
-    const keyword = search.value.toLowerCase().trim();
-    let matches = 0;
+    const keyword = search.value.toLowerCase();
 
     cards.forEach(card => {
 
@@ -22,13 +15,11 @@ search.addEventListener("input", () => {
 
         if (university.includes(keyword)) {
             card.style.display = "flex";
-            matches++;
         } else {
             card.style.display = "none";
         }
 
     });
-    emptyMessage.style.display = matches ? "none" : "block";
 
 });
 

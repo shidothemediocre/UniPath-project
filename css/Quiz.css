@@ -1,0 +1,1725 @@
+
+/* =========================================================
+   UNIPATH MYANMAR
+   QUIZ PAGE CSS
+   MATCHES recommendation.html THEME
+========================================================= */
+
+
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'
+);
+
+
+/* =========================================================
+   ROOT COLORS
+========================================================= */
+
+:root {
+
+    /* Main UniPath colors */
+    --primary: #3B82F6;
+    --primary-light: #60A5FA;
+
+    --secondary: #06B6D4;
+    --secondary-light: #22D3EE;
+
+    --accent: #8B5CF6;
+
+    --success: #10B981;
+    --danger: #F87171;
+
+    /* Dark backgrounds */
+    --dark-bg: #0F172A;
+    --dark-bg-2: #1E293B;
+    --dark-bg-3: #334155;
+
+    /* Text */
+    --text-main: #FFFFFF;
+    --text-muted: #E2E8F0;
+    --text-light: #CBD5E1;
+    --text-soft: #94A3B8;
+
+    /* Glass */
+    --glass: rgba(30, 41, 59, 0.72);
+    --glass-light: rgba(51, 65, 85, 0.55);
+
+    --glass-border:
+        rgba(255, 255, 255, 0.10);
+
+    /* Glow */
+    --glow-blue:
+        rgba(59, 130, 246, 0.30);
+
+    --glow-cyan:
+        rgba(6, 182, 212, 0.25);
+
+    --glow-purple:
+        rgba(139, 92, 246, 0.18);
+
+    /* Shadows */
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, 0.30);
+
+    --shadow-light:
+        0 15px 45px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--text-main);
+
+    /* University background image */
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.6),
+            rgba(15, 23, 42, 0.6)
+        ),
+        url("Home.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND LIGHT EFFECTS
+========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    top: -160px;
+    left: -140px;
+
+    border-radius: 50%;
+
+    background:
+        var(--glow-blue);
+
+    filter: blur(120px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    bottom: -160px;
+    right: -140px;
+
+    border-radius: 50%;
+
+    background:
+        var(--glow-cyan);
+
+    filter: blur(120px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.quiz-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 92%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 35px 0 60px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.quiz-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 28px;
+
+    margin-bottom: 25px;
+
+    background:
+        rgba(15, 23, 42, 0.70);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+        1px solid var(--glass-border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        var(--shadow-light);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.logo-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.25),
+            rgba(6, 182, 212, 0.20)
+        );
+
+    border:
+        1px solid rgba(96, 165, 250, 0.25);
+}
+
+.logo h1 {
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary-light),
+            var(--secondary-light)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.logo p {
+
+    margin-top: 2px;
+
+    font-size: 0.78rem;
+
+    font-weight: 400;
+
+    color: var(--text-soft);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    border-radius: 12px;
+
+    color: var(--text-muted);
+
+    text-decoration: none;
+
+    font-size: 0.82rem;
+
+    font-weight: 500;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid var(--glass-border);
+
+    transition:
+        0.3s ease;
+}
+
+.back-btn:hover {
+
+    color: white;
+
+    background:
+        rgba(59, 130, 246, 0.15);
+
+    border-color:
+        rgba(96, 165, 250, 0.35);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN GLASS SECTIONS
+========================================================= */
+
+.intro-section,
+.quiz-section,
+.result-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 45px;
+
+    background:
+        rgba(15, 23, 42, 0.72);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border:
+        1px solid var(--glass-border);
+
+    border-radius: 28px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+/* Top light line */
+
+.intro-section::before,
+.quiz-section::before,
+.result-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+
+    width: 76%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(96, 165, 250, 0.55),
+            rgba(34, 211, 238, 0.55),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   INTRO SECTION
+========================================================= */
+
+.intro-section {
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   INTRO ICON
+========================================================= */
+
+.intro-icon {
+
+    width: 88px;
+    height: 88px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 5px auto 24px;
+
+    border-radius: 25px;
+
+    font-size: 42px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.20),
+            rgba(6, 182, 212, 0.16)
+        );
+
+    border:
+        1px solid rgba(96, 165, 250, 0.22);
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+
+/* =========================================================
+   INTRO TITLE
+========================================================= */
+
+.intro-section h2 {
+
+    font-size: 2.25rem;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: -0.8px;
+
+    margin-bottom: 15px;
+
+    color: var(--text-main);
+}
+
+
+/* =========================================================
+   INTRO DESCRIPTION
+========================================================= */
+
+.intro-section > p {
+
+    max-width: 720px;
+
+    margin: 0 auto 38px;
+
+    color: var(--text-light);
+
+    font-size: 0.96rem;
+
+    line-height: 1.8;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   FIELD PREVIEW
+========================================================= */
+
+.field-preview {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 17px;
+
+    max-width: 850px;
+
+    margin:
+        0 auto 38px;
+}
+
+
+/* =========================================================
+   FIELD CARD
+========================================================= */
+
+.field-card {
+
+    position: relative;
+
+    padding: 22px 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        0.3s ease;
+}
+
+.field-card span {
+
+    font-size: 29px;
+
+    line-height: 1;
+}
+
+.field-card strong {
+
+    font-size: 0.83rem;
+
+    font-weight: 500;
+
+    color: var(--text-muted);
+
+    letter-spacing: 0.1px;
+}
+
+.field-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(59, 130, 246, 0.09);
+
+    border-color:
+        rgba(96, 165, 250, 0.30);
+
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   BUTTON BASE
+========================================================= */
+
+.primary-btn,
+.secondary-btn {
+
+    min-height: 45px;
+
+    padding:
+        11px 23px;
+
+    border-radius: 12px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.84rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.1px;
+
+    cursor: pointer;
+
+    transition:
+        0.3s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary-btn {
+
+    border: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(37, 99, 235, 0.25);
+}
+
+.primary-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 13px 32px
+        rgba(37, 99, 235, 0.35);
+}
+
+.primary-btn:active {
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.secondary-btn {
+
+    color: var(--text-muted);
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid var(--glass-border);
+}
+
+.secondary-btn:hover {
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border-color:
+        rgba(96, 165, 250, 0.28);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   PROGRESS AREA
+========================================================= */
+
+.progress-area {
+
+    margin-bottom: 28px;
+}
+
+.progress-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    color: var(--text-soft);
+
+    font-size: 0.76rem;
+
+    font-weight: 500;
+}
+
+#progress-percent {
+
+    color: var(--secondary-light);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 8px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+#progress-fill {
+
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(34, 211, 238, 0.25);
+
+    transition:
+        width 0.4s ease;
+}
+
+
+/* =========================================================
+   QUESTION CARD
+========================================================= */
+
+.question-card {
+
+    padding: 32px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(30, 41, 59, 0.50);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   QUESTION ICON
+========================================================= */
+
+.question-icon {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    font-size: 25px;
+
+    background:
+        rgba(59, 130, 246, 0.12);
+
+    border:
+        1px solid rgba(96, 165, 250, 0.20);
+}
+
+
+/* =========================================================
+   QUESTION TITLE
+========================================================= */
+
+.question-card h2 {
+
+    max-width: 850px;
+
+    font-size: 1.45rem;
+
+    line-height: 1.55;
+
+    font-weight: 600;
+
+    letter-spacing: -0.25px;
+
+    color: var(--text-main);
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   QUESTION HELP
+========================================================= */
+
+.question-help {
+
+    color: var(--text-soft);
+
+    font-size: 0.78rem;
+
+    font-weight: 400;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.options-container {
+
+    display: grid;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   OPTION
+========================================================= */
+
+.option {
+
+    width: 100%;
+
+    min-height: 62px;
+
+    padding:
+        12px 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    text-align: left;
+
+    color: var(--text-muted);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.83rem;
+
+    font-weight: 500;
+
+    line-height: 1.45;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition:
+        0.25s ease;
+}
+
+.option:hover {
+
+    transform:
+        translateX(4px);
+
+    color: white;
+
+    background:
+        rgba(59, 130, 246, 0.09);
+
+    border-color:
+        rgba(96, 165, 250, 0.32);
+}
+
+
+/* =========================================================
+   SELECTED OPTION
+========================================================= */
+
+.option.selected {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(59, 130, 246, 0.17),
+            rgba(6, 182, 212, 0.09)
+        );
+
+    border-color:
+        rgba(59, 130, 246, 0.65);
+
+    box-shadow:
+        0 5px 20px
+        rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   OPTION LETTER
+========================================================= */
+
+.option-letter {
+
+    min-width: 37px;
+    width: 37px;
+
+    height: 37px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color:
+        var(--primary-light);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    transition:
+        0.25s ease;
+}
+
+.option.selected .option-letter {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+}
+
+
+/* =========================================================
+   QUIZ NAVIGATION
+========================================================= */
+
+.quiz-navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 24px;
+}
+
+
+/* =========================================================
+   RESULT SECTION
+========================================================= */
+
+.result-section {
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   RESULT ICON
+========================================================= */
+
+.result-icon {
+
+    font-size: 52px;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   RESULT TITLE
+========================================================= */
+
+.result-section > h2 {
+
+    font-size: 2rem;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    letter-spacing: -0.6px;
+
+    color: var(--text-main);
+
+    margin-bottom: 9px;
+}
+
+
+/* =========================================================
+   RESULT DESCRIPTION
+========================================================= */
+
+.result-description {
+
+    color: var(--text-light);
+
+    font-size: 0.86rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   MAIN RESULT
+========================================================= */
+
+.main-result {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    margin-bottom: 32px;
+
+    text-align: left;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.15),
+            rgba(6, 182, 212, 0.08)
+        );
+
+    border:
+        1px solid rgba(96, 165, 250, 0.22);
+
+    box-shadow:
+        0 12px 30px
+        rgba(15, 23, 42, 0.25);
+}
+
+
+/* =========================================================
+   RECOMMENDED ICON
+========================================================= */
+
+.recommended-icon {
+
+    width: 70px;
+    height: 70px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 19px;
+
+    font-size: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.20),
+            rgba(6, 182, 212, 0.15)
+        );
+
+    border:
+        1px solid rgba(96, 165, 250, 0.22);
+}
+
+
+/* =========================================================
+   RECOMMEND LABEL
+========================================================= */
+
+.recommend-label {
+
+    font-size: 0.68rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    color:
+        var(--secondary-light);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RECOMMENDED FIELD
+========================================================= */
+
+.main-result h3 {
+
+    margin:
+        4px 0 5px;
+
+    font-size: 1.55rem;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    color: var(--text-main);
+}
+
+
+/* =========================================================
+   RECOMMEND REASON
+========================================================= */
+
+.main-result p {
+
+    color: var(--text-light);
+
+    font-size: 0.78rem;
+
+    line-height: 1.7;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   SCORE TITLE
+========================================================= */
+
+.scores-title {
+
+    text-align: left;
+
+    font-size: 1.05rem;
+
+    font-weight: 600;
+
+    color: var(--text-main);
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   SCORE GRID
+========================================================= */
+
+.scores-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 13px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   SCORE CARD
+========================================================= */
+
+.score-card {
+
+    padding: 17px;
+
+    text-align: left;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        0.25s ease;
+}
+
+.score-card:hover {
+
+    background:
+        rgba(59, 130, 246, 0.07);
+
+    border-color:
+        rgba(96, 165, 250, 0.20);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   SCORE TOP
+========================================================= */
+
+.score-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 9px;
+}
+
+
+/* =========================================================
+   SCORE NAME
+========================================================= */
+
+.score-name {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--text-muted);
+
+    font-size: 0.78rem;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SCORE NUMBER
+========================================================= */
+
+.score-number {
+
+    color:
+        var(--secondary-light);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SCORE BAR
+========================================================= */
+
+.score-bar {
+
+    width: 100%;
+
+    height: 6px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   SCORE FILL
+========================================================= */
+
+.score-fill {
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(34, 211, 238, 0.20);
+
+    transition:
+        width 0.7s ease;
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.warning-message {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 17px 18px;
+
+    margin-bottom: 25px;
+
+    text-align: left;
+
+    border-radius: 15px;
+
+    background:
+        rgba(245, 158, 11, 0.07);
+
+    border:
+        1px solid rgba(245, 158, 11, 0.20);
+}
+
+.warning-message span {
+
+    flex-shrink: 0;
+
+    font-size: 20px;
+}
+
+.warning-message p {
+
+    color: #FCD34D;
+
+    font-size: 0.76rem;
+
+    line-height: 1.65;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   RESULT BUTTONS
+========================================================= */
+
+.result-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   HIDDEN
+========================================================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
+
+button:focus-visible,
+a:focus-visible {
+
+    outline:
+        2px solid var(--secondary-light);
+
+    outline-offset:
+        3px;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+
+    color: white;
+
+    background:
+        var(--primary);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+
+    background:
+        var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            var(--primary),
+            var(--secondary)
+        );
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .quiz-container {
+
+        max-width: 1120px;
+
+        padding-top: 40px;
+    }
+
+    .intro-section,
+    .quiz-section,
+    .result-section {
+
+        padding: 50px;
+    }
+
+    .intro-section h2 {
+
+        font-size: 2.45rem;
+    }
+
+    .question-card h2 {
+
+        font-size: 1.55rem;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .quiz-container {
+
+        width: 94%;
+
+        padding-top: 20px;
+    }
+
+    .intro-section,
+    .quiz-section,
+    .result-section {
+
+        padding: 30px 24px;
+
+        border-radius: 23px;
+    }
+
+    .field-preview {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .scores-container {
+
+        grid-template-columns: 1fr;
+    }
+
+    .intro-section h2 {
+
+        font-size: 1.9rem;
+    }
+
+    .question-card h2 {
+
+        font-size: 1.25rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL SCREEN
+========================================================= */
+
+@media (max-width: 560px) {
+
+    .quiz-header {
+
+        padding: 15px 17px;
+
+        border-radius: 16px;
+    }
+
+    .logo {
+
+        gap: 9px;
+    }
+
+    .logo-icon {
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 21px;
+
+        border-radius: 11px;
+    }
+
+    .logo h1 {
+
+        font-size: 1rem;
+    }
+
+    .logo p {
+
+        font-size: 0.65rem;
+    }
+
+    .back-btn {
+
+        padding:
+            8px 11px;
+
+        font-size: 0.7rem;
+    }
+
+    .intro-section,
+    .quiz-section,
+    .result-section {
+
+        padding:
+            25px 17px;
+
+        border-radius: 20px;
+    }
+
+    .intro-icon {
+
+        width: 70px;
+        height: 70px;
+
+        font-size: 33px;
+
+        border-radius: 20px;
+    }
+
+    .intro-section h2 {
+
+        font-size: 1.65rem;
+
+        letter-spacing: -0.4px;
+    }
+
+    .intro-section > p {
+
+        font-size: 0.78rem;
+
+        line-height: 1.7;
+    }
+
+    .field-preview {
+
+        gap: 10px;
+    }
+
+    .field-card {
+
+        padding: 17px 10px;
+
+        border-radius: 14px;
+    }
+
+    .field-card span {
+
+        font-size: 24px;
+    }
+
+    .field-card strong {
+
+        font-size: 0.7rem;
+    }
+
+    .question-card {
+
+        padding: 20px 15px;
+
+        border-radius: 17px;
+    }
+
+    .question-card h2 {
+
+        font-size: 1.08rem;
+
+        line-height: 1.55;
+    }
+
+    .question-help {
+
+        font-size: 0.7rem;
+    }
+
+    .option {
+
+        min-height: 55px;
+
+        padding:
+            10px 12px;
+
+        gap: 10px;
+
+        font-size: 0.72rem;
+    }
+
+    .option-letter {
+
+        min-width: 32px;
+
+        width: 32px;
+
+        height: 32px;
+
+        font-size: 0.68rem;
+    }
+
+    .quiz-navigation {
+
+        gap: 10px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+
+        padding:
+            10px 15px;
+
+        font-size: 0.72rem;
+    }
+
+    .main-result {
+
+        padding: 18px;
+
+        gap: 13px;
+    }
+
+    .recommended-icon {
+
+        width: 55px;
+        height: 55px;
+
+        font-size: 27px;
+
+        border-radius: 15px;
+    }
+
+    .main-result h3 {
+
+        font-size: 1.15rem;
+    }
+
+    .main-result p {
+
+        font-size: 0.68rem;
+    }
+
+    .result-section > h2 {
+
+        font-size: 1.65rem;
+    }
+
+    .result-description {
+
+        font-size: 0.74rem;
+    }
+}
+
