@@ -1,178 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>University Quiz | Myanmar Universities</title>
-<style>
-  * { box-sizing: border-box; }
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f5f7fa;
-    color: #1c2b3a;
-  }
-  header {
-    background: #1c2b3a;
-    color: #fff;
-    padding: 1rem 2rem;
-    text-align: center;
-  }
-  header h1 { margin: 0; font-size: 1.5rem; }
-  .wrap {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  .card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .card h2 { margin-top: 0; color: #1c2b3a; }
-  .question { margin-bottom: 1.5rem; }
-  .question p { font-weight: bold; margin-bottom: 0.5rem; }
-  .options label {
-    display: block;
-    padding: 0.6rem 0.8rem;
-    margin-bottom: 0.4rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .options label:hover { background: #eef4ff; }
-  .options input { margin-right: 0.5rem; }
-  .btn-row {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  button {
-    background: #2563eb;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  button:hover { background: #1d4ed8; }
-  button.secondary {
-    background: #64748b;
-  }
-  button.secondary:hover { background: #475569; }
-  .result {
-    display: none;
-  }
-  .uni-list {
-    list-style: none;
-    padding: 0;
-  }
-  .uni-list li {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    padding: 1rem;
-    margin-bottom: 0.75rem;
-  }
-  .uni-list a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .uni-list a:hover { text-decoration: underline; }
-  .match-score {
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-top: 0.25rem;
-  }
-  .note {
-    color: #64748b;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniPath Myanmar - Career Quiz</title>
+
+    <link rel="stylesheet" href="Quiz.css">
 </head>
+
 <body>
 
-<header>
-  <h1>Find Your University</h1>
-  <p>Answer a few questions and get matched with Myanmar universities</p>
-</header>
+    <!-- Background overlay -->
+    
 
-<div class="wrap">
+    <!-- Main Container -->
+    <main class="quiz-container">
 
-  <!-- Quiz Form -->
-  <div id="quiz-card" class="card">
-    <h2>University Matching Quiz</h2>
+        <!-- Header -->
+        <header class="quiz-header">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <div>
+                    <h1>UniPath Myanmar</h1>
+                    <p>Field Recommendation Quiz</p>
+                </div>
+            </div>
 
-    <div class="question">
-      <p>1. What is your strongest subject area?</p>
-      <div class="options">
-        <label><input type="radio" name="q1" value="science"> Science / Engineering</label>
-        <label><input type="radio" name="q1" value="medicine"> Medicine / Health</label>
-        <label><input type="radio" name="q1" value="arts"> Arts / Humanities</label>
-        <label><input type="radio" name="q1" value="business"> Business / Economics</label>
-        <label><input type="radio" name="q1" value="it"> IT / Computer Science</label>
-      </div>
-    </div>
+            <a href="recommendation.html" class="back-btn">
+                ← Back
+            </a>
+        </header>
 
-    <div class="question">
-      <p>2. Which region do you prefer?</p>
-      <div class="options">
-        <label><input type="radio" name="q2" value="yangon"> Yangon</label>
-        <label><input type="radio" name="q2" value="mandalay"> Mandalay</label>
-        <label><input type="radio" name="q2" value="other"> Other regions</label>
-        <label><input type="radio" name="q2" value="any"> No preference</label>
-      </div>
-    </div>
 
-    <div class="question">
-      <p>3. What is your estimated total marks?</p>
-      <div class="options">
-        <label><input type="radio" name="q3" value="500"> 500+ (High)</label>
-        <label><input type="radio" name="q3" value="450"> 450 - 499</label>
-        <label><input type="radio" name="q3" value="400"> 400 - 449</label>
-        <label><input type="radio" name="q3" value="350"> 350 - 399</label>
-        <label><input type="radio" name="q3" value="any"> Not sure</label>
-      </div>
-    </div>
+        <!-- Introduction -->
+        <section id="intro-section" class="intro-section">
 
-    <div class="question">
-      <p>4. What career path interests you most?</p>
-      <div class="options">
-        <label><input type="radio" name="q4" value="engineer"> Engineer / Architect</label>
-        <label><input type="radio" name="q4" value="doctor"> Doctor / Nurse / Pharmacist</label>
-        <label><input type="radio" name="q4" value="teacher"> Teacher / Researcher</label>
-        <label><input type="radio" name="q4" value="business"> Business / Manager</label>
-        <label><input type="radio" name="q4" value="developer"> Software Developer</label>
-      </div>
-    </div>
+            <div class="intro-icon">🧠</div>
 
-    <div class="btn-row">
-      <button id="submit-quiz">Get Recommendations</button>
-      <button id="back-btn" class="secondary" type="button">Back to Home</button>
-    </div>
-  </div>
+            <h2>Find the Field That Matches You</h2>
 
-  <!-- Result Section -->
-  <div id="result-card" class="card result">
-    <h2>Your Recommended Universities</h2>
-    <p id="summary"></p>
-    <ul id="recommendations" class="uni-list"></ul>
-    <p class="note">These recommendations are based on your quiz answers. Please check official requirements before applying.</p>
-    <div class="btn-row">
-      <button id="retake-btn" class="secondary">Retake Quiz</button>
-      <button id="home-btn" class="secondary">Back to Home</button>
-    </div>
-  </div>
+            <p>
+                Answer the following psychology-based questions honestly.
+                Your answers will help identify the fields that best match
+                your skills, interests, and way of thinking.
+            </p>
 
-</div>
+            <div class="field-preview">
 
-<script src="../js/quiz.js"></script>
+                <div class="field-card">
+                    <span>🩺</span>
+                    <strong>Medicine</strong>
+                </div>
+
+                <div class="field-card">
+                    <span>🏗️</span>
+                    <strong>Engineering</strong>
+                </div>
+
+                <div class="field-card">
+                    <span>💻</span>
+                    <strong>Computer</strong>
+                </div>
+
+                <div class="field-card">
+                    <span>💼</span>
+                    <strong>Business</strong>
+                </div>
+
+                <div class="field-card">
+                    <span>🎨</span>
+                    <strong>Arts</strong>
+                </div>
+
+                <div class="field-card">
+                    <span>📚</span>
+                    <strong>Education</strong>
+                </div>
+
+            </div>
+
+            <button id="start-btn" class="primary-btn">
+                Start Quiz →
+            </button>
+
+        </section>
+
+
+        <!-- Quiz Section -->
+        <section id="quiz-section" class="quiz-section hidden">
+
+            <!-- Progress -->
+            <div class="progress-area">
+
+                <div class="progress-info">
+                    <span id="question-number">Question 1 of 24</span>
+                    <span id="progress-percent">4%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Question -->
+            <div class="question-card">
+
+                <div class="question-icon">
+                    🧠
+                </div>
+
+                <h2 id="question-text">
+                    Question goes here
+                </h2>
+
+                <p class="question-help">
+                    Choose the answer that describes you best.
+                </p>
+
+                <div id="options-container" class="options-container">
+                    <!-- Options inserted by JavaScript -->
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <div class="quiz-navigation">
+
+                <button id="previous-btn" class="secondary-btn">
+                    ← Previous
+                </button>
+
+                <button id="next-btn" class="primary-btn">
+                    Next →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Result Section -->
+        <section id="result-section" class="result-section hidden">
+
+            <div class="result-icon">
+                🎯
+            </div>
+
+            <h2>Your Field Recommendation</h2>
+
+            <p class="result-description">
+                Based on your answers, these fields match your skills most closely.
+            </p>
+
+
+            <!-- Main Recommendation -->
+            <div id="main-result" class="main-result">
+
+                <div class="recommended-icon" id="recommended-icon">
+                    💻
+                </div>
+
+                <div>
+                    <span class="recommend-label">
+                        Best Match
+                    </span>
+
+                    <h3 id="recommended-field">
+                        Computer Science
+                    </h3>
+
+                    <p id="recommended-reason">
+                        Your answers show strong analytical and problem-solving skills.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Scores -->
+            <h3 class="scores-title">
+                Your Field Scores
+            </h3>
+
+            <div id="scores-container" class="scores-container">
+                <!-- Scores inserted by JavaScript -->
+            </div>
+
+
+            <!-- Warning -->
+            <div id="warning-message" class="warning-message hidden">
+                <span>💡</span>
+                <p>
+                    I think you should choose another field.
+                    Your answers do not show a strong enough match with this field.
+                    Consider exploring another option that better matches your skills.
+                </p>
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="result-buttons">
+
+                <button id="retake-btn" class="secondary-btn">
+                    ↻ Retake Quiz
+                </button>
+
+                <button id="recommendation-btn" class="primary-btn">
+                    View University Recommendations →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="Quiz.js"></script>
+
 </body>
 </html>
+```
