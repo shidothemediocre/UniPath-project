@@ -2,10 +2,9 @@
   "use strict";
 
   var searchInput = document.getElementById("globalSearch");
-  var searchButton = document.getElementById("searchBtn");
   var searchForm = document.getElementById("universitySearchForm");
   var resultsContainer = document.getElementById("searchResults");
-  if (!searchInput || !searchButton || !searchForm || !resultsContainer) return;
+  if (!searchInput || !searchForm || !resultsContainer) return;
 
   // These are the existing category pages; their card markup remains the source of truth.
   var sourcePages = [
@@ -71,11 +70,12 @@
       var name = (link || cards[i]).textContent.replace(/\s+/g, " ").trim();
       var href = link ? link.getAttribute("href") : page;
       var absoluteHref = new URL(href, new URL(page, window.location.href)).href;
+      var aliases = link ? link.className : "";
       addUniversity(
         name,
         absoluteHref,
         searchablePageText(sourceDocument) + " " +
-        cards[i].textContent + " " + acronym(name),
+        cards[i].textContent + " " + acronym(name) + " " + aliases,
         Boolean(link)
       );
     }
@@ -150,6 +150,7 @@
       })
       .then(function (html) {
         addCardsFromPage(html, page);
+        executeSearch();
       })
       .catch(function (error) {
         console.error("University search source failed:", error);
@@ -165,10 +166,6 @@
   });
 
   searchForm.addEventListener("submit", handleSearch);
-  searchButton.addEventListener("click", handleSearch);
-  searchInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") handleSearch(event);
-  });
 
   sourcePages.forEach(loadSource);
 })();
