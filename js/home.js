@@ -18,7 +18,7 @@
   function normalize(value) {
     return String(value || "")
       .toLowerCase()
-      .replace(/[^\p{L}\p{N}]+/gu, " ")
+      .replace(/[^a-z0-9]+/g, " ")
       .replace(/\s+/g, " ")
       .trim();
   }
