@@ -3,8 +3,9 @@
 
   var searchInput = document.getElementById("globalSearch");
   var searchButton = document.getElementById("searchBtn");
+  var searchForm = document.getElementById("universitySearchForm");
   var resultsContainer = document.getElementById("searchResults");
-  if (!searchInput || !searchButton || !resultsContainer) return;
+  if (!searchInput || !searchButton || !searchForm || !resultsContainer) return;
 
   // These are the existing category pages; their card markup remains the source of truth.
   var sourcePages = [
@@ -15,7 +16,11 @@
   var loadedSources = 0;
 
   function normalize(value) {
-    return value.toLowerCase().replace(/\s+/g, " ").trim();
+    return String(value || "")
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}]+/gu, " ")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
   function cleanName(element) {
@@ -23,7 +28,7 @@
   }
 
   function acronym(name) {
-    return name.split(/\s+/).filter(function (word) {
+    return normalize(name).split(" ").filter(function (word) {
       return word.length > 2 && word.toLowerCase() !== "the";
     }).map(function (word) {
       return word.charAt(0);
@@ -48,6 +53,14 @@
     });
   }
 
+  function searchablePageText(sourceDocument) {
+    return [
+      sourceDocument.title,
+      sourceDocument.body ? sourceDocument.body.textContent : "",
+      sourceDocument.querySelector("h1") ? sourceDocument.querySelector("h1").textContent : ""
+    ].join(" ");
+  }
+
   function addCardsFromPage(html, page) {
     var documentParser = new DOMParser();
     var sourceDocument = documentParser.parseFromString(html, "text/html");
@@ -61,8 +74,7 @@
       addUniversity(
         name,
         absoluteHref,
-        sourceDocument.title + " " +
-        (sourceDocument.querySelector("h1") ? sourceDocument.querySelector("h1").textContent : "") + " " +
+        searchablePageText(sourceDocument) + " " +
         cards[i].textContent + " " + acronym(name),
         Boolean(link)
       );
@@ -78,7 +90,8 @@
       cleanName(nameElement),
       absoluteHref,
       nameElement.textContent + " " +
-      document.querySelector(searchableSelector).textContent,
+      document.querySelector(searchableSelector).textContent + " " +
+      acronym(cleanName(nameElement)),
       true
     );
   }
@@ -120,6 +133,10 @@
     }
   }
 
+  function executeSearch() {
+    render(searchInput.value);
+  }
+
   function loadSource(page) {
     return fetch(page)
       .then(function (response) {
@@ -134,23 +151,17 @@
       })
       .then(function () {
         loadedSources += 1;
-        if (loadedSources === sourcePages.length) render(searchInput.value);
+        if (loadedSources === sourcePages.length) executeSearch();
       });
   }
 
   searchInput.addEventListener("input", function () {
-    render(this.value);
+    executeSearch();
   });
 
-  searchButton.addEventListener("click", function () {
-    render(searchInput.value);
-  });
-
-  searchInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      render(searchInput.value);
-    }
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    executeSearch();
   });
 
   sourcePages.forEach(loadSource);
