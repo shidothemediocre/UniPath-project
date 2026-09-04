@@ -137,6 +137,11 @@
     render(searchInput.value);
   }
 
+  function handleSearch(event) {
+    event.preventDefault();
+    executeSearch();
+  }
+
   function loadSource(page) {
     return fetch(page)
       .then(function (response) {
@@ -159,9 +164,10 @@
     executeSearch();
   });
 
-  searchForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    executeSearch();
+  searchForm.addEventListener("submit", handleSearch);
+  searchButton.addEventListener("click", handleSearch);
+  searchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") handleSearch(event);
   });
 
   sourcePages.forEach(loadSource);
