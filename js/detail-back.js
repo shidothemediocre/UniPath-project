@@ -10,9 +10,16 @@
   button.className = "detail-back-button";
   button.textContent = "Back";
   button.addEventListener("click", function () {
+    var params = new URLSearchParams(window.location.search);
+    var cameFromCompare = params.get("from") === "compare";
     var referrer = document.referrer;
     var cameFromThisSite = referrer && new URL(referrer, window.location.href).origin === window.location.origin;
-    if (cameFromThisSite && window.history.length > 1) {
+    var hasCompareSnapshot = sessionStorage.getItem("compareReturnState");
+    if (cameFromCompare && hasCompareSnapshot && window.history.length > 1) {
+      window.history.back();
+    } else if (cameFromCompare && hasCompareSnapshot) {
+      window.location.href = "compare.html";
+    } else if (cameFromThisSite && window.history.length > 1) {
       window.history.back();
     } else {
       window.location.href = navigation.tagName === "HEADER" ? "Uni.html" : "../index.html";

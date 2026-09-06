@@ -1979,18 +1979,41 @@ function updateUniversityCard(university, number) {
  
     if (website) {
         const detailHref = resolveUniversityDetailPage(university);
- 
+
         if (detailHref) {
-            website.href = detailHref;
+            website.href = `${detailHref}?from=compare`;
             website.textContent = "More Details ";
             website.classList.remove("disabled");
+            website.removeAttribute("aria-disabled");
             website.removeAttribute("target");
             website.rel = "noopener noreferrer";
+            let returnStateSaved = false;
+            const saveReturnState = function () {
+                if (returnStateSaved) return;
+                const select1 = document.getElementById("uni1");
+                const select2 = document.getElementById("uni2");
+                sessionStorage.setItem("compareReturnState", JSON.stringify({
+                    uni1: select1 ? select1.value : "",
+                    uni2: select2 ? select2.value : "",
+                    scrollY: window.scrollY
+                }));
+                returnStateSaved = true;
+            };
+            website.onpointerdown = saveReturnState;
+            website.onclick = function (event) {
+                event.preventDefault();
+                saveReturnState();
+                website.blur();
+                window.location.assign(website.href);
+            };
         } else {
             website.href = "#";
             website.textContent = "More Details";
             website.classList.add("disabled");
+            website.setAttribute("aria-disabled", "true");
             website.removeAttribute("target");
+            website.onpointerdown = null;
+            website.onclick = null;
         }
     }
 }
@@ -2004,13 +2027,13 @@ function resolveUniversityDetailPage(university) {
     const pageMap = {
         med1_yangon: "../html/UM1.html",
         med2_yangon: "../html/UM2.html",
-        med_mandalay: "../UMM.html",
-        med_magway: "../UMMG.html",
-        med_taunggyi: "../UMTG.html",
-        dental_yangon: "../UDMY.html",
-        dental_mandalay: "../UDMM.html",
-        pharmacy_yangon: "../UOPM.html",
-        pharmacy_mandalay: "../UOPY.html",
+        med_mandalay: "UMM.html",
+        med_magway: "UMMG.html",
+        med_taunggyi: "UMTG.html",
+        dental_yangon: "UDMY.html",
+        dental_mandalay: "UDMM.html",
+        pharmacy_yangon: "UOPM.html",
+        pharmacy_mandalay: "UOPY.html",
         ucsy: "UCSY.html",
         ucsm: "UCSM.html",
         uit: "UIT.html",
@@ -2053,16 +2076,16 @@ function resolveUniversityDetailPage(university) {
  
     if (pageMap[id]) return pageMap[id];
  
-    if (name.includes("university of medicine (1)") || name.includes("medicine (1)")) return "../UM1.html";
-    if (name.includes("university of medicine (2)") || name.includes("medicine (2)")) return "../UM2.html";
-    if (name.includes("university of medicine, mandalay") || name.includes("medicine, mandalay")) return "../UMM.html";
-    if (name.includes("university of medicine, magway") || name.includes("medicine, magway")) return "../UMMG.html";
-    if (name.includes("university of medicine, taunggyi") || name.includes("medicine, taunggyi")) return "../UMTG.html";
-    if (name.includes("dental medicine")) return name.includes("mandalay") ? "../UDMM.html" : "../UDMY.html";
+    if (name.includes("university of medicine (1)") || name.includes("medicine (1)")) return "UM1.html";
+    if (name.includes("university of medicine (2)") || name.includes("medicine (2)")) return "UM2.html";
+    if (name.includes("university of medicine, mandalay") || name.includes("medicine, mandalay")) return "UMM.html";
+    if (name.includes("university of medicine, magway") || name.includes("medicine, magway")) return "UMMG.html";
+    if (name.includes("university of medicine, taunggyi") || name.includes("medicine, taunggyi")) return "UMTG.html";
+    if (name.includes("dental medicine")) return name.includes("mandalay") ? "UDMM.html" : "UDMY.html";
     if (name.includes("computer studies")) return name.includes("mandalay") ? "UCSM.html" : "UCSY.html";
     if (name.includes("information technology")) return "UIT.html";
     if (name.includes("medical technology")) return "../Uni.html";
-    if (name.includes("pharmacy")) return "../UOPM.html";
+    if (name.includes("pharmacy")) return "UOPM.html";
     if (name.includes("nursing")) return "../Uni.html";
     if (name.includes("economics")) return "Business.html";
     if (name.includes("education")) return "Education.html";
@@ -2155,7 +2178,7 @@ function resetUniversityCard(number) {
 // COMPARE UNIVERSITIES
 // =====================================================
  
-function compareUniversities() {
+function compareUniversities(options) {
  
     const select1 =
         document.getElementById("uni1");
@@ -2207,14 +2230,16 @@ function compareUniversities() {
     updateUniversityCard(university1, 1);
     updateUniversityCard(university2, 2);
  
-    const comparisonGrid =
-        document.querySelector(".comparison-grid");
- 
-    if (comparisonGrid) {
-        comparisonGrid.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+    if (!options || options.scroll !== false) {
+        const comparisonGrid =
+            document.querySelector(".comparison-grid");
+
+        if (comparisonGrid) {
+            comparisonGrid.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
     }
  
     updateSelectorStatus(`Comparing ${university1.name} and ${university2.name}.`);
@@ -2700,7 +2725,7 @@ function loadComparisonFromURL() {
  
         select2.value = uni2;
  
-        compareUniversities();
+        compareUniversities({ scroll: false });
     }
 }
  
@@ -2709,6 +2734,10 @@ function loadComparisonFromURL() {
 // INITIALIZE
 // =====================================================
  
+if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     loadUniversities();
     setupSearchableSelector(1);
@@ -2716,7 +2745,9 @@ document.addEventListener("DOMContentLoaded", function () {
     preventSameUniversity();
     closeSearchResultsWhenClickedOutside();
     updateSelectorStatus();
-    loadComparisonFromURL();
+    if (!restoreCompareReturnState()) {
+        loadComparisonFromURL();
+    }
  
     const compareButton = document.getElementById("compareButton");
  
@@ -2734,4 +2765,68 @@ document.addEventListener("DOMContentLoaded", function () {
     if (select2) {
         select2.addEventListener("change", updateSelectorStatus);
     }
+});
+
+function restoreCompareReturnState() {
+    const rawState = sessionStorage.getItem("compareReturnState");
+
+    if (!rawState) {
+        return false;
+    }
+
+    let state;
+    try {
+        state = JSON.parse(rawState);
+    } catch (error) {
+        sessionStorage.removeItem("compareReturnState");
+        return false;
+    }
+
+    const select1 = document.getElementById("uni1");
+    const select2 = document.getElementById("uni2");
+    const scrollY = Number(state.scrollY);
+
+    if (
+        !select1 ||
+        !select2 ||
+        !universities[state.uni1] ||
+        !universities[state.uni2] ||
+        state.uni1 === state.uni2
+    ) {
+        sessionStorage.removeItem("compareReturnState");
+        return false;
+    }
+
+    select1.value = state.uni1;
+    select2.value = state.uni2;
+    const search1 = document.getElementById("uniSearch1");
+    const search2 = document.getElementById("uniSearch2");
+    if (search1) search1.value = universities[state.uni1].name;
+    if (search2) search2.value = universities[state.uni2].name;
+    compareUniversities({ scroll: false });
+
+    sessionStorage.removeItem("compareReturnState");
+
+    if (Number.isFinite(scrollY) && scrollY >= 0) {
+        window.setTimeout(function () {
+            if (document.activeElement && typeof document.activeElement.blur === "function") {
+                document.activeElement.blur();
+            }
+            const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+            document.documentElement.style.scrollBehavior = "auto";
+            requestAnimationFrame(function () {
+                window.scrollTo(0, scrollY);
+                document.documentElement.style.scrollBehavior = previousScrollBehavior;
+            });
+        }, 100);
+    }
+
+    return true;
+}
+
+window.addEventListener("pageshow", function (event) {
+    if (!event.persisted && !sessionStorage.getItem("compareReturnState")) {
+        return;
+    }
+    restoreCompareReturnState();
 });

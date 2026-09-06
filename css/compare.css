@@ -1856,3 +1856,20 @@ body > header {
         min-height: 0;
     }
 }
+
+/* Keep populated cards balanced while allowing them to stack naturally on mobile. */
+.university-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.university-details {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.university-actions {
+    margin-top: auto;
+    padding-top: 20px;
+}
