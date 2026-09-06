@@ -1,0 +1,1858 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* =========================================================
+   UNIPATH COMPARE
+   MATCHES HOME PAGE THEME
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================================
+   HOME PAGE COLOR SYSTEM
+   ========================================================= */
+
+:root {
+    --primary: #3B82F6;
+    --primary-light: #60A5FA;
+
+    --secondary: #06B6D4;
+    --secondary-light: #22D3EE;
+
+    --accent: #8B5CF6;
+    --success: #10B981;
+
+    --dark-bg: #0F172A;
+    --dark-bg-2: #1E293B;
+    --dark-bg-3: #334155;
+
+    --white: #FFFFFF;
+
+    --light: #F8FAFC;
+    --light-blue: #DBEAFE;
+
+    --text-main: #FFFFFF;
+    --text-muted: #E2E8F0;
+    --text-light: #CBD5E1;
+
+    --glass: rgba(30, 41, 59, 0.72);
+    --glass-light: rgba(51, 65, 85, 0.70);
+
+    --glass-border: rgba(255,255,255,0.10);
+
+    --glow-blue: rgba(59,130,246,0.30);
+    --glow-cyan: rgba(6,182,212,0.25);
+    --glow-purple: rgba(139,92,246,0.25);
+}
+
+/* =========================================================
+   BODY
+   EXACT HOME PAGE BACKGROUND
+   ========================================================= */
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.65),
+            rgba(30, 41, 59, 0.75)
+        ),
+        url("../images/Home.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: var(--text-main);
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    appearance: none;
+}
+
+/* =========================================================
+   NAVBAR
+   SAME AS HOME PAGE
+   IMPORTANT:
+   Do NOT use `header { ... }`
+   because comparison cards also contain <header>.
+   ========================================================= */
+
+body > header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+}
+
+.navbar {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 92%;
+    max-width: 1350px;
+
+    padding: 18px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 22px;
+
+    background: rgba(15,23,42,.72);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35),
+        0 0 25px rgba(37,99,235,.08);
+}
+
+.logo {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--cyan-light);
+
+    text-shadow:
+        0 0 15px rgba(34,211,238,.55);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: .3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--cyan-light);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: var(--cyan-light);
+
+    transition: .3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.compare-page {
+    width: 92%;
+    max-width: 1350px;
+
+    margin: 0 auto;
+
+    padding: 150px 0 80px;
+}
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+.compare-heading {
+    max-width: 900px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color: var(--cyan-light);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.compare-heading h1 {
+    color: white;
+
+    font-size: clamp(42px,5vw,62px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -.04em;
+}
+
+.compare-heading p {
+    max-width: 820px;
+
+    margin: 18px auto 0;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #E2E8F0;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #22D3EE;
+
+    text-shadow:
+        0 0 10px rgba(34,211,238,0.40);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: #22D3EE;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: #E2E8F0;
+}
+
+.nav-links a.active::after {
+    width: 0;
+}
+
+.nav-links a.active:hover::after {
+    width: 100%;
+}
+
+/* =========================================================
+   PAGE
+   SAME SPACING LANGUAGE AS HOME
+   ========================================================= */
+
+.compare-page {
+    width: 92%;
+    max-width: 1350px;
+
+    margin: 0 auto;
+
+    padding: 150px 0 80px;
+}
+
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+.compare-heading {
+    max-width: 900px;
+
+    margin: 0 auto 52px;
+
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--secondary-light);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 12px rgba(34,211,238,0.35);
+}
+
+.compare-heading h1 {
+    font-size: clamp(44px, 5vw, 62px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -.04em;
+
+    background:
+        linear-gradient(
+            90deg,
+            #F8FAFC,
+            #93C5FD,
+            #67E8F9
+        );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.compare-heading p {
+    max-width: 820px;
+
+    margin: 18px auto 0;
+
+    color: var(--text-muted);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    font-weight: 500;
+}
+
+/* =========================================================
+   SEARCH AREA
+   ========================================================= */
+
+.search-area {
+    position: relative;
+
+    z-index: 100;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: start;
+
+    margin-bottom: 44px;
+}
+
+.search-box {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            rgba(15,23,42,.65),
+            rgba(30,41,59,.75)
+        );
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid var(--glass-border);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.40),
+        0 0 30px rgba(59,130,246,.06);
+}
+
+.search-box:focus-within {
+    border-color: rgba(34,211,238,.55);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.40),
+        0 0 30px rgba(6,182,212,.12);
+}
+
+.search-box label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+
+    color: #F8FAFC;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+.search-number {
+    color: var(--secondary-light);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.search-input-wrap {
+    position: relative;
+
+    width: 100%;
+
+    z-index: 30;
+}
+
+.search-icon {
+    position: absolute;
+
+    left: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--secondary-light);
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.uni-search {
+    width: 100%;
+
+    height: 64px;
+
+    padding: 0 54px 0 52px;
+
+    border: 1px solid #06B6D4;
+
+    outline: none;
+
+    border-radius: 22px;
+
+    color: #F8FAFC;
+
+    background: rgba(2,6,23,.88);
+
+    box-shadow:
+        0 0 0 1px rgba(6,182,212,.08),
+        0 12px 35px rgba(0,0,0,.28),
+        0 0 25px rgba(6,182,212,.08);
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    transition: .25s ease;
+}
+
+.uni-search::placeholder {
+    color: rgba(226,232,240,.70);
+}
+
+.uni-search:focus,
+.uni-search.selected {
+    border-color: var(--secondary-light);
+
+    background: rgba(2,6,23,.93);
+
+    box-shadow:
+        0 0 0 3px rgba(34,211,238,.08),
+        0 12px 35px rgba(0,0,0,.28),
+        0 0 28px rgba(34,211,238,.12);
+}
+
+/* =========================================================
+   HIDDEN SELECT
+   ========================================================= */
+
+.hidden-selector {
+    position: absolute !important;
+
+    width: 1px !important;
+    height: 1px !important;
+
+    padding: 0 !important;
+    margin: -1px !important;
+
+    overflow: hidden !important;
+
+    clip: rect(0,0,0,0) !important;
+    clip-path: inset(50%) !important;
+
+    white-space: nowrap !important;
+
+    border: 0 !important;
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+}
+
+/* =========================================================
+   SEARCH RESULTS
+   ========================================================= */
+
+.search-results {
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    left: 0;
+    right: 0;
+
+    max-height: 390px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: none;
+
+    padding: 8px;
+
+    border: 1px solid rgba(96,165,250,.22);
+
+    border-radius: 18px;
+
+    background: rgba(15,23,42,.985);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.55),
+        0 0 30px rgba(37,99,235,.10);
+
+    z-index: 99999;
+}
+
+.search-results.open {
+    display: block;
+}
+
+.search-result-item {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 14px;
+
+    border: 1px solid transparent;
+
+    border-radius: 13px;
+
+    text-align: left;
+
+    color: #fff;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font: inherit;
+
+    transition: .18s ease;
+}
+
+.search-result-item + .search-result-item {
+    margin-top: 3px;
+}
+
+.search-result-item:hover,
+.search-result-item:focus-visible {
+    outline: none;
+
+    border-color: rgba(96,165,250,.20);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(37,99,235,.22),
+            rgba(6,182,212,.08)
+        );
+
+    transform: translateX(2px);
+}
+
+.result-icon {
+    flex: 0 0 46px;
+
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 13px;
+
+    border: 1px solid rgba(96,165,250,.20);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.18),
+            rgba(6,182,212,.12)
+        );
+
+    font-size: 21px;
+}
+
+.result-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.result-info strong {
+    color: #F8FAFC;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+.result-info span {
+    color: rgba(203,213,225,.72);
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+.more-results {
+    padding: 11px 12px 8px;
+
+    margin-top: 4px;
+
+    border-top: 1px solid rgba(255,255,255,.07);
+
+    text-align: center;
+
+    color: rgba(226,232,240,.50);
+
+    font-size: 11px;
+}
+
+.search-no-result {
+    padding: 24px 14px;
+
+    text-align: center;
+
+    color: rgba(255,255,255,.72);
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   SEARCH SCROLLBAR
+   ========================================================= */
+
+.search-results::-webkit-scrollbar {
+    width: 7px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: rgba(255,255,255,.04);
+
+    border-radius: 10px;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            #2563EB,
+            #06B6D4
+        );
+
+    border-radius: 10px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            #60A5FA,
+            #22D3EE
+        );
+}
+
+.search-results {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        #2563EB
+        rgba(255,255,255,.04);
+}
+
+/* =========================================================
+   COMPARE BUTTON
+   ========================================================= */
+
+.compare-btn {
+    grid-column: 1 / -1;
+
+    justify-self: center;
+
+    min-width: 280px;
+
+    height: 56px;
+
+    padding: 0 34px;
+
+    border: 1px solid rgba(34,211,238,.55);
+
+    border-radius: 18px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563EB 0%,
+            #06B6D4 100%
+        );
+
+    box-shadow:
+        0 8px 25px rgba(37,99,235,.30);
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: .35s ease;
+}
+
+.compare-btn span {
+    margin-left: 10px;
+}
+
+.compare-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(6,182,212,.35);
+}
+
+.selector-status {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    color: #94A3B8;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   COMPARISON GRID
+   ========================================================= */
+
+.comparison-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+/* =========================================================
+   UNIVERSITY CARD
+   SAME GLASS STYLE AS HOME
+   ========================================================= */
+
+.university-card {
+    position: relative;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    padding: 32px 30px 30px;
+
+    background:
+        linear-gradient(
+            rgba(15,23,42,.72),
+            rgba(30,41,59,.82)
+        );
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.40),
+        0 0 30px rgba(59,130,246,.06);
+}
+
+.card-accent {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563EB,
+            #06B6D4
+        );
+
+    box-shadow:
+        0 0 20px rgba(34,211,238,.35);
+}
+
+/* =========================================================
+   EMPTY CARD
+   ========================================================= */
+
+.empty-state {
+    min-height: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.empty-icon {
+    width: 78px;
+    height: 78px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 18px;
+
+    border: 1px solid rgba(34,211,238,.30);
+
+    border-radius: 50%;
+
+    color: var(--secondary-light);
+
+    background: rgba(34,211,238,.06);
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+.empty-category {
+    color: #8EA4BC;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+.empty-state h2 {
+    margin-top: 12px;
+
+    color: #fff;
+
+    font-size: 24px;
+}
+
+.empty-state p {
+    max-width: 340px;
+
+    margin-top: 9px;
+
+    color: #94A3B8;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.university-details[hidden] {
+    display: none !important;
+}
+
+/* =========================================================
+   UNIVERSITY HEADER
+   CRITICAL OVERLAP FIX
+   ========================================================= */
+
+/*
+   DO NOT use:
+       header { position: absolute; }
+
+   because the university card itself contains:
+       <header class="university-header">
+
+   This header must stay in normal document flow.
+*/
+
+.university-header {
+    position: static !important;
+
+    display: block;
+
+    width: 100%;
+
+    height: auto !important;
+
+    margin: 0 !important;
+
+    padding: 5px 4px 20px !important;
+
+    border-bottom:
+        1px solid rgba(148,163,184,.16);
+
+    clear: both;
+
+    z-index: auto;
+}
+
+.university-category {
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    max-width: 100%;
+
+    padding: 6px 12px;
+
+    border: 1px solid rgba(34,211,238,.35);
+
+    border-radius: 999px;
+
+    color: var(--secondary-light);
+
+    background: rgba(34,211,238,.07);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+/*
+   IMPORTANT:
+   The title is allowed to wrap naturally.
+   It cannot overlap the admission section.
+*/
+
+.university-header h2 {
+    position: static !important;
+
+    display: block !important;
+
+    width: 100%;
+
+    height: auto !important;
+
+    clear: both;
+
+    margin: 14px 0 0 !important;
+
+    padding: 0 !important;
+
+    color: #FFFFFF;
+
+    font-size: clamp(24px, 2.25vw, 34px);
+
+    line-height: 1.22 !important;
+
+    font-weight: 800;
+
+    letter-spacing: -.03em;
+
+    overflow: visible !important;
+
+    white-space: normal !important;
+
+    overflow-wrap: anywhere;
+
+    word-break: normal;
+}
+
+.university-name-mm {
+    position: static !important;
+
+    display: block;
+
+    width: 100%;
+
+    height: auto !important;
+
+    margin: 7px 0 0 !important;
+
+    padding: 0 !important;
+
+    color: #AFC0D2;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   ADMISSION / CUTOFF
+   ========================================================= */
+
+.cutoff-section {
+    display: flex;
+
+    gap: 15px;
+
+    padding: 22px 0 20px;
+
+    align-items: stretch;
+
+    border-bottom:
+        1px solid rgba(148,163,184,.10);
+}
+
+.cutoff-section .info-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+#entry_mark1,
+#entry_mark2 {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+}
+
+.admission-highlight {
+    position: static !important;
+
+    min-width: 0;
+
+    width: 100%;
+
+    height: auto !important;
+
+    padding: 18px 20px;
+
+    border: 1px solid rgba(148,163,184,.16);
+
+    border-radius: 18px;
+
+    background: rgba(2,6,23,.30);
+
+    box-shadow: none;
+}
+
+.admission-highlight-label {
+    color: #9EB3C5;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    line-height: 1.45;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.admission-highlight-value {
+    margin-top: 9px;
+
+    color: #F8FAFC;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+.admission-highlight-lowest {
+    position: static !important;
+
+    min-height: 160px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border-color:
+        rgba(34,211,238,.58);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(37,99,235,.22),
+            rgba(6,182,212,.15)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 14px 35px rgba(6,182,212,.12),
+        0 0 28px rgba(34,211,238,.08);
+}
+
+.admission-highlight-lowest
+.admission-highlight-label {
+    color: #67E8F9;
+
+    font-size: 12px;
+
+    letter-spacing: 1.2px;
+}
+
+.admission-lowest-value {
+    margin-top: 12px;
+
+    color: #FFFFFF;
+
+    font-size: clamp(40px,4vw,58px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -.035em;
+
+    text-shadow:
+        0 0 22px rgba(34,211,238,.22);
+}
+
+/* =========================================================
+   INFORMATION SECTIONS
+   ========================================================= */
+
+.info-section {
+    display: flex;
+
+    gap: 15px;
+
+    width: 100%;
+
+    padding: 20px 0;
+
+    border-bottom:
+        1px solid rgba(148,163,184,.10);
+}
+
+.info-icon {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid rgba(34,211,238,.22);
+
+    border-radius: 12px;
+
+    color: var(--secondary-light);
+
+    background: rgba(34,211,238,.06);
+
+    font-size: 16px;
+}
+
+.info-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.info-content h3 {
+    color: #DBEAFE;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+
+    font-weight: 800;
+
+    letter-spacing: .75px;
+
+    text-transform: uppercase;
+}
+
+.info-content p {
+    margin-top: 8px;
+
+    color: #D1D9E4;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    overflow-wrap: anywhere;
+}
+
+.large-inline-value {
+    color: #E0F2FE !important;
+
+    font-size: 25px !important;
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.tag-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 10px;
+}
+
+.course-tag {
+    display: inline-flex;
+
+    max-width: 100%;
+
+    padding: 8px 12px;
+
+    border: 1px solid rgba(34,211,238,.18);
+
+    border-radius: 9px;
+
+    color: #BFE7ED;
+
+    background: rgba(34,211,238,.06);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   OTHER INFORMATION
+   ========================================================= */
+
+.secondary-divider {
+    margin: 24px 0 14px;
+
+    text-align: center;
+}
+
+.secondary-divider span {
+    display: inline-block;
+
+    padding: 0 12px;
+
+    color: #71839A;
+
+    background: rgba(30,41,59,.82);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+.secondary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap: 9px;
+}
+
+.mini-info {
+    min-width: 0;
+
+    padding: 13px;
+
+    border: 1px solid rgba(148,163,184,.12);
+
+    border-radius: 12px;
+
+    background: rgba(2,8,20,.30);
+}
+
+.mini-info span {
+    display: block;
+
+    color: #7C91A8;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .45px;
+}
+
+.mini-info strong {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #D5DEE8;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-section {
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid rgba(148,163,184,.10);
+}
+
+.profile-section h3 {
+    color: #DBEAFE;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+}
+
+.profile-section p {
+    margin-top: 9px;
+
+    color: #B4C3D2;
+
+    font-size: 13px;
+
+    line-height: 1.85;
+}
+
+/* =========================================================
+   MORE DETAILS
+   ========================================================= */
+
+.university-actions {
+    margin-top: 20px;
+}
+
+.detail-link {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    border: 1px solid rgba(34,211,238,.20);
+
+    border-radius: 12px;
+
+    color: var(--secondary-light);
+
+    background: rgba(34,211,238,.05);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: .25s ease;
+}
+
+.detail-link:hover {
+    border-color: rgba(34,211,238,.50);
+
+    background: rgba(34,211,238,.10);
+
+    transform: translateY(-2px);
+}
+
+.detail-link.disabled {
+    opacity: .55;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   RESPONSIVE — SAME HOME BREAKPOINTS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        width: 94%;
+
+        padding: 15px 22px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .compare-page {
+        width: 94%;
+
+        padding-top: 130px;
+    }
+
+    .search-area,
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .compare-heading h1 {
+        font-size: 44px;
+    }
+
+    #entry_mark1,
+    #entry_mark2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .navbar {
+        top: 15px;
+
+        width: 94%;
+
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        top: 15px;
+
+        width: 94%;
+
+        padding: 14px 18px;
+    }
+
+    .logo {
+        font-size: 29px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .compare-page {
+        width: 92%;
+
+        padding: 115px 0 55px;
+    }
+
+    .compare-heading {
+        margin-bottom: 34px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+    }
+
+    .compare-heading h1 {
+        font-size: 36px;
+    }
+
+    .compare-heading p {
+        font-size: 13px;
+    }
+
+    .search-box {
+        padding: 20px;
+    }
+
+    .uni-search {
+        height: 58px;
+
+        font-size: 14px;
+    }
+
+    .university-card {
+        padding: 28px 20px 24px;
+
+        border-radius: 24px;
+    }
+
+    .university-header h2 {
+        font-size: 25px;
+    }
+
+    .info-section {
+        gap: 12px;
+
+        padding: 18px 0;
+    }
+
+    .info-icon {
+        width: 37px;
+        height: 37px;
+
+        flex-basis: 37px;
+    }
+
+    .info-content p {
+        font-size: 14px;
+    }
+
+    .large-inline-value {
+        font-size: 22px !important;
+    }
+
+    .course-tag {
+        font-size: 11px;
+    }
+
+    .secondary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admission-lowest-value {
+        font-size: 42px;
+    }
+}
+/* =========================================================
+   FINAL SIDE-BY-SIDE ALIGNMENT FIX
+   CSS ONLY — keeps HTML and JS untouched
+   ========================================================= */
+
+/* Keep both cards stretching to the same comparison height. */
+.comparison-grid {
+    align-items: stretch;
+}
+
+#university-card-1,
+#university-card-2 {
+    align-self: stretch;
+}
+
+/* Make the internal card flow predictable. */
+.university-details {
+    width: 100%;
+    min-width: 0;
+}
+
+/*
+   The two cards contain the same ordered subsections.
+   Give matching rows the same minimum height so their
+   headings/values start on the same horizontal line.
+*/
+#university-card-1 .university-header,
+#university-card-2 .university-header {
+    min-height: 155px;
+}
+
+#university-card-1 .info-section,
+#university-card-2 .info-section {
+    align-items: flex-start;
+}
+
+/* 1 — Admission / Entry Track */
+#university-card-1 .admission-detail:nth-of-type(2),
+#university-card-2 .admission-detail:nth-of-type(2) {
+    min-height: 104px;
+}
+
+/* 2 — Required Subjects */
+#university-card-1 .admission-detail:nth-of-type(3),
+#university-card-2 .admission-detail:nth-of-type(3) {
+    min-height: 112px;
+}
+
+/* 3 — Years of Study */
+#university-card-1 .admission-detail:nth-of-type(4),
+#university-card-2 .admission-detail:nth-of-type(4) {
+    min-height: 88px;
+}
+
+/* 4 — Degree Offered */
+#university-card-1 .admission-detail:nth-of-type(5),
+#university-card-2 .admission-detail:nth-of-type(5) {
+    min-height: 92px;
+}
+
+/* 5 — Programmes / Majors */
+#university-card-1 .admission-detail:nth-of-type(6),
+#university-card-2 .admission-detail:nth-of-type(6) {
+    min-height: 150px;
+}
+
+/* 6 — Location */
+#university-card-1 .admission-detail:nth-of-type(7),
+#university-card-2 .admission-detail:nth-of-type(7) {
+    min-height: 88px;
+}
+
+/* Keep the contents at the same top edge inside every matched row. */
+#university-card-1 .info-content,
+#university-card-2 .info-content {
+    min-width: 0;
+}
+
+/* Prevent long text from visually changing row alignment. */
+#university-card-1 .info-content p,
+#university-card-2 .info-content p,
+#university-card-1 .mini-info strong,
+#university-card-2 .mini-info strong,
+#university-card-1 .course-tag,
+#university-card-2 .course-tag {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* Keep the programme/tag area aligned even when one side has fewer tags. */
+#university-card-1 .admission-detail:nth-of-type(6) .tag-list,
+#university-card-2 .admission-detail:nth-of-type(6) .tag-list {
+    min-height: 68px;
+    align-content: flex-start;
+}
+
+/* Match the lower metadata area as well. */
+#university-card-1 .secondary-grid,
+#university-card-2 .secondary-grid {
+    grid-auto-rows: minmax(74px, auto);
+}
+
+/* Profile section begins at the same baseline. */
+#university-card-1 .profile-section,
+#university-card-2 .profile-section {
+    min-height: 150px;
+}
+
+/* Desktop/tablet: preserve the synchronized row heights. */
+@media (min-width: 901px) {
+    #university-card-1 .info-section,
+    #university-card-2 .info-section {
+        min-height: 0;
+    }
+
+    #university-card-1 .admission-detail:nth-of-type(2),
+    #university-card-2 .admission-detail:nth-of-type(2) { min-height: 104px; }
+
+    #university-card-1 .admission-detail:nth-of-type(3),
+    #university-card-2 .admission-detail:nth-of-type(3) { min-height: 112px; }
+
+    #university-card-1 .admission-detail:nth-of-type(4),
+    #university-card-2 .admission-detail:nth-of-type(4) { min-height: 88px; }
+
+    #university-card-1 .admission-detail:nth-of-type(5),
+    #university-card-2 .admission-detail:nth-of-type(5) { min-height: 92px; }
+
+    #university-card-1 .admission-detail:nth-of-type(6),
+    #university-card-2 .admission-detail:nth-of-type(6) { min-height: 150px; }
+
+    #university-card-1 .admission-detail:nth-of-type(7),
+    #university-card-2 .admission-detail:nth-of-type(7) { min-height: 88px; }
+}
+
+/* Mobile should remain natural instead of forcing large empty gaps. */
+@media (max-width: 900px) {
+    #university-card-1 .university-header,
+    #university-card-2 .university-header,
+    #university-card-1 .info-section,
+    #university-card-2 .info-section,
+    #university-card-1 .profile-section,
+    #university-card-2 .profile-section {
+        min-height: 0;
+    }
+
+    #university-card-1 .admission-detail:nth-of-type(6) .tag-list,
+    #university-card-2 .admission-detail:nth-of-type(6) .tag-list {
+        min-height: 0;
+    }
+}

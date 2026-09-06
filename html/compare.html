@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare Myanmar universities, admission requirements and 2025 lowest cutoff marks with UniPath Myanmar.">
+    <title>UniPath | Compare Universities</title>
+    <link rel="stylesheet" href="../css/compare.css">
+</head>
+<body>
+<header>
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="logo" href="../index.html" aria-label="UniPath Home">Uni<span>Path</span></a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../html/Uni.html">Universities</a></li>
+            <li><a href="compare.html" aria-current="page">Compare</a></li>
+            <li><a href="../html/recommendation2.html">Recommendation</a></li>
+            <li><a href="../html/About.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+ 
+<main class="compare-page">
+    <section class="compare-section">
+        <div class="compare-heading">
+            <span class="eyebrow">UNIPATH MYANMAR • UNIVERSITY COMPARISON</span>
+            <h1>Compare Universities</h1>
+            <p>Find two universities and compare the admission information that matters most — including the 2025 lowest cutoff, admission requirements, entry track, duration, degrees, programmes and location.</p>
+        </div>
+ 
+        <section class="search-area" aria-label="University search">
+            <div class="search-box" id="searchBox1">
+                <label for="uniSearch1"><span class="search-number">01</span> Select University 1</label>
+                <div class="search-input-wrap">
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+                    <input id="uniSearch1" class="uni-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search University 1..." aria-label="Search University 1" aria-controls="searchResults1" aria-autocomplete="list">
+                    <div id="searchResults1" class="search-results" role="listbox" aria-label="University 1 suggestions"></div>
+                </div>
+                <select id="uni1" name="uni1" class="hidden-selector" aria-hidden="true" tabindex="-1"></select>
+            </div>
+ 
+            <div class="search-box" id="searchBox2">
+                <label for="uniSearch2"><span class="search-number">02</span> Select University 2</label>
+                <div class="search-input-wrap">
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+                    <input id="uniSearch2" class="uni-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search University 2..." aria-label="Search University 2" aria-controls="searchResults2" aria-autocomplete="list">
+                    <div id="searchResults2" class="search-results" role="listbox" aria-label="University 2 suggestions"></div>
+                </div>
+                <select id="uni2" name="uni2" class="hidden-selector" aria-hidden="true" tabindex="-1"></select>
+            </div>
+ 
+            <button type="button" id="compareButton" class="compare-btn">Compare <span>→</span></button>
+            <p id="selectorStatus" class="selector-status" aria-live="polite">Choose two different universities to compare.</p>
+        </section>
+ 
+        <section class="comparison-grid" id="comparisonGrid" aria-label="University comparison">
+            <article class="university-card" id="university-card-1">
+                <div class="card-accent"></div>
+                <div class="empty-state" id="empty1">
+                    <span class="empty-icon">01</span>
+                    <span class="empty-category">UNIVERSITY 1</span>
+                    <h2>Search for a university</h2>
+                    <p>Use the search box above to choose the first university.</p>
+                </div>
+                <div class="university-details" id="details1" hidden>
+                    <header class="university-header">
+                        <div class="university-category" id="category1">University</div>
+                        <h2 id="name_en1">Select University</h2>
+                        <p class="university-name-mm" id="name_mm1"></p>
+                    </header>
+ 
+                    <section class="info-section cutoff-section">
+                        <div class="info-icon">🏆</div>
+                        <div class="info-content">
+                            <div id="entry_mark1"></div>
+                        </div>
+                    </section>
+ 
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">↳</div>
+                        <div class="info-content"><h3>Admission / Entry Track</h3><div id="track1" class="tag-list"></div></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">📚</div>
+                        <div class="info-content"><h3>Required Subjects</h3><div id="subjects1" class="tag-list"></div></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">◷</div>
+                        <div class="info-content"><h3>Years of Study</h3><p id="duration_mark1" class="large-inline-value">—</p></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">🎓</div>
+                        <div class="info-content"><h3>Degree Offered</h3><p id="degree1">—</p></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">▦</div>
+                        <div class="info-content"><h3>Programmes / Majors</h3><div id="courses1" class="tag-list"></div></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content"><h3>Location</h3><p id="location1">—</p></div>
+                    </section>
+ 
+                    <div class="secondary-divider"><span>OTHER INFORMATION</span></div>
+                    <section class="secondary-grid">
+                        <div class="mini-info"><span>Type</span><strong id="type1">—</strong></div>
+                        <div class="mini-info"><span>Established</span><strong id="established1">—</strong></div>
+                        <div class="mini-info"><span>Seats</span><strong id="seats1">—</strong></div>
+                        <div class="mini-info"><span>Gender / Eligibility</span><strong id="gender1">—</strong></div>
+                        <div class="mini-info"><span>Interview</span><strong id="interview1">—</strong></div>
+                        <div class="mini-info"><span>Service Requirement</span><strong id="service1">—</strong></div>
+                    </section>
+                    <section class="profile-section"><h3>History &amp; Profile</h3><p id="description1">—</p></section>
+                    <div class="university-actions"><a id="website1" href="#" class="detail-link disabled" aria-disabled="true">More Details <span>→</span></a></div>
+                </div>
+            </article>
+ 
+            <article class="university-card" id="university-card-2">
+                <div class="card-accent"></div>
+                <div class="empty-state" id="empty2">
+                    <span class="empty-icon">02</span>
+                    <span class="empty-category">UNIVERSITY 2</span>
+                    <h2>Search for a university</h2>
+                    <p>Use the search box above to choose the second university.</p>
+                </div>
+                <div class="university-details" id="details2" hidden>
+                    <header class="university-header">
+                        <div class="university-category" id="category2">University</div>
+                        <h2 id="name_en2">Select University</h2>
+                        <p class="university-name-mm" id="name_mm2"></p>
+                    </header>
+ 
+                    <section class="info-section cutoff-section">
+                        <div class="info-icon">🏆</div>
+                        <div class="info-content">
+                            <div id="entry_mark2"></div>
+                        </div>
+                    </section>
+ 
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">↳</div>
+                        <div class="info-content"><h3>Admission / Entry Track</h3><div id="track2" class="tag-list"></div></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">📚</div>
+                        <div class="info-content"><h3>Required Subjects</h3><div id="subjects2" class="tag-list"></div></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">◷</div>
+                        <div class="info-content"><h3>Years of Study</h3><p id="duration_mark2" class="large-inline-value">—</p></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">🎓</div>
+                        <div class="info-content"><h3>Degree Offered</h3><p id="degree2">—</p></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">▦</div>
+                        <div class="info-content"><h3>Programmes / Majors</h3><div id="courses2" class="tag-list"></div></div>
+                    </section>
+                    <section class="info-section admission-detail">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content"><h3>Location</h3><p id="location2">—</p></div>
+                    </section>
+ 
+                    <div class="secondary-divider"><span>OTHER INFORMATION</span></div>
+                    <section class="secondary-grid">
+                        <div class="mini-info"><span>Type</span><strong id="type2">—</strong></div>
+                        <div class="mini-info"><span>Established</span><strong id="established2">—</strong></div>
+                        <div class="mini-info"><span>Seats</span><strong id="seats2">—</strong></div>
+                        <div class="mini-info"><span>Gender / Eligibility</span><strong id="gender2">—</strong></div>
+                        <div class="mini-info"><span>Interview</span><strong id="interview2">—</strong></div>
+                        <div class="mini-info"><span>Service Requirement</span><strong id="service2">—</strong></div>
+                    </section>
+                    <section class="profile-section"><h3>History &amp; Profile</h3><p id="description2">—</p></section>
+                    <div class="university-actions"><a id="website2" href="#" class="detail-link disabled" aria-disabled="true">More Details <span>→</span></a></div>
+                </div>
+            </article>
+        </section>
+    </section>
+</main>
+ 
+<script src="../js/compare.js"></script>
+</body>
+</html>
