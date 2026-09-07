@@ -25,7 +25,9 @@
     var cameFromThisSite = referrer && new URL(referrer, window.location.href).origin === window.location.origin;
     var savedReturnUrl = sessionStorage.getItem("detailReturnUrl");
     var hasCompareSnapshot = sessionStorage.getItem("compareReturnState");
-    if (cameFromCompare && hasCompareSnapshot && window.history.length > 1) {
+    if (isUniversityListPage) {
+      window.location.href = "Uni.html";
+    } else if (cameFromCompare && hasCompareSnapshot && window.history.length > 1) {
       window.history.back();
     } else if (cameFromCompare && hasCompareSnapshot) {
       window.location.href = "compare.html";
