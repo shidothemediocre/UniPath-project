@@ -4,7 +4,8 @@
   var navigation = document.querySelector(".navbar") || document.querySelector("header");
   if (!navigation) return;
   navigation.classList.add("back-navigation");
-  var isUniversityListPage = navigation.tagName === "HEADER" && !document.querySelector(".navbar");
+  var isDetailPage = !!document.querySelector(".navbar");
+  var isUniversityListPage = !isDetailPage && navigation.tagName === "HEADER";
   if (isUniversityListPage) {
     document.querySelectorAll("a[href]").forEach(function (link) {
       link.addEventListener("click", function () {
@@ -28,7 +29,7 @@
       window.history.back();
     } else if (cameFromCompare && hasCompareSnapshot) {
       window.location.href = "compare.html";
-    } else if (savedReturnUrl) {
+    } else if (isDetailPage && savedReturnUrl) {
       window.location.href = savedReturnUrl;
     } else if (cameFromThisSite && window.history.length > 1) {
       window.history.back();
