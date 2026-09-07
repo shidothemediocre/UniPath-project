@@ -95,6 +95,7 @@ header h1{
     transition:.35s;
 
     box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
 
 }
 
@@ -172,8 +173,25 @@ header h1{
     box-shadow:
     0 12px 30px rgba(15,23,42,.08);
 
+    transition:.35s;
     text-align:center;
+}
 
+.card:hover{
+    transform:
+        translateY(-6px)
+        scale(1.02);
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #06B6D4
+    );
+}
+
+.card:hover a{
+    color:white;
+    letter-spacing:.5px;
 }
 
 /* ================= LINKS ================= */

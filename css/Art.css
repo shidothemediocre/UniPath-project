@@ -104,6 +104,7 @@ header h1{
 
     background:
     rgba(236,72,153,.4);
+    transition:.35s;
 
 
     border:1px solid
@@ -262,6 +263,7 @@ header h1{
 
 
     border-radius:22px;
+    transition:.35s;
 
 
 
@@ -282,14 +284,30 @@ header h1{
 
 
     box-shadow:
-
     0 12px 35px rgba(0,0,0,.3);
 
-
-
+    transition:.35s;
     text-align:center;
 
+}
 
+.card:hover{
+    transform:
+        translateY(-6px)
+        translateX(8px)
+        scale(1.03);
+
+    background:
+    linear-gradient(
+        135deg,
+        #EC4899,
+        #8B5CF6
+    );
+}
+
+.card:hover a{
+    color:white;
+    letter-spacing:.7px;
 }
 
 

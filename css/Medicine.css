@@ -114,8 +114,14 @@ header h1{
     color:#ffffff;
     font-size:20px;
     font-weight:500;
+    transition:.35s;
     text-align: center;
     justify-content: center;
+}
+
+.card:hover{
+    transform:translateX(10px);
+    background:rgba(255,255,255,.28);
 }
 
 @media(max-width:700px){
