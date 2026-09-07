@@ -295,6 +295,14 @@ header {
     .nav-links {
         display: none;
     }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 /* ===================================
                 HERO
@@ -2009,5 +2017,65 @@ img {
     .computer-content h2 {
 
         font-size: 30px;
+    }
+
+    .hero-desc br {
+        display: none;
+    }
+
+    .search-results {
+        left: 0;
+        right: 0;
+        max-width: 100%;
+    }
+
+    .search-result-item {
+        min-height: 58px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .hero-text {
+        padding: 28px 18px;
+        border-radius: 22px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(30px, 10vw, 38px);
+    }
+
+    .hero-text h2 {
+        font-size: 20px;
+    }
+
+    .hero-text::before {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .cards-wrap,
+    .featured-uni,
+    .computer-feature,
+    .footer {
+        width: calc(100% - 28px);
+        padding: 20px 16px;
+    }
+
+    .cards-left,
+    .cards-right,
+    .crd {
+        min-width: 0;
+    }
+
+    .cards-left h1,
+    .cards-left p,
+    .crd h3,
+    .crd p {
+        overflow-wrap: anywhere;
     }
 }

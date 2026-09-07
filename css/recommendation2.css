@@ -513,7 +513,7 @@ button.secondary:hover {
 }
 
 .navbar .logo {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 700;
   color: var(--text-main);
   letter-spacing: -1px;
@@ -527,7 +527,7 @@ button.secondary:hover {
 .navbar .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 35px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -576,22 +576,28 @@ body > header {
 }
 
 @media (max-width: 820px) {
-
-  .navbar {
-    padding: 12px 20px;
-    flex-direction: column;
-    gap: 12px;
-    border-radius: 18px;
-  }
-
-  .navbar .nav-links {
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   body > header {
     padding-top: 11rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .navbar.menu-open .nav-links {
+    display: flex;
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .navbar.menu-open .nav-links {
+    display: flex;
   }
 }
 
@@ -1109,7 +1115,7 @@ button.secondary:hover {
 }
 
 .navbar .logo {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 700;
   color: var(--text-main);
   letter-spacing: -1px;
@@ -1123,7 +1129,7 @@ button.secondary:hover {
 .navbar .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 35px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1172,22 +1178,18 @@ body > header {
 }
 
 @media (max-width: 820px) {
-
-  .navbar {
-    padding: 12px 20px;
-    flex-direction: column;
-    gap: 12px;
-    border-radius: 18px;
-  }
-
-  .navbar .nav-links {
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   body > header {
     padding-top: 11rem;
   }
 }
 
+/* Keep recommendation navigation behavior consistent with the shared mobile menu. */
+@media (max-width: 750px) {
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .navbar.menu-open .nav-links {
+    display: flex;
+  }
+}

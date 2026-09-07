@@ -1,0 +1,529 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* ==========================
+BODY
+========================== */
+
+body{
+background:
+linear-gradient(
+    rgba(20,20,32,.9),
+    rgba(38,32,60,.9)
+),
+url("Myanmar\ art1.jpg");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:#F4F2FF;
+}
+
+/* ==========================
+OVERLAY
+========================== */
+
+.overlay{
+width:100%;
+min-height:100vh;
+padding:35px;
+}
+
+/* ==========================
+NAVBAR
+========================== */
+
+.navbar{
+width:90%;
+max-width:1300px;
+
+margin:auto;
+margin-bottom:40px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+
+background:
+rgba(30,28,45,.82);
+
+backdrop-filter:blur(25px);
+
+border:1px solid rgba(162,155,254,.25);
+
+border-radius:20px;
+
+box-shadow:
+0 12px 35px rgba(0,0,0,.30);
+}
+
+.nav-title{
+font-size:25px;
+font-weight:600;
+letter-spacing:1px;
+
+color:#F8F7FF;
+}
+
+.nav-title i{
+color:#A29BFE;
+
+margin-right:10px;
+
+text-shadow:
+0 0 15px rgba(162,155,254,.45);
+}
+
+/* ==========================
+HEADER
+========================== */
+
+.header{
+width:90%;
+max-width:1300px;
+
+margin:auto;
+
+text-align:center;
+
+margin-bottom:40px;
+}
+
+.logo{
+width:150px;
+height:150px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+background:#FFFFFF;
+
+padding:10px;
+
+border:6px solid rgba(162,155,254,.35);
+
+box-shadow:
+0 0 0 8px rgba(108,92,231,.12),
+0 0 45px rgba(108,92,231,.35);
+}
+
+.header h1{
+margin-top:20px;
+
+font-size:52px;
+
+background:
+linear-gradient(
+    90deg,
+    #FFFFFF,
+    #C9C3FF,
+    #74B9FF
+);
+
+background-clip:text;
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+}
+
+.header h3{
+color:#A29BFE;
+
+margin-top:10px;
+
+font-weight:600;
+}
+
+.subtitle{
+margin-top:15px;
+
+font-size:18px;
+
+color:#D6D3E8;
+}
+
+/* ==========================
+HERO IMAGE
+========================== */
+
+.hero{
+width:90%;
+max-width:1300px;
+
+margin:auto;
+
+margin-bottom:40px;
+}
+
+.hero img{
+width:100%;
+
+border-radius:25px;
+
+border:2px solid rgba(162,155,254,.25);
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.40);
+}
+
+/* ==========================
+GLASS SECTION
+========================== */
+
+.glass{
+width:90%;
+max-width:1300px;
+
+margin:auto;
+margin-bottom:35px;
+
+padding:35px;
+
+background:
+rgba(31,29,47,.78);
+
+backdrop-filter:blur(25px);
+
+border-radius:25px;
+
+border:
+1px solid rgba(162,155,254,.20);
+
+box-shadow:
+0 12px 35px rgba(0,0,0,.28);
+}
+
+.glass h2{
+margin-bottom:20px;
+
+color:#A29BFE;
+}
+
+.glass p{
+line-height:1.9;
+
+font-size:17px;
+
+color:#D9D6E8;
+}
+
+/* ==========================
+CARDS
+========================== */
+
+.cards{
+width:90%;
+max-width:1300px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+margin-bottom:45px;
+}
+
+.card{
+background:
+linear-gradient(
+    145deg,
+    rgba(35,33,52,.92),
+    rgba(45,39,67,.88)
+);
+
+backdrop-filter:blur(25px);
+
+border:
+1px solid rgba(162,155,254,.18);
+
+border-radius:22px;
+
+padding:30px;
+
+transition:.4s;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.25);
+}
+
+.card:hover{
+transform:translateY(-12px);
+
+background:
+linear-gradient(
+    145deg,
+    rgba(45,40,70,.96),
+    rgba(56,47,82,.94)
+);
+
+border-color:
+#A29BFE;
+
+box-shadow:
+0 18px 40px rgba(108,92,231,.25),
+0 0 25px rgba(162,155,254,.12);
+}
+
+.icon{
+font-size:35px;
+
+color:#A29BFE;
+
+margin-bottom:18px;
+
+filter:
+drop-shadow(0 5px 10px rgba(108,92,231,.30));
+}
+
+.card h2{
+margin-bottom:18px;
+
+color:#F8F7FF;
+}
+
+.card p{
+line-height:1.8;
+
+color:#D5D2E4;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin-bottom:10px;
+
+color:#D5D2E4;
+}
+
+.card li::marker{
+color:#A29BFE;
+}
+
+/* ==========================
+ENTRANCE CARD
+========================== */
+
+.entrance{
+text-align:center;
+
+background:
+linear-gradient(
+    145deg,
+    rgba(55,45,90,.90),
+    rgba(45,39,75,.94)
+);
+
+border:
+1px solid rgba(162,155,254,.30);
+}
+
+.entrance:hover{
+background:
+linear-gradient(
+    145deg,
+    rgba(65,53,105,.95),
+    rgba(53,45,88,.96)
+);
+}
+
+.entrance h1{
+font-size:18px;
+
+margin:20px 0;
+
+color:#A29BFE;
+
+text-shadow:
+0 0 20px rgba(162,155,254,.30);
+}
+
+.entrance p{
+color:#D9D6E8;
+}
+
+/* ==========================
+GALLERY
+========================== */
+
+.gallery{
+width:90%;
+max-width:1300px;
+
+margin:auto;
+
+margin-bottom:45px;
+}
+
+.gallery h2{
+text-align:center;
+
+margin-bottom:30px;
+
+color:#A29BFE;
+}
+
+.gallery-box{
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:20px;
+}
+
+.gallery-box img{
+width:100%;
+
+height:260px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+transition:.5s;
+
+border:
+2px solid rgba(162,155,254,.20);
+
+cursor:pointer;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.30);
+}
+
+.gallery-box img:hover{
+transform:scale(1.06);
+
+border-color:#A29BFE;
+
+box-shadow:
+0 20px 45px rgba(108,92,231,.30);
+}
+
+/* ==========================
+BUTTON
+========================== */
+
+.visit-btn{
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:40px;
+
+background:
+linear-gradient(
+    135deg,
+    #6C5CE7,
+    #0984E3
+);
+
+color:#FFFFFF;
+
+font-size:16px;
+
+font-weight:600;
+
+text-decoration:none;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:
+0 8px 20px rgba(108,92,231,.30);
+}
+
+.visit-btn:hover{
+transform:translateY(-5px);
+
+background:
+linear-gradient(
+    135deg,
+    #A29BFE,
+    #6C5CE7,
+    #0984E3
+);
+
+box-shadow:
+0 15px 35px rgba(108,92,231,.45);
+}
+
+/* ==========================
+FOOTER
+========================== */
+
+footer{
+width:90%;
+max-width:1300px;
+
+margin:40px auto 0;
+
+text-align:center;
+
+padding:25px;
+
+background:
+rgba(28,27,42,.85);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(162,155,254,.18);
+
+border-radius:20px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.25);
+}
+
+footer p{
+color:#C9C5DA;
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.header h1{
+    font-size:36px;
+}
+
+.gallery-box{
+    grid-template-columns:1fr;
+}
+
+.logo{
+    width:120px;
+    height:120px;
+}
+
+.nav-title{
+    font-size:20px;
+}
+
+}

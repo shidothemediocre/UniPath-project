@@ -464,6 +464,8 @@ body > header {
 }
 
 .search-box:focus-within {
+    z-index: 2;
+
     border-color: rgba(34,211,238,.55);
 
     box-shadow:
@@ -1779,4 +1781,42 @@ body > header {
 .university-actions {
     margin-top: auto;
     padding-top: 20px;
+}
+
+@media (max-width: 480px) {
+    .compare-page {
+        width: calc(100% - 24px);
+    }
+
+    .compare-heading h1 {
+        font-size: 32px;
+    }
+
+    .compare-heading p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .search-area {
+        gap: 16px;
+    }
+
+    .search-box {
+        padding: 16px;
+    }
+
+    .uni-search {
+        font-size: 13px;
+        padding-left: 46px;
+    }
+
+    .university-card {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .university-header h2,
+    .empty-state h2 {
+        overflow-wrap: anywhere;
+    }
 }

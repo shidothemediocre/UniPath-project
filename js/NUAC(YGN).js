@@ -133,33 +133,3 @@ setInterval(()=>{
 
 },20);
 
-
-// ===============================
-// Card Hover Glow
-// ===============================
-
-const cards=document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-
-    card.addEventListener("mousemove",(e)=>{
-
-        const rect=card.getBoundingClientRect();
-
-        const x=e.clientX-rect.left;
-
-        const y=e.clientY-rect.top;
-
-        card.style.background=`radial-gradient(circle at ${x}px ${y}px,
-        rgba(61,232,255,.22),
-        rgba(255,255,255,.10))`;
-
-    });
-
-    card.addEventListener("mouseleave",()=>{
-
-        card.style.background="rgba(255,255,255,.10)";
-
-    });
-
-});

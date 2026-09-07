@@ -1,7 +1,3 @@
-/* ==========================
-   GOOGLE FONT & RESET
-========================== */
-
 *{
     margin:0;
     padding:0;
@@ -20,9 +16,11 @@ html{
 body{
 
     background:
-    linear-gradient(rgba(8,20,45,.75),
-    rgba(10,35,70,.75)),
-    url("../laboratory.jpg");
+    linear-gradient(
+        rgba(5,30,40,.80),
+        rgba(5,45,60,.80)
+    ),
+    url("Econo.jpg");
 
     background-size:cover;
     background-position:center;
@@ -62,15 +60,16 @@ body{
 
     padding:18px;
 
-    background:rgba(255,255,255,.10);
+    background:rgba(207,250,254,.12);
 
     backdrop-filter:blur(25px);
 
-    border:1px solid rgba(255,255,255,.20);
+    border:1px solid rgba(103,232,249,.25);
 
     border-radius:20px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
 
 }
 
@@ -86,7 +85,8 @@ body{
 
 .nav-title i{
 
-    color:#3de8ff;
+    color:#67E8F9;
+
     margin-right:10px;
 
 }
@@ -121,10 +121,10 @@ body{
 
     padding:10px;
 
-    border:6px solid rgba(255,255,255,.25);
+    border:6px solid rgba(103,232,249,.30);
 
     box-shadow:
-    0 0 40px rgba(61,232,255,.5);
+    0 0 40px rgba(34,211,238,.45);
 
 }
 
@@ -134,16 +134,24 @@ body{
 
     font-size:52px;
 
-    background:linear-gradient(90deg,#ffffff,#69f0ff,#8effc1);
-    background-clip: text;
+    background:
+    linear-gradient(
+        90deg,
+        #ffffff,
+        #CFFAFE,
+        #67E8F9
+    );
+
+    background-clip:text;
     -webkit-background-clip:text;
+
     -webkit-text-fill-color:transparent;
 
 }
 
 .header h3{
 
-    color:#d4ffff;
+    color:#CFFAFE;
 
     margin-top:10px;
 
@@ -155,7 +163,7 @@ body{
 
     font-size:18px;
 
-    color:#ededed;
+    color:#ECFEFF;
 
 }
 
@@ -180,9 +188,10 @@ body{
 
     border-radius:25px;
 
-    border:2px solid rgba(255,255,255,.15);
+    border:2px solid rgba(103,232,249,.20);
 
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
 
 }
 
@@ -200,15 +209,18 @@ body{
 
     padding:35px;
 
-    background:rgba(255,255,255,.10);
+    background:
+    rgba(40,65,72,.50);
 
     backdrop-filter:blur(25px);
 
     border-radius:25px;
 
-    border:1px solid rgba(255,255,255,.20);
+    border:
+    1px solid rgba(103,232,249,.22);
 
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
 
 }
 
@@ -216,7 +228,7 @@ body{
 
     margin-bottom:20px;
 
-    color:#69f0ff;
+    color:#67E8F9;
 
 }
 
@@ -241,7 +253,8 @@ body{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
 
     gap:25px;
 
@@ -251,11 +264,13 @@ body{
 
 .card{
 
-    background:rgba(255,255,255,.10);
+    background:
+    rgba(207,250,254,.10);
 
     backdrop-filter:blur(25px);
 
-    border:1px solid rgba(255,255,255,.18);
+    border:
+    1px solid rgba(103,232,249,.20);
 
     border-radius:22px;
 
@@ -263,7 +278,8 @@ body{
 
     transition:.4s;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.20);
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.20);
 
 }
 
@@ -271,9 +287,14 @@ body{
 
     transform:translateY(-12px);
 
-    background:rgba(255,255,255,.18);
+    background:
+    rgba(207,250,254,.17);
 
-    box-shadow:0 15px 35px rgba(61,232,255,.30);
+    border-color:
+    rgba(34,211,238,.45);
+
+    box-shadow:
+    0 15px 35px rgba(34,211,238,.22);
 
 }
 
@@ -281,7 +302,7 @@ body{
 
     font-size:35px;
 
-    color:#3de8ff;
+    color:#67E8F9;
 
     margin-bottom:18px;
 
@@ -325,13 +346,20 @@ body{
 
 .entrance h1{
 
-    font-size:15px;
+    font-size:18px;
 
     margin:20px 0;
 
-    color:#8effc1;
+    color:#67E8F9;
 
-    text-shadow:0 0 25px #3de8ff;
+    text-shadow:
+    0 0 20px rgba(34,211,238,.45);
+
+}
+
+.entrance p{
+
+    color:#CFFAFE;
 
 }
 
@@ -356,7 +384,7 @@ body{
 
     margin-bottom:30px;
 
-    color:#69f0ff;
+    color:#67E8F9;
 
 }
 
@@ -364,7 +392,8 @@ body{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+    repeat(3,1fr);
 
     gap:20px;
 
@@ -382,7 +411,8 @@ body{
 
     transition:.5s;
 
-    border:2px solid rgba(255,255,255,.15);
+    border:
+    2px solid rgba(103,232,249,.20);
 
     cursor:pointer;
 
@@ -392,21 +422,9 @@ body{
 
     transform:scale(1.06);
 
-    box-shadow:0 20px 40px rgba(61,232,255,.35);
+    box-shadow:
+    0 20px 40px rgba(34,211,238,.25);
 
-}
-
-@media (max-width: 600px) {
-    .overlay { padding: 24px 14px 32px; }
-    .nav-title { max-width: 100%; font-size: 18px; line-height: 1.4; overflow-wrap: anywhere; text-align: center; }
-    .header, .hero, .glass, .cards, .gallery, footer { width: 100%; }
-    .header h1 { font-size: clamp(30px, 9vw, 42px); overflow-wrap: anywhere; }
-    .hero img { height: auto; max-height: 55vh; object-fit: cover; }
-    .glass, .card { padding: 22px 18px; }
-    .glass p, .card p, .card li { overflow-wrap: anywhere; }
-    .gallery-box { grid-template-columns: 1fr; }
-    .gallery-box img { height: 220px; }
-    .visit-btn { width: 100%; min-height: 48px; padding: 12px 18px; }
 }
 
 /* ==========================
@@ -414,6 +432,8 @@ body{
 ========================== */
 
 .visit-btn{
+
+    display:inline-block;
 
     margin-top:25px;
 
@@ -423,13 +443,21 @@ body{
 
     border-radius:40px;
 
-    background:linear-gradient(135deg,#3b82f6,#22d3ee,#34d399);
+    background:
+    linear-gradient(
+        135deg,
+        #67E8F9,
+        #22D3EE,
+        #06B6D4
+    );
 
-    color:white;
+    color:#083344;
 
     font-size:16px;
 
     font-weight:600;
+
+    text-decoration:none;
 
     cursor:pointer;
 
@@ -441,7 +469,8 @@ body{
 
     transform:translateY(-5px);
 
-    box-shadow:0 15px 35px rgba(34,211,238,.40);
+    box-shadow:
+    0 15px 35px rgba(34,211,238,.40);
 
 }
 
@@ -460,19 +489,21 @@ footer{
 
     padding:25px;
 
-    background:rgba(255,255,255,.08);
+    background:
+    rgba(207,250,254,.08);
 
     backdrop-filter:blur(20px);
 
-    border-radius:20px;
+    border:
+    1px solid rgba(103,232,249,.18);
 
-    border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;
 
 }
 
 footer p{
 
-    color:#dddddd;
+    color:#CFFAFE;
 
 }
 
