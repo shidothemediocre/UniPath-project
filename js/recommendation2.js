@@ -20,10 +20,66 @@ var universities = [
 
   {
     name: "University of Medicine, Mandalay",
-    page: "../html/UM2.html",
+    page: "../html/UMM.html",
     region: "mandalay",
     majors: ["medicine"],
     minMarks: 500
+  },
+
+  {
+    name: "University of Medicine 2, Yangon",
+    page: "../html/UM2.html",
+    region: "yangon",
+    majors: ["medicine"],
+    minMarks: 500
+  },
+
+  {
+    name: "University of Medicine, Magway",
+    page: "../html/UMMG.html",
+    region: "magway",
+    majors: ["medicine"],
+    minMarks: 500
+  },
+
+  {
+    name: "University of Medicine, Taunggyi",
+    page: "../html/UMTG.html",
+    region: "taunggyi",
+    majors: ["medicine"],
+    minMarks: 500
+  },
+
+  {
+    name: "University of Pharmacy, Yangon",
+    page: "../html/UOPY.html",
+    region: "yangon",
+    majors: ["medicine"],
+    minMarks: 450
+  },
+
+  {
+    name: "University of Pharmacy, Mandalay",
+    page: "../html/UOPM.html",
+    region: "mandalay",
+    majors: ["medicine"],
+    minMarks: 450
+  },
+
+  {
+    name: "University of Dental Medicine, Yangon",
+    page: "../html/UDMY.html",
+    region: "yangon",
+    majors: ["medicine"],
+    minMarks: 450
+  },
+
+  {
+    name: "University of Dental Medicine, Mandalay",
+    page: "../html/UDMM.html",
+    region: "mandalay",
+    majors: ["medicine"],
+    minMarks: 450
   },
 
   {
@@ -67,13 +123,44 @@ var universities = [
   },
 
   {
+    name: "University of Economics, Meiktila",
+    page: "../html/MeiktilaUE.html",
+    region: "Meiktila",
+    majors: ["business"],
+    minMarks: 400
+  },
+
+  {
+    name: "University of Economics, Monywa",
+    page: "../html/MonywaUE.html",
+    region: "Monywa",
+    majors: ["business"],
+    minMarks: 400
+  },
+
+  {
     name: "University of Computer Studies, Yangon",
     page: "../html/UCSY.html",
     region: "yangon",
     majors: ["it"],
-    minMarks: 450
-  }
+    minMarks: 400
+  },
 
+  {
+    name: "University of Computer Studies, Yangon",
+    page: "../html/UCSY.html",
+    region: "yangon",
+    majors: ["it"],
+    minMarks: 400
+  },
+
+  {
+    name: "University of Computer Studies, Pyay",
+    page: "../html/Cupyay.html",
+    region: "pyay",
+    majors: ["it"],
+    minMarks: 340
+  }
 ];
 
 
@@ -81,9 +168,9 @@ var universities = [
    PAGE PATHS
    ========================================================= */
 
-var HOME_PAGE = "../html/HOMEPAGEUITPJ.html";
+var HOME_PAGE = "../html/index.html";
 
-var QUIZ_PAGE = "../html/Quiz.html";
+var QUIZ_PAGE = "../html/Quiz2.html";
 
 
 /* =========================================================
@@ -215,7 +302,7 @@ function validate(
 
   if (
     isNaN(marks) ||
-    marks < 0 ||
+    marks < 240 ||
     marks > 600
   ) {
 
