@@ -5,6 +5,7 @@
     font-family:'Poppins',sans-serif;
 }
 
+
 /* ================= BODY ================= */
 
 body{
@@ -168,8 +169,6 @@ header h1{
 
     max-width:470px;
 
-    animation:float 4s ease-in-out infinite;
-
     filter:
         drop-shadow(0 25px 40px rgba(0,0,0,.35))
         drop-shadow(0 0 35px rgba(37,99,235,.30))
@@ -193,66 +192,11 @@ header h1{
 
     backdrop-filter:blur(20px);
 
-    transition:.35s;
-
     box-shadow:0 15px 35px rgba(0,0,0,.30);
 
     text-align: center;
 
     justify-content: center;
-
-}
-
-.card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-100%;
-
-    width:100%;
-
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.12),
-        transparent
-    );
-
-    transition:.6s;
-
-}
-
-.card:hover::before{
-
-    left:100%;
-
-}
-
-.card:hover{
-
-    transform:
-        translateY(-6px)
-        translateX(8px)
-        scale(1.02);
-
-    background:linear-gradient(
-        135deg,
-        #2563EB,
-        #06B6D4,
-        #0EA5E9
-    );
-
-    border-color:#7DD3FC;
-
-    box-shadow:
-        0 20px 45px rgba(37,99,235,.45),
-        0 0 35px rgba(6,182,212,.30);
 
 }
 
@@ -270,41 +214,9 @@ header h1{
 
     font-weight:600;
 
-    transition:.35s;
-
-}
-
-.card:hover a{
-
-    letter-spacing:.6px;
-
-    color:#fff;
-
 }
 
 /* ================= FLOAT ================= */
-
-@keyframes float{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-16px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
 
 /* ================= SCROLLBAR ================= */
 
@@ -399,8 +311,52 @@ header h1{
 
 .business-image{
 
-    display:none;
+    position:static;
+    order:2;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:8px;
 
+}
+
+/* Keep the student image anchored while scrolling on larger screens. */
+.business-image {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+.business-image img {
+    width: 400px;
+    max-width: 100%;
+    display: block;
+}
+
+@media (min-width: 701px) {
+    .business-image {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .business-image {
+        position: static;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .business-image img {
+        width: min(100%, 320px);
+        max-width: 100%;
+    }
 }
 
 .card{
@@ -415,4 +371,54 @@ header h1{
 
 }
 
+}
+
+@media (max-width: 820px) {
+    .business-image {
+        position: static;
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+        z-index: auto;
+    }
+
+    .business-image img {
+        width: min(100%, 320px);
+        max-width: 100%;
+    }
+}
+
+.business-image {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+.business-image img {
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+@media (max-width: 820px) {
+    .business-image {
+        position: static;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+        z-index: auto;
+    }
+
+    .business-image img {
+        width: min(100%, 320px);
+        max-width: 100%;
+    }
 }

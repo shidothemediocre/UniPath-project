@@ -187,8 +187,7 @@ header h1::first-letter {
     position: fixed;
     right: 0;
     bottom: 0;
-    left: auto;
-    top: auto;
+    width: 400px;
     margin: 0;
     padding: 0;
     z-index: 1000;
@@ -230,8 +229,7 @@ header h1::first-letter {
     }
 
     .computer-image {
-        width: 37%;
-        min-height: 600px;
+        width: min(400px, 35vw);
     }
 }
 
@@ -263,16 +261,18 @@ header h1::first-letter {
     }
 
     .computer-image {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: min(230px, 48vw);
-        margin: 0;
-        z-index: 5;
+        position: static;
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+        z-index: auto;
     }
 
     .computer-image img {
-        max-width: none;
+        width: min(100%, 320px);
+        max-width: 100%;
     }
 }
 

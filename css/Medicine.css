@@ -114,16 +114,9 @@ header h1{
     color:#ffffff;
     font-size:20px;
     font-weight:500;
-    transition:.35s;
     text-align: center;
     justify-content: center;
 }
-
-.card:hover{
-    transform:translateX(10px);
-    background:rgba(255,255,255,.28);
-}
-
 
 @media(max-width:700px){
 
@@ -159,25 +152,6 @@ width:100%;
     gap: 24px;
 }
 
-.university-list,
-.doc {
-    width: 100%;
-}
-
-.doc {
-    order: 2;
-}
-
-.doc img {
-    width: min(100%, 320px);
-    height: auto;
-    margin-left: 0;
-}
-
-.doctor-image img {
-    width: min(100%, 320px);
-}
-
 .card {
     font-size: 18px;
     padding: 16px 18px;
@@ -185,50 +159,28 @@ width:100%;
 }
 
 }
-.doc {
-
-    width:40%;
-
-    display:flex;
-
-    justify-content:center;
-
-}
-
-
-
-.doc img {
-
-
-    max-width:100%;
-
-    animation:float 3s infinite ease-in-out;
-
-    margin-left: 80%;
-
-    height: 150%;
-
-    width:70%;
-}
-
 .doctor-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    top: auto;
+    width: 1080px;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
 }
 
 .doctor-image img {
-    max-width: 100%;
+    width: 1080px;
     height: auto;
+    max-width: 100%;
+    display: block;
+    transform: translateX(321px);
 }
 
 
 
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
-}
 .container{
     display:flex;
     justify-content:space-between;
@@ -239,17 +191,6 @@ width:100%;
 .university-list{
     width:70%;
 }
-.doc{
-    width:40%;
-    display:flex;
-    justify-content:center;
-}
-
-.doc img{
-    width:100%;
-    max-width:480px;
-    filter:drop-shadow(0 15px 35px rgba(0,0,0,.35));
-}
 .university-list a{
     text-decoration: none;
     color: inherit;
@@ -257,7 +198,18 @@ width:100%;
 }
 
 @media (max-width: 700px) {
+    .doctor-image {
+        position: static;
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
     .doctor-image img {
-        width: min(100%, 320px);
+        width: min(100%, 450px);
+        max-width: 100%;
+        transform: none;
     }
 }
