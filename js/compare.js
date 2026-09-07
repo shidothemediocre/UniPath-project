@@ -1,11 +1,4 @@
-// =====================================================
-// UNIPATH UNIVERSITY COMPARISON
-// =====================================================
- 
- 
-// =====================================================
-// UNIVERSITY DATABASE
-// =====================================================
+
  
 const universities = {
  
@@ -23,7 +16,7 @@ const universities = {
         entryMarks: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         minimumRequirement: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         entryTrack: "STEAMS-1",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Medicine (MBBS)"],
         degree: "MBBS",
         duration: "6 years",
@@ -45,7 +38,7 @@ const universities = {
         entryMarks: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         minimumRequirement: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         entryTrack: "STEAMS-1",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Medicine (MBBS)"],
         degree: "MBBS",
         duration: "6 years",
@@ -67,7 +60,7 @@ const universities = {
         entryMarks: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         minimumRequirement: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         entryTrack: "STEAMS-1",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Medicine (MBBS)"],
         degree: "MBBS",
         duration: "6 years",
@@ -89,7 +82,7 @@ const universities = {
         entryMarks: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         minimumRequirement: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         entryTrack: "STEAMS-1",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Medicine (MBBS)"],
         degree: "MBBS",
         duration: "6 years",
@@ -111,7 +104,7 @@ const universities = {
         entryMarks: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         minimumRequirement: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         entryTrack: "STEAMS-1",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Medicine (MBBS)"],
         degree: "MBBS",
         duration: "6 years",
@@ -138,7 +131,7 @@ const universities = {
         entryMarks: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         minimumRequirement: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         entryTrack: "STEAMS-1",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Dental Medicine (BDS)"],
         degree: "BDS",
         duration: "5 years",
@@ -160,7 +153,7 @@ const universities = {
         entryMarks: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         minimumRequirement: "6-subject total: 450+ marks; must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health.",
         entryTrack: "STEAMS-1",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Dental Medicine (BDS)"],
         degree: "BDS",
         duration: "5 years",
@@ -186,7 +179,7 @@ const universities = {
         entryMarks: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         minimumRequirement: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         entryTrack: "Health Science",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Pharmacy (B.Pharm)"],
         degree: "B.Pharm",
         duration: "4 years",
@@ -207,7 +200,7 @@ const universities = {
         entryMarks: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         minimumRequirement: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         entryTrack: "Health Science",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Pharmacy (B.Pharm)"],
         degree: "B.Pharm",
         duration: "4 years",
@@ -233,7 +226,7 @@ const universities = {
         entryMarks: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         minimumRequirement: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         entryTrack: "Health Science",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: [
             "Medical Laboratory Technology",
             "Radiography",
@@ -258,7 +251,7 @@ const universities = {
         entryMarks: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         minimumRequirement: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         entryTrack: "Health Science",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: [
             "Medical Laboratory Technology",
             "Radiography",
@@ -288,7 +281,7 @@ const universities = {
         entryMarks: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         minimumRequirement: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         entryTrack: "Health Science",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Nursing"],
         degree: "B.N.Sc",
         duration: "4 years",
@@ -309,7 +302,7 @@ const universities = {
         entryMarks: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         minimumRequirement: "Must pass STEAMS-1 (Chemistry, Physics, Biology); good English proficiency and good health. No fixed total-mark minimum is stated in the guide.",
         entryTrack: "Health Science",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Nursing"],
         degree: "B.N.Sc",
         duration: "4 years",
@@ -335,7 +328,7 @@ const universities = {
         entryMarks: "Must pass STEAMS-1 (Chemistry, Physics, Biology) and meet the health requirements. No fixed total-mark minimum is stated in the guide.",
         minimumRequirement: "Must pass STEAMS-1 (Chemistry, Physics, Biology) and meet the health requirements. No fixed total-mark minimum is stated in the guide.",
         entryTrack: "Health Science",
-        subjects: ["Chemistry", "Physics", "Biology"],
+        subjects: ["English", "Chemistry", "Biology"],
         programs: ["Traditional Medicine"],
         degree: "B.Med.Tech / Traditional Medicine",
         duration: "5 years",
@@ -1446,8 +1439,8 @@ const lowestCutoffData = {
  
     // Medical universities
     // The PDF lists separate male/female columns.
-    med1_yangon: { lastYearCutoff: "251 (male) / 251 (female)" },
-    med2_yangon: { lastYearCutoff: "251 (male) / 251 (female)" },
+    med1_yangon: { lastYearCutoff: "251 (male) / 258 (female)" },
+    med2_yangon: { lastYearCutoff: "251 (male) / 258 (female)" },
     med_mandalay: { lastYearCutoff: "246 (male) / 252 (female)" },
     med_taunggyi: { lastYearCutoff: "250 (male) / 250 (female)" },
     med_magway: { lastYearCutoff: "250 (male) / 250 (female)" },
@@ -1723,12 +1716,12 @@ function getDisplayEntryTrack(university) {
 // =====================================================
 // COMPARISON CARD ALIGNMENT
 // =====================================================
-
+ 
 function syncComparisonCardRows() {
     const card1 = document.getElementById("university-card-1");
     const card2 = document.getElementById("university-card-2");
     if (!card1 || !card2) return;
-
+ 
     const selectors = [
         ".university-header",
         ".cutoff-section",
@@ -1737,18 +1730,18 @@ function syncComparisonCardRows() {
         ".profile-section",
         ".university-actions"
     ];
-
+ 
     selectors.forEach(selector => {
         card1.querySelectorAll(selector).forEach(el => el.style.minHeight = "");
         card2.querySelectorAll(selector).forEach(el => el.style.minHeight = "");
     });
-
+ 
     if (window.innerWidth <= 900) {
         card1.style.minHeight = "";
         card2.style.minHeight = "";
         return;
     }
-
+ 
     const rows = [
         ".university-header",
         ".cutoff-section",
@@ -1762,37 +1755,37 @@ function syncComparisonCardRows() {
         ".profile-section",
         ".university-actions"
     ];
-
+ 
     rows.forEach(selector => {
         const a = card1.querySelector(selector);
         const b = card2.querySelector(selector);
         if (!a || !b) return;
-
+ 
         const height = Math.max(
             a.getBoundingClientRect().height,
             b.getBoundingClientRect().height
         );
-
+ 
         a.style.minHeight = `${Math.ceil(height)}px`;
         b.style.minHeight = `${Math.ceil(height)}px`;
     });
-
+ 
     const cardHeight = Math.max(
         card1.getBoundingClientRect().height,
         card2.getBoundingClientRect().height
     );
-
+ 
     card1.style.minHeight = `${Math.ceil(cardHeight)}px`;
     card2.style.minHeight = `${Math.ceil(cardHeight)}px`;
 }
-
+ 
 function scheduleComparisonCardSync() {
     requestAnimationFrame(() => {
         syncComparisonCardRows();
         requestAnimationFrame(syncComparisonCardRows);
     });
 }
-
+ 
 // =====================================================
 // UPDATE UNIVERSITY CARD
 // =====================================================
@@ -2052,13 +2045,12 @@ function updateUniversityCard(university, number) {
  
     if (website) {
         const detailHref = resolveUniversityDetailPage(university);
-
+ 
         if (detailHref) {
-<<<<<<< Updated upstream
             website.href = `${detailHref}?from=compare`;
-=======
+ 
             website.href = buildDetailHrefWithReturnState(detailHref);
->>>>>>> Stashed changes
+ 
             website.textContent = "More Details ";
             website.classList.remove("disabled");
             website.removeAttribute("aria-disabled");
@@ -2254,54 +2246,54 @@ function resetUniversityCard(number) {
 // =====================================================
 // COMPARE RETURN STATE
 // =====================================================
-
+ 
 function saveComparisonReturnState() {
     const select1 = document.getElementById("uni1");
     const select2 = document.getElementById("uni2");
-
+ 
     if (!select1 || !select2 || !select1.value || !select2.value) return;
-
+ 
     const params = new URLSearchParams();
     params.set("uni1", select1.value);
     params.set("uni2", select2.value);
-
+ 
     const compareUrl =
         `${window.location.pathname}?${params.toString()}${window.location.hash || ""}`;
-
+ 
     window.history.replaceState(
         { uni1: select1.value, uni2: select2.value },
         "",
         compareUrl
     );
-
+ 
     sessionStorage.setItem("unipathCompareReturnUrl", compareUrl);
     sessionStorage.setItem(
         "unipathCompareScrollY",
         String(window.scrollY || 0)
     );
 }
-
+ 
 function buildDetailHrefWithReturnState(detailHref) {
     if (!detailHref) return detailHref;
-
+ 
     saveComparisonReturnState();
-
+ 
     const separator = detailHref.includes("?") ? "&" : "?";
     return `${detailHref}${separator}from=compare`;
 }
-
+ 
 function restoreComparisonScrollPosition() {
     const saved = sessionStorage.getItem("unipathCompareScrollY");
     if (saved === null) return;
-
+ 
     const y = Number(saved);
     if (!Number.isFinite(y)) return;
-
+ 
     requestAnimationFrame(() => {
         window.scrollTo(0, y);
     });
 }
-
+ 
 // =====================================================
 // COMPARE UNIVERSITIES
 // =====================================================
@@ -2361,7 +2353,7 @@ function compareUniversities(options) {
     if (!options || options.scroll !== false) {
         const comparisonGrid =
             document.querySelector(".comparison-grid");
-
+ 
         if (comparisonGrid) {
             comparisonGrid.scrollIntoView({
                 behavior: "smooth",
@@ -2371,7 +2363,7 @@ function compareUniversities(options) {
     }
  
     updateSelectorStatus(`Comparing ${university1.name} and ${university2.name}.`);
-
+ 
     saveComparisonReturnState();
     scheduleComparisonCardSync();
 }
@@ -2442,6 +2434,20 @@ function buildSearchAliases(university, id = "") {
             aliases.add("med");
             aliases.add("medical");
             aliases.add("medicine");
+ 
+            // University of Medicine 1 / 2
+            // Support UM1 / UM2 and names written with (1) / (2).
+            if (normalizedName.includes("university of medicine 1") || normalizedName.includes("medicine 1")) {
+                aliases.add("um1");
+                aliases.add("um 1");
+                aliases.add("university of medicine 1");
+            }
+ 
+            if (normalizedName.includes("university of medicine 2") || normalizedName.includes("medicine 2")) {
+                aliases.add("um2");
+                aliases.add("um 2");
+                aliases.add("university of medicine 2");
+            }
         } else if (normalizedName.includes("medicine") && !normalizedName.includes("dental medicine")) {
             aliases.add("um");
             aliases.add("med");
@@ -2580,7 +2586,25 @@ function scoreUniversitySearch(university, query, id = "") {
     return score;
 }
  
+// =====================================================
+// UNIVERSITY / MAJOR ICONS
+// IMPORTANT:
+// These primary icons intentionally match the Home page.
+// Home page mappings:
+// Computer -> 💻
+// Medicine -> 🩺
+// Engineering -> ⚙️
+// Business -> 📊
+// Arts -> 🎨
+// Education -> 📚
+// Polytechnic -> 🏗️
+//
+// Compare uses a few more detailed category names than Home,
+// so equivalent categories are normalized to the same Home icon.
+// =====================================================
+ 
 const majorIcons = {
+    // Home page categories
     Computer: "💻",
     Medicine: "🩺",
     Engineering: "⚙️",
@@ -2588,20 +2612,88 @@ const majorIcons = {
     Arts: "🎨",
     Education: "📚",
     Polytechnic: "🏗️",
-    Technology: "🛠️",
+ 
+    // Additional Compare categories
     Agriculture: "🌾",
     Veterinary: "🐾",
     Maritime: "⚓",
-    Aerospace: "✈️",
-    Economics: "💰",
+    Aerospace: "⚙️",
+    Economics: "📊",
     "Foreign Languages": "🌍",
-    General: "🎓",
     Multidisciplinary: "🏛️"
 };
  
-function getMajorIcon(major) {
-    return majorIcons[major] || "🎓";
+function getMajorIcon(category) {
+    const normalizedCategory = String(category || "")
+        .trim()
+        .toLowerCase()
+        .replace(/[-_]+/g, " ")
+        .replace(/\s+/g, " ");
+ 
+    if (!normalizedCategory) return "🎓";
+ 
+    // =================================================
+    // EXACT HOME-PAGE ICON MATCHING
+    // =================================================
+ 
+    // Computer / IT
+    if (
+        normalizedCategory === "computer" ||
+        normalizedCategory === "computer studies" ||
+        normalizedCategory === "it" ||
+        normalizedCategory === "information technology"
+    ) {
+        return "💻";
+    }
+ 
+    // All health/medical-related categories use Home's Medicine icon.
+    if (
+        normalizedCategory === "medicine" ||
+        normalizedCategory === "medical" ||
+        normalizedCategory === "dental" ||
+        normalizedCategory === "pharmacy" ||
+        normalizedCategory === "nursing" ||
+        normalizedCategory === "medical technology" ||
+        normalizedCategory === "traditional medicine" ||
+        normalizedCategory === "health science"
+    ) {
+        return "🩺";
+    }
+ 
+    // Engineering/technology-related categories use Home's Engineering icon.
+    if (
+        normalizedCategory === "engineering" ||
+        normalizedCategory === "technology" ||
+        normalizedCategory === "aerospace"
+    ) {
+        return "⚙️";
+    }
+ 
+    // Business/Economics use Home's Business icon.
+    if (
+        normalizedCategory === "business" ||
+        normalizedCategory === "economics"
+    ) {
+        return "📊";
+    }
+ 
+    // Exact Home-page categories
+    if (normalizedCategory === "arts") return "🎨";
+    if (normalizedCategory === "education") return "📚";
+    if (normalizedCategory === "polytechnic") return "🏗️";
+ 
+    // Additional categories that do not exist on Home yet.
+    const extraIconMap = {
+        agriculture: "🌾",
+        veterinary: "🐾",
+        maritime: "⚓",
+        "foreign languages": "🌍",
+        multidisciplinary: "🏛️"
+    };
+ 
+    return extraIconMap[normalizedCategory] || "🎓";
 }
+ 
  
 function renderSearchResults(number, query) {
     const input = document.getElementById(`uniSearch${number}`);
@@ -2611,8 +2703,13 @@ function renderSearchResults(number, query) {
     if (!input || !select || !results) return;
  
     const q = normalizeSearchText(query);
-    const otherSelect = number === 1 ? document.getElementById("uni2") : document.getElementById("uni1");
  
+    const otherSelect =
+        number === 1
+            ? document.getElementById("uni2")
+            : document.getElementById("uni1");
+ 
+    // Empty search
     if (!q) {
         results.innerHTML = "";
         results.classList.remove("open");
@@ -2621,132 +2718,311 @@ function renderSearchResults(number, query) {
  
     const matches = Object.entries(universities)
         .map(([id, university]) => {
-            if (otherSelect && otherSelect.value && id === otherSelect.value) {
+ 
+            // Don't show the university already selected
+            // in the other selector.
+            if (
+                otherSelect &&
+                otherSelect.value &&
+                id === otherSelect.value
+            ) {
                 return null;
             }
  
-            const score = scoreUniversitySearch(university, q, id);
-            return score > 0 ? { id, university, score } : null;
+            const score = scoreUniversitySearch(
+                university,
+                q,
+                id
+            );
+ 
+            return score > 0
+                ? {
+                    id,
+                    university,
+                    score
+                }
+                : null;
         })
         .filter(Boolean)
-        .sort((a, b) => b.score - a.score || a.university.name.localeCompare(b.university.name));
+        .sort(
+            (a, b) =>
+                b.score - a.score ||
+                a.university.name.localeCompare(
+                    b.university.name
+                )
+        );
  
     results.innerHTML = "";
  
+    // No results
     if (matches.length === 0) {
         const empty = document.createElement("div");
+ 
         empty.className = "search-no-result";
         empty.textContent = "No matching university found.";
+ 
         results.appendChild(empty);
         results.classList.add("open");
+ 
         return;
     }
  
+    // Create search result items
     matches.forEach(({ id, university }) => {
+ 
         const button = document.createElement("button");
+ 
         button.type = "button";
         button.className = "search-result-item";
         button.setAttribute("role", "option");
  
+ 
+        // --------------------------------
+        // UNIVERSITY ICON
+        // --------------------------------
+ 
         const icon = document.createElement("span");
+ 
         icon.className = "result-icon";
-        icon.textContent = getMajorIcon(university.category);
+ 
+        // Get icon from university category
+        icon.textContent = getMajorIcon(
+            university.category
+        );
+ 
+ 
+        // --------------------------------
+        // UNIVERSITY INFORMATION
+        // --------------------------------
  
         const info = document.createElement("div");
+ 
         info.className = "result-info";
  
+ 
+        // University name
         const name = document.createElement("strong");
+ 
         name.textContent = university.name;
  
-        const meta = document.createElement("span");
-        meta.textContent = [university.category, university.location].filter(Boolean).join(" • ");
  
+        // Category + location
+        const meta = document.createElement("span");
+ 
+        meta.textContent = [
+            university.category,
+            university.location
+        ]
+            .filter(Boolean)
+            .join(" • ");
+ 
+ 
+        // Build information section
         info.appendChild(name);
         info.appendChild(meta);
+ 
+ 
+        // Build result button
         button.appendChild(icon);
         button.appendChild(info);
  
+ 
+        // --------------------------------
+        // SELECT UNIVERSITY
+        // --------------------------------
+ 
         button.addEventListener("click", function () {
+ 
+            // Set actual select value
             select.value = id;
+ 
+            // Show university name in search input
             input.value = university.name;
+ 
+            // Close results
             results.classList.remove("open");
-            select.dispatchEvent(new Event("change", { bubbles: true }));
+ 
+            // Trigger select change
+            select.dispatchEvent(
+                new Event("change", {
+                    bubbles: true
+                })
+            );
+ 
+            // Update status
             updateSelectorStatus();
         });
+ 
  
         results.appendChild(button);
     });
  
+ 
+    // --------------------------------
+    // RESULT COUNT
+    // --------------------------------
+ 
     const resultCount = document.createElement("div");
+ 
     resultCount.className = "more-results";
-    resultCount.textContent = `${matches.length} university result${matches.length === 1 ? "" : "s"}`;
+ 
+    resultCount.textContent =
+        `${matches.length} university result` +
+        `${matches.length === 1 ? "" : "s"}`;
+ 
     results.appendChild(resultCount);
+ 
     results.classList.add("open");
 }
  
+ 
 function setupSearchableSelector(number) {
-    const input = document.getElementById(`uniSearch${number}`);
-    const select = document.getElementById(`uni${number}`);
-    const results = document.getElementById(`searchResults${number}`);
+ 
+    const input =
+        document.getElementById(`uniSearch${number}`);
+ 
+    const select =
+        document.getElementById(`uni${number}`);
+ 
+    const results =
+        document.getElementById(`searchResults${number}`);
  
     if (!input || !select || !results) return;
  
+ 
+    // Search while typing
     input.addEventListener("input", function () {
-        renderSearchResults(number, input.value);
+ 
+        renderSearchResults(
+            number,
+            input.value
+        );
+ 
     });
  
+ 
+    // Show results when focused
     input.addEventListener("focus", function () {
-        renderSearchResults(number, input.value);
+ 
+        renderSearchResults(
+            number,
+            input.value
+        );
+ 
     });
  
+ 
+    // When university is selected
     select.addEventListener("change", function () {
-        const university = universities[select.value];
-        input.value = university ? university.name : "";
+ 
+        const university =
+            universities[select.value];
+ 
+        input.value =
+            university
+                ? university.name
+                : "";
+ 
         results.classList.remove("open");
+ 
         updateSelectorStatus();
     });
 }
  
+ 
 function updateSelectorStatus(message) {
-    const status = document.getElementById("selectorStatus");
-    const select1 = document.getElementById("uni1");
-    const select2 = document.getElementById("uni2");
+ 
+    const status =
+        document.getElementById("selectorStatus");
+ 
+    const select1 =
+        document.getElementById("uni1");
+ 
+    const select2 =
+        document.getElementById("uni2");
  
     if (!status || !select1 || !select2) return;
  
-    if (message && typeof message !== "object") {
+ 
+    // Custom message
+    if (
+        message &&
+        typeof message !== "object"
+    ) {
         status.textContent = message;
         return;
     }
  
-    if (select1.value && select2.value && select1.value === select2.value) {
-        status.textContent = "Please select two different universities.";
+ 
+    // Prevent same university
+    if (
+        select1.value &&
+        select2.value &&
+        select1.value === select2.value
+    ) {
+        status.textContent =
+            "Please select two different universities.";
+ 
         return;
     }
  
-    const total = Object.keys(universities).length;
-    const first = select1.value ? `University 1: ${universities[select1.value].name}` : "University 1 not selected";
-    const second = select2.value ? `University 2: ${universities[select2.value].name}` : "University 2 not selected";
  
-    status.textContent = `${total} universities available • ${first} • ${second}`;
+    // Total universities
+    const total =
+        Object.keys(universities).length;
+ 
+ 
+    // University 1
+    const first =
+        select1.value
+            ? `University 1: ${universities[select1.value].name}`
+            : "University 1 not selected";
+ 
+ 
+    // University 2
+    const second =
+        select2.value
+            ? `University 2: ${universities[select2.value].name}`
+            : "University 2 not selected";
+ 
+ 
+    status.textContent =
+        `${total} universities available • ` +
+        `${first} • ${second}`;
 }
  
+ 
 function closeSearchResultsWhenClickedOutside() {
+ 
     document.addEventListener("click", function (event) {
+ 
         [1, 2].forEach(number => {
-            const input = document.getElementById(`uniSearch${number}`);
-            const results = document.getElementById(`searchResults${number}`);
+ 
+            const input =
+                document.getElementById(
+                    `uniSearch${number}`
+                );
+ 
+            const results =
+                document.getElementById(
+                    `searchResults${number}`
+                );
  
             if (!input || !results) return;
  
-            if (!input.parentElement.parentElement.contains(event.target)) {
+ 
+            if (
+                !input.parentElement.parentElement.contains(
+                    event.target
+                )
+            ) {
                 results.classList.remove("open");
             }
+ 
         });
+ 
     });
 }
- 
- 
 // =====================================================
 // PREVENT SAME UNIVERSITY
 // =====================================================
@@ -2817,54 +3093,54 @@ function preventSameUniversity() {
  
 function loadComparisonFromURL() {
     const params = new URLSearchParams(window.location.search);
-
+ 
     let uni1 = params.get("uni1");
     let uni2 = params.get("uni2");
     let restoreScroll = false;
-
+ 
     if (!uni1 || !uni2) {
         const savedUrl = sessionStorage.getItem("unipathCompareReturnUrl");
-
+ 
         if (savedUrl) {
             const savedQuery = savedUrl.split("?")[1] || "";
             const savedParams = new URLSearchParams(savedQuery);
-
+ 
             uni1 = savedParams.get("uni1");
             uni2 = savedParams.get("uni2");
             restoreScroll = true;
         }
     }
-
+ 
     if (!uni1 || !uni2) return;
-
+ 
     const select1 = document.getElementById("uni1");
     const select2 = document.getElementById("uni2");
     if (!select1 || !select2) return;
-
+ 
     if (universities[uni1] && universities[uni2] && uni1 !== uni2) {
         select1.value = uni1;
         select2.value = uni2;
-<<<<<<< Updated upstream
+ 
  
         compareUniversities({ scroll: false });
-=======
-
+ 
+ 
         updateUniversityCard(universities[uni1], 1);
         updateUniversityCard(universities[uni2], 2);
-
+ 
         updateSelectorStatus(
             `Comparing ${universities[uni1].name} and ${universities[uni2].name}.`
         );
-
+ 
         saveComparisonReturnState();
         scheduleComparisonCardSync();
-
+ 
         if (restoreScroll) restoreComparisonScrollPosition();
->>>>>>> Stashed changes
+ 
     }
 }
-
-
+ 
+ 
 // =====================================================
 // INITIALIZE
 // =====================================================
@@ -2872,7 +3148,7 @@ function loadComparisonFromURL() {
 if ("scrollRestoration" in window.history) {
     window.history.scrollRestoration = "manual";
 }
-
+ 
 document.addEventListener("DOMContentLoaded", function () {
     loadUniversities();
     setupSearchableSelector(1);
@@ -2900,18 +3176,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (select2) {
         select2.addEventListener("change", updateSelectorStatus);
     }
-
+ 
     window.addEventListener("resize", scheduleComparisonCardSync);
 });
-
-<<<<<<< Updated upstream
+ 
 function restoreCompareReturnState() {
     const rawState = sessionStorage.getItem("compareReturnState");
-
+ 
     if (!rawState) {
         return false;
     }
-
+ 
     let state;
     try {
         state = JSON.parse(rawState);
@@ -2919,11 +3194,11 @@ function restoreCompareReturnState() {
         sessionStorage.removeItem("compareReturnState");
         return false;
     }
-
+ 
     const select1 = document.getElementById("uni1");
     const select2 = document.getElementById("uni2");
     const scrollY = Number(state.scrollY);
-
+ 
     if (
         !select1 ||
         !select2 ||
@@ -2934,7 +3209,7 @@ function restoreCompareReturnState() {
         sessionStorage.removeItem("compareReturnState");
         return false;
     }
-
+ 
     select1.value = state.uni1;
     select2.value = state.uni2;
     const search1 = document.getElementById("uniSearch1");
@@ -2942,9 +3217,9 @@ function restoreCompareReturnState() {
     if (search1) search1.value = universities[state.uni1].name;
     if (search2) search2.value = universities[state.uni2].name;
     compareUniversities({ scroll: false });
-
+ 
     sessionStorage.removeItem("compareReturnState");
-
+ 
     if (Number.isFinite(scrollY) && scrollY >= 0) {
         window.setTimeout(function () {
             if (document.activeElement && typeof document.activeElement.blur === "function") {
@@ -2958,15 +3233,14 @@ function restoreCompareReturnState() {
             });
         }, 100);
     }
-
+ 
     return true;
 }
-
+ 
 window.addEventListener("pageshow", function (event) {
     if (!event.persisted && !sessionStorage.getItem("compareReturnState")) {
         return;
     }
     restoreCompareReturnState();
 });
-=======
->>>>>>> Stashed changes
+ 
