@@ -4,6 +4,14 @@
   var navigation = document.querySelector(".navbar") || document.querySelector("header");
   if (!navigation) return;
   navigation.classList.add("back-navigation");
+  var isUniversityListPage = navigation.tagName === "HEADER" && !document.querySelector(".navbar");
+  if (isUniversityListPage) {
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        sessionStorage.setItem("detailReturnUrl", window.location.href);
+      });
+    });
+  }
 
   var button = document.createElement("button");
   button.type = "button";
@@ -14,6 +22,7 @@
     var cameFromCompare = params.get("from") === "compare";
     var referrer = document.referrer;
     var cameFromThisSite = referrer && new URL(referrer, window.location.href).origin === window.location.origin;
+    var savedReturnUrl = sessionStorage.getItem("detailReturnUrl");
     var hasCompareSnapshot = sessionStorage.getItem("compareReturnState");
     if (cameFromCompare && hasCompareSnapshot && window.history.length > 1) {
       window.history.back();
@@ -21,6 +30,10 @@
       window.location.href = "compare.html";
     } else if (cameFromThisSite && window.history.length > 1) {
       window.history.back();
+    } else if (cameFromThisSite) {
+      window.location.href = referrer;
+    } else if (savedReturnUrl) {
+      window.location.href = savedReturnUrl;
     } else {
       window.location.href = navigation.tagName === "HEADER" ? "Uni.html" : "../index.html";
     }

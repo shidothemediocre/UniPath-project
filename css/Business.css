@@ -364,7 +364,18 @@ header h1{
     width: 400px;
     margin: 0;
     padding: 0;
-    z-index: 1000;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.university-list {
+    position: relative;
+    z-index: 2;
 }
 
 .business-image img {
@@ -433,7 +444,8 @@ header h1{
     width: 400px;
     margin: 0;
     padding: 0;
-    z-index: 1000;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .business-image img {
