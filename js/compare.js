@@ -1721,6 +1721,79 @@ function getDisplayEntryTrack(university) {
 }
  
 // =====================================================
+// COMPARISON CARD ALIGNMENT
+// =====================================================
+
+function syncComparisonCardRows() {
+    const card1 = document.getElementById("university-card-1");
+    const card2 = document.getElementById("university-card-2");
+    if (!card1 || !card2) return;
+
+    const selectors = [
+        ".university-header",
+        ".cutoff-section",
+        ".admission-detail",
+        ".secondary-grid",
+        ".profile-section",
+        ".university-actions"
+    ];
+
+    selectors.forEach(selector => {
+        card1.querySelectorAll(selector).forEach(el => el.style.minHeight = "");
+        card2.querySelectorAll(selector).forEach(el => el.style.minHeight = "");
+    });
+
+    if (window.innerWidth <= 900) {
+        card1.style.minHeight = "";
+        card2.style.minHeight = "";
+        return;
+    }
+
+    const rows = [
+        ".university-header",
+        ".cutoff-section",
+        ".admission-detail:nth-of-type(2)",
+        ".admission-detail:nth-of-type(3)",
+        ".admission-detail:nth-of-type(4)",
+        ".admission-detail:nth-of-type(5)",
+        ".admission-detail:nth-of-type(6)",
+        ".admission-detail:nth-of-type(7)",
+        ".secondary-grid",
+        ".profile-section",
+        ".university-actions"
+    ];
+
+    rows.forEach(selector => {
+        const a = card1.querySelector(selector);
+        const b = card2.querySelector(selector);
+        if (!a || !b) return;
+
+        const height = Math.max(
+            a.getBoundingClientRect().height,
+            b.getBoundingClientRect().height
+        );
+
+        a.style.minHeight = `${Math.ceil(height)}px`;
+        b.style.minHeight = `${Math.ceil(height)}px`;
+    });
+
+    const cardHeight = Math.max(
+        card1.getBoundingClientRect().height,
+        card2.getBoundingClientRect().height
+    );
+
+    card1.style.minHeight = `${Math.ceil(cardHeight)}px`;
+    card2.style.minHeight = `${Math.ceil(cardHeight)}px`;
+}
+
+function scheduleComparisonCardSync() {
+    requestAnimationFrame(() => {
+        syncComparisonCardRows();
+        requestAnimationFrame(syncComparisonCardRows);
+    });
+}
+
+// =====================================================
 // UPDATE UNIVERSITY CARD
 // =====================================================
  
@@ -1981,7 +2054,11 @@ function updateUniversityCard(university, number) {
         const detailHref = resolveUniversityDetailPage(university);
 
         if (detailHref) {
+<<<<<<< Updated upstream
             website.href = `${detailHref}?from=compare`;
+=======
+            website.href = buildDetailHrefWithReturnState(detailHref);
+>>>>>>> Stashed changes
             website.textContent = "More Details ";
             website.classList.remove("disabled");
             website.removeAttribute("aria-disabled");
@@ -2175,6 +2252,57 @@ function resetUniversityCard(number) {
  
  
 // =====================================================
+// COMPARE RETURN STATE
+// =====================================================
+
+function saveComparisonReturnState() {
+    const select1 = document.getElementById("uni1");
+    const select2 = document.getElementById("uni2");
+
+    if (!select1 || !select2 || !select1.value || !select2.value) return;
+
+    const params = new URLSearchParams();
+    params.set("uni1", select1.value);
+    params.set("uni2", select2.value);
+
+    const compareUrl =
+        `${window.location.pathname}?${params.toString()}${window.location.hash || ""}`;
+
+    window.history.replaceState(
+        { uni1: select1.value, uni2: select2.value },
+        "",
+        compareUrl
+    );
+
+    sessionStorage.setItem("unipathCompareReturnUrl", compareUrl);
+    sessionStorage.setItem(
+        "unipathCompareScrollY",
+        String(window.scrollY || 0)
+    );
+}
+
+function buildDetailHrefWithReturnState(detailHref) {
+    if (!detailHref) return detailHref;
+
+    saveComparisonReturnState();
+
+    const separator = detailHref.includes("?") ? "&" : "?";
+    return `${detailHref}${separator}from=compare`;
+}
+
+function restoreComparisonScrollPosition() {
+    const saved = sessionStorage.getItem("unipathCompareScrollY");
+    if (saved === null) return;
+
+    const y = Number(saved);
+    if (!Number.isFinite(y)) return;
+
+    requestAnimationFrame(() => {
+        window.scrollTo(0, y);
+    });
+}
+
+// =====================================================
 // COMPARE UNIVERSITIES
 // =====================================================
  
@@ -2243,6 +2371,9 @@ function compareUniversities(options) {
     }
  
     updateSelectorStatus(`Comparing ${university1.name} and ${university2.name}.`);
+
+    saveComparisonReturnState();
+    scheduleComparisonCardSync();
 }
  
  
@@ -2685,51 +2816,55 @@ function preventSameUniversity() {
 // =====================================================
  
 function loadComparisonFromURL() {
- 
-    const params =
-        new URLSearchParams(
-            window.location.search
-        );
- 
-    const uni1 =
-        params.get("uni1");
- 
-    const uni2 =
-        params.get("uni2");
- 
- 
+    const params = new URLSearchParams(window.location.search);
+
+    let uni1 = params.get("uni1");
+    let uni2 = params.get("uni2");
+    let restoreScroll = false;
+
     if (!uni1 || !uni2) {
-        return;
+        const savedUrl = sessionStorage.getItem("unipathCompareReturnUrl");
+
+        if (savedUrl) {
+            const savedQuery = savedUrl.split("?")[1] || "";
+            const savedParams = new URLSearchParams(savedQuery);
+
+            uni1 = savedParams.get("uni1");
+            uni2 = savedParams.get("uni2");
+            restoreScroll = true;
+        }
     }
- 
- 
-    const select1 =
-        document.getElementById("uni1");
- 
-    const select2 =
-        document.getElementById("uni2");
- 
- 
-    if (!select1 || !select2) {
-        return;
-    }
- 
- 
-    if (
-        universities[uni1] &&
-        universities[uni2] &&
-        uni1 !== uni2
-    ) {
- 
+
+    if (!uni1 || !uni2) return;
+
+    const select1 = document.getElementById("uni1");
+    const select2 = document.getElementById("uni2");
+    if (!select1 || !select2) return;
+
+    if (universities[uni1] && universities[uni2] && uni1 !== uni2) {
         select1.value = uni1;
- 
         select2.value = uni2;
+<<<<<<< Updated upstream
  
         compareUniversities({ scroll: false });
+=======
+
+        updateUniversityCard(universities[uni1], 1);
+        updateUniversityCard(universities[uni2], 2);
+
+        updateSelectorStatus(
+            `Comparing ${universities[uni1].name} and ${universities[uni2].name}.`
+        );
+
+        saveComparisonReturnState();
+        scheduleComparisonCardSync();
+
+        if (restoreScroll) restoreComparisonScrollPosition();
+>>>>>>> Stashed changes
     }
 }
- 
- 
+
+
 // =====================================================
 // INITIALIZE
 // =====================================================
@@ -2765,8 +2900,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (select2) {
         select2.addEventListener("change", updateSelectorStatus);
     }
+
+    window.addEventListener("resize", scheduleComparisonCardSync);
 });
 
+<<<<<<< Updated upstream
 function restoreCompareReturnState() {
     const rawState = sessionStorage.getItem("compareReturnState");
 
@@ -2830,3 +2968,5 @@ window.addEventListener("pageshow", function (event) {
     }
     restoreCompareReturnState();
 });
+=======
+>>>>>>> Stashed changes

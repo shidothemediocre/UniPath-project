@@ -1707,11 +1707,10 @@ body > header {
     }
 }
 /* =========================================================
-   FINAL SIDE-BY-SIDE ALIGNMENT FIX
-   CSS ONLY — keeps HTML and JS untouched
+   FINAL COMPARISON CARD ALIGNMENT
+   Matching rows are synchronized by compare.js after rendering.
    ========================================================= */
 
-/* Keep both cards stretching to the same comparison height. */
 .comparison-grid {
     align-items: stretch;
 }
@@ -1719,141 +1718,49 @@ body > header {
 #university-card-1,
 #university-card-2 {
     align-self: stretch;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Make the internal card flow predictable. */
-.university-details {
+#university-card-1 .university-details,
+#university-card-2 .university-details {
     width: 100%;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
 }
 
-/*
-   The two cards contain the same ordered subsections.
-   Give matching rows the same minimum height so their
-   headings/values start on the same horizontal line.
-*/
-#university-card-1 .university-header,
-#university-card-2 .university-header {
-    min-height: 155px;
+#university-card-1 .university-actions,
+#university-card-2 .university-actions {
+    margin-top: auto;
 }
 
-#university-card-1 .info-section,
-#university-card-2 .info-section {
-    align-items: flex-start;
-}
-
-/* 1 — Admission / Entry Track */
-#university-card-1 .admission-detail:nth-of-type(2),
-#university-card-2 .admission-detail:nth-of-type(2) {
-    min-height: 104px;
-}
-
-/* 2 — Required Subjects */
-#university-card-1 .admission-detail:nth-of-type(3),
-#university-card-2 .admission-detail:nth-of-type(3) {
-    min-height: 112px;
-}
-
-/* 3 — Years of Study */
-#university-card-1 .admission-detail:nth-of-type(4),
-#university-card-2 .admission-detail:nth-of-type(4) {
-    min-height: 88px;
-}
-
-/* 4 — Degree Offered */
-#university-card-1 .admission-detail:nth-of-type(5),
-#university-card-2 .admission-detail:nth-of-type(5) {
-    min-height: 92px;
-}
-
-/* 5 — Programmes / Majors */
-#university-card-1 .admission-detail:nth-of-type(6),
-#university-card-2 .admission-detail:nth-of-type(6) {
-    min-height: 150px;
-}
-
-/* 6 — Location */
-#university-card-1 .admission-detail:nth-of-type(7),
-#university-card-2 .admission-detail:nth-of-type(7) {
-    min-height: 88px;
-}
-
-/* Keep the contents at the same top edge inside every matched row. */
 #university-card-1 .info-content,
-#university-card-2 .info-content {
-    min-width: 0;
-}
-
-/* Prevent long text from visually changing row alignment. */
-#university-card-1 .info-content p,
-#university-card-2 .info-content p,
-#university-card-1 .mini-info strong,
-#university-card-2 .mini-info strong,
+#university-card-2 .info-content,
+#university-card-1 .mini-info,
+#university-card-2 .mini-info,
 #university-card-1 .course-tag,
 #university-card-2 .course-tag {
+    min-width: 0;
     overflow-wrap: anywhere;
-    word-break: normal;
 }
 
-/* Keep the programme/tag area aligned even when one side has fewer tags. */
-#university-card-1 .admission-detail:nth-of-type(6) .tag-list,
-#university-card-2 .admission-detail:nth-of-type(6) .tag-list {
-    min-height: 68px;
-    align-content: flex-start;
-}
-
-/* Match the lower metadata area as well. */
-#university-card-1 .secondary-grid,
-#university-card-2 .secondary-grid {
-    grid-auto-rows: minmax(74px, auto);
-}
-
-/* Profile section begins at the same baseline. */
-#university-card-1 .profile-section,
-#university-card-2 .profile-section {
-    min-height: 150px;
-}
-
-/* Desktop/tablet: preserve the synchronized row heights. */
-@media (min-width: 901px) {
-    #university-card-1 .info-section,
-    #university-card-2 .info-section {
-        min-height: 0;
-    }
-
-    #university-card-1 .admission-detail:nth-of-type(2),
-    #university-card-2 .admission-detail:nth-of-type(2) { min-height: 104px; }
-
-    #university-card-1 .admission-detail:nth-of-type(3),
-    #university-card-2 .admission-detail:nth-of-type(3) { min-height: 112px; }
-
-    #university-card-1 .admission-detail:nth-of-type(4),
-    #university-card-2 .admission-detail:nth-of-type(4) { min-height: 88px; }
-
-    #university-card-1 .admission-detail:nth-of-type(5),
-    #university-card-2 .admission-detail:nth-of-type(5) { min-height: 92px; }
-
-    #university-card-1 .admission-detail:nth-of-type(6),
-    #university-card-2 .admission-detail:nth-of-type(6) { min-height: 150px; }
-
-    #university-card-1 .admission-detail:nth-of-type(7),
-    #university-card-2 .admission-detail:nth-of-type(7) { min-height: 88px; }
-}
-
-/* Mobile should remain natural instead of forcing large empty gaps. */
 @media (max-width: 900px) {
-    #university-card-1 .university-header,
-    #university-card-2 .university-header,
-    #university-card-1 .info-section,
-    #university-card-2 .info-section,
-    #university-card-1 .profile-section,
-    #university-card-2 .profile-section {
-        min-height: 0;
+    #university-card-1,
+    #university-card-2 {
+        min-height: 0 !important;
     }
 
-    #university-card-1 .admission-detail:nth-of-type(6) .tag-list,
-    #university-card-2 .admission-detail:nth-of-type(6) .tag-list {
-        min-height: 0;
+    #university-card-1 .university-details,
+    #university-card-2 .university-details {
+        display: block;
+    }
+
+    #university-card-1 .university-actions,
+    #university-card-2 .university-actions {
+        margin-top: 20px;
     }
 }
 
