@@ -27,19 +27,8 @@ search.addEventListener("input", () => {
         }
 
     });
-
     emptyMessage.style.display = matches ? "none" : "block";
 
-});
-
-// Click animation
-cards.forEach(card => {
-    card.addEventListener("click", () => {
-        card.style.transform = "scale(0.95)";
-        setTimeout(() => {
-            card.style.transform = "";
-        }, 150);
-    });
 });
 
 // Fade-in animation when the page loads
@@ -55,6 +44,21 @@ window.addEventListener("load", () => {
             card.style.opacity = "1";
             card.style.transform = "translateY(0)";
         }, index * 100);
+
+    });
+
+});
+
+// Click animation
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        card.style.transform = "scale(0.95)";
+
+        setTimeout(() => {
+            card.style.transform = "";
+        }, 150);
 
     });
 
