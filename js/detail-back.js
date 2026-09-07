@@ -28,12 +28,12 @@
       window.history.back();
     } else if (cameFromCompare && hasCompareSnapshot) {
       window.location.href = "compare.html";
+    } else if (savedReturnUrl) {
+      window.location.href = savedReturnUrl;
     } else if (cameFromThisSite && window.history.length > 1) {
       window.history.back();
     } else if (cameFromThisSite) {
       window.location.href = referrer;
-    } else if (savedReturnUrl) {
-      window.location.href = savedReturnUrl;
     } else {
       window.location.href = navigation.tagName === "HEADER" ? "Uni.html" : "../index.html";
     }
