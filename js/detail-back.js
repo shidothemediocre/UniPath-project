@@ -3,6 +3,14 @@
 
   var navigation = document.querySelector(".navbar") || document.querySelector("header");
   if (!navigation) return;
+  if (
+    navigation.dataset.backNavigationInitialized === "true" ||
+    navigation.querySelector(".detail-back-button")
+  ) {
+    navigation.dataset.backNavigationInitialized = "true";
+    return;
+  }
+  navigation.dataset.backNavigationInitialized = "true";
   navigation.classList.add("back-navigation");
   var isDetailPage = !!document.querySelector(".navbar");
   var isUniversityListPage = !!document.querySelector(".major-grid");
