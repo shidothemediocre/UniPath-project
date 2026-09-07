@@ -278,6 +278,9 @@ const recommendedReason =
 const recommendedIcon =
     document.getElementById("recommended-icon");
 
+const mainResult =
+    document.getElementById("main-result");
+
 const scoresContainer =
     document.getElementById("scores-container");
 
@@ -306,6 +309,7 @@ if (!introSection ||
     !recommendedField ||
     !recommendedReason ||
     !recommendedIcon ||
+    !mainResult ||
     !scoresContainer ||
     !warningMessage) {
 
@@ -627,6 +631,7 @@ function calculateResults() {
 
             percentages[field] = 0;
 
+
         } else {
 
             percentages[field] =
@@ -640,29 +645,45 @@ function calculateResults() {
     });
 
 
+    /* If every field has the same percentage,
+       there is no clear recommendation. */
+
+    const percentageValues =
+        Object.values(percentages);
+
+    const allFieldsEqual =
+        percentageValues.length > 0 &&
+        percentageValues.every(function (value) {
+            return value === percentageValues[0];
+        });
+
+
     /* Find best field */
 
     let bestField = null;
 
     let highestPercentage = -1;
 
+    if (!allFieldsEqual) {
 
-    Object.keys(fields).forEach(function (field) {
+        Object.keys(fields).forEach(function (field) {
 
-        if (
-            percentages[field] >
-            highestPercentage
-        ) {
+            if (
+                percentages[field] >
+                highestPercentage
+            ) {
 
-            highestPercentage =
-                percentages[field];
+                highestPercentage =
+                    percentages[field];
 
-            bestField =
-                field;
+                bestField =
+                    field;
 
-        }
+            }
 
-    });
+        });
+
+    }
 
 
     /* Display results */
@@ -686,22 +707,67 @@ function showResults(percentages, bestField) {
     resultSection.classList.remove("hidden");
 
 
-    const field =
-        fields[bestField];
+    const hasRecommendation =
+        Boolean(bestField) &&
+        Boolean(fields[bestField]);
 
 
-    /* Main recommendation */
+    if (hasRecommendation) {
 
-    recommendedIcon.textContent =
-        field.icon;
+        mainResult.classList.remove("hidden");
 
-
-    recommendedField.textContent =
-        field.name;
+        const field =
+            fields[bestField];
 
 
-    recommendedReason.textContent =
-        field.reason;
+        /* Main recommendation */
+
+        recommendedIcon.textContent =
+            field.icon;
+
+
+        recommendedField.textContent =
+            field.name;
+
+
+        recommendedReason.textContent =
+            field.reason;
+
+    } else {
+
+        mainResult.classList.add("hidden");
+
+        recommendedIcon.textContent = "";
+        recommendedField.textContent = "";
+        recommendedReason.textContent = "";
+
+        const warningText =
+            warningMessage.querySelector("p");
+
+        if (warningText) {
+            warningText.textContent =
+                "Please retake the quiz.";
+        }
+
+        warningMessage.classList.remove("hidden");
+
+        localStorage.removeItem("quizRecommendedField");
+        localStorage.removeItem("quizRecommendedFieldName");
+        localStorage.setItem(
+            "quizScores",
+            JSON.stringify(percentages)
+        );
+
+        localStorage.setItem(
+            "quizResult",
+            JSON.stringify({
+                field: null,
+                fieldName: "",
+                percentages: percentages
+            })
+        );
+
+    }
 
 
     /* Clear old scores */
@@ -781,7 +847,29 @@ function showResults(percentages, bestField) {
        LOW SCORE MESSAGE
     ======================================== */
 
-    if (percentages[bestField] < 50) {
+    if (!hasRecommendation) {
+
+        const warningText =
+            warningMessage.querySelector("p");
+
+        if (warningText) {
+            warningText.textContent =
+                "Please retake the quiz.";
+        }
+
+        warningMessage.classList.remove("hidden");
+
+    } else if (percentages[bestField] < 50) {
+
+        const warningText =
+            warningMessage.querySelector("p");
+
+        if (warningText) {
+            warningText.textContent =
+                "I think you should choose another field. " +
+                "Your answers do not show a strong enough match with this field. " +
+                "Consider exploring another option that better matches your skills.";
+        }
 
         warningMessage.classList.remove("hidden");
 
@@ -796,41 +884,45 @@ function showResults(percentages, bestField) {
        SAVE RESULT
     ======================================== */
 
-    localStorage.setItem(
-        "quizRecommendedField",
-        bestField
-    );
+    if (hasRecommendation) {
+
+        localStorage.setItem(
+            "quizRecommendedField",
+            bestField
+        );
 
 
-    localStorage.setItem(
-        "quizRecommendedFieldName",
-        field.name
-    );
+        localStorage.setItem(
+            "quizRecommendedFieldName",
+            fields[bestField].name
+        );
 
 
-    localStorage.setItem(
-        "quizScores",
-        JSON.stringify(percentages)
-    );
+        localStorage.setItem(
+            "quizScores",
+            JSON.stringify(percentages)
+        );
 
 
-    /* Save complete result */
+        /* Save complete result */
 
-    const result = {
+        const result = {
 
-        field: bestField,
+            field: bestField,
 
-        fieldName: field.name,
+            fieldName: fields[bestField].name,
 
-        percentages: percentages
+            percentages: percentages
 
-    };
+        };
 
 
-    localStorage.setItem(
-        "quizResult",
-        JSON.stringify(result)
-    );
+        localStorage.setItem(
+            "quizResult",
+            JSON.stringify(result)
+        );
+
+    }
 
 }
 
@@ -862,7 +954,7 @@ recommendationBtn.addEventListener(
     function () {
 
         window.location.href =
-            "recommendation2.html";
+            "../html/recommendation2.html";
 
     }
 );
