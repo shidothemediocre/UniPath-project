@@ -1,7 +1,7 @@
 // Fade in cards
 
 const cards = document.querySelectorAll(
-".card,.card1,.card2,.card3,.card4,.card5"
+".card,.card1,.card2,.card3,.card4,.card5,.card6,.card7"
 );
 
 cards.forEach((card,index)=>{

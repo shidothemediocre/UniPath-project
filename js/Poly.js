@@ -3,6 +3,7 @@ const search = document.getElementById("search");
 
 // Get all university cards
 const cards = document.querySelectorAll(".card");
+
 const list = document.querySelector(".university-list");
 const emptyMessage = document.createElement("p");
 emptyMessage.textContent = "No universities found";

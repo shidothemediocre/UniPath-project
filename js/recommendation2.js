@@ -171,9 +171,9 @@ var universities = [
   },
 
   {
-    name: "University of Computer Studies, Yangon",
-    page: "../html/UCSY.html",
-    region: "yangon",
+    name: "University of Computer Studies, Mandalay",
+    page: "../html/UCSM.html",
+    region: "mandalay",
     majors: ["it"],
     minMarks: 400
   },

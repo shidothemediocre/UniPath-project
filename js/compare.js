@@ -518,9 +518,7 @@ const universities = {
         subjects: ["Mathematics", "English", "Science"],
         programs: [
             "Computer Science",
-            "Software Engineering",
-            "AI",
-            "Information Systems"
+            "Computer Technoology"
         ],
         degree: "B.C.Sc / B.C.Tech",
         duration: "4 years",
@@ -543,10 +541,8 @@ const universities = {
         entryTrack: "Computer",
         subjects: ["Mathematics", "English", "Science"],
         programs: [
-            "Computer Science",
-            "AI",
-            "Cyber Security",
-            "Data Science"
+             "Computer Science",
+            "Computer Technoology"
         ],
         degree: "B.C.Sc / B.C.Tech",
         duration: "4 years",
@@ -570,7 +566,6 @@ const universities = {
         subjects: ["Mathematics", "English", "Science"],
         programs: [
             "Computer Science",
-            "Software Engineering",
             "Computer Technology"
         ],
         degree: "B.C.Sc / B.C.Tech",

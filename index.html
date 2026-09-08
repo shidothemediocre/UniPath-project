@@ -131,9 +131,9 @@
                 students can choose their future path confidently.
             </p>
 
-            <a href="#globalSearch" class="btn">
+            <button type="button" class="btn" id="goToSearch">
                 Go to Search
-            </a>
+            </button>
 
         </div>
 
@@ -511,6 +511,22 @@
 
         });
     </script>
+    <script>
+    document.getElementById("goToSearch").addEventListener("click", function () {
+        const searchInput = document.getElementById("globalSearch");
+
+        if (searchInput) {
+            searchInput.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+            setTimeout(() => {
+                searchInput.focus();
+            }, 500);
+        }
+    });
+</script>
 
 
     <!-- =========================

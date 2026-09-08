@@ -390,26 +390,6 @@ header {
 }
 
 
-/* =========================================================
-   CARD HOVER
-========================================================= */
-
-.card:hover,
-.card1:hover,
-.card2:hover,
-.card3:hover,
-.card4:hover,
-.card5:hover,
-.card6:hover,
-.card7:hover {
-    transform:
-        translateY(-15px)
-        scale(1.03);
-
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.35);
-}
-
 
 /* =========================================================
    ICON
@@ -591,7 +571,8 @@ header {
     .card4,
     .card5,
     .card6,
-    .card7 {
+    .card7,
+    .card8 {
         padding: 30px 20px;
     }
 }
@@ -627,7 +608,8 @@ header {
     .card4 h2,
     .card5 h2,
     .card6 h2,
-    .card7 h2 {
+    .card7 h2,
+    .card8 h2{
         font-size: 24px;
     }
 }
