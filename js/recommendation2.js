@@ -99,6 +99,14 @@ var universities = [
   },
 
   {
+    name: "University of Information Technology",
+    page: "../html/UIT.html",
+    region: "yangon",
+    majors: ["it"],
+    minMarks: 450
+  },
+
+  {
     name: "Yangon University",
     page: "../html/yu.html",
     region: "yangon",
@@ -112,6 +120,22 @@ var universities = [
     region: "mandalay",
     majors: ["arts", "science", "business"],
     minMarks: 350
+  },
+
+  {
+    name: "National University of Arts and Culture, Yangon",
+    page: "../html/NUAC(YGN).html",
+    region: "yangon",
+    majors: ["arts"],
+    minMarks: 240
+  },
+
+  {
+    name: "National University of Arts and Culture, Mandalay",
+    page: "../html/NUAC(MDY).html",
+    region: "mandalay",
+    majors: ["arts"],
+    minMarks:240
   },
 
   {
